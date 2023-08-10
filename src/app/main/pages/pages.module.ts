@@ -32,6 +32,7 @@ import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 import { environment } from 'src/environments/environment';
 import { TranslocoModule } from '@ngneat/transloco';
 import { CalificacionTaxisComponent } from './calificacion-taxis/calificacion-taxis.component';
+import { RatingModule } from 'primeng/rating';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -67,6 +68,7 @@ import { CalificacionTaxisComponent } from './calificacion-taxis/calificacion-ta
     ComponentModule,
     RecaptchaV3Module,
     TranslocoModule,
+    RatingModule
   ],
   exports:[
   ],
