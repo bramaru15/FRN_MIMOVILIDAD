@@ -1,0 +1,2838 @@
+@import "https://js.arcgis.com/4.26/@arcgis/core/assets/esri/themes/light/main.css";
+
+$colorPrimario1: #20223E;
+$colorAzul2: #425287;
+$colorFondoCielo: #e4ecef;
+$colorFondo: #EDEDED;
+$colorVerde: #BED000;
+$colorMorado: #7B558E;
+$colorRojo: #B24445;
+$colorFondoTarjetas: #ffffff;
+$colorGris1: #696969;
+$colorGris2: #999999;
+$heightInput: 30px;
+$radiusInputCuston: 5px;
+$radiusInputFiltrarCuston: 50px;
+$radiusButtonCuston: 20px;
+$radiusCardCuston: 15px;
+$sizeFiltrar: 12px;
+
+.a-custon-anonimo {
+    color: $colorAzul2;
+}
+
+
+
+/* Establecer el ancho de la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+/* Establecer el color de fondo de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Establecer el color del thumb (la parte que se arrastra) */
+::-webkit-scrollbar-thumb {
+    background-color: $colorGris2;
+    border-radius: 4px;
+}
+
+/* Cambiar el color del thumb cuando se pasa el mouse encima */
+::-webkit-scrollbar-thumb:hover {
+    background-color: $colorGris1;
+}
+
+//moz
+
+/* Establecer el ancho de la barra de desplazamiento */
+::-moz-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+/* Establecer el color de fondo de la barra de desplazamiento */
+::-moz-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Establecer el color del thumb (la parte que se arrastra) */
+::-moz-scrollbar-thumb {
+    background-color: $colorGris2;
+    border-radius: 4px;
+}
+
+/* Cambiar el color del thumb cuando se pasa el mouse encima */
+::-moz-scrollbar-thumb:hover {
+    background-color: $colorGris1;
+}
+
+@mixin respond($breakpoint) {
+
+
+    @if $breakpoint ==custom-m {
+        @media only screen and (max-width: 81.188em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==phone-s {
+        @media only screen and (max-width: 20em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==phone-m {
+        @media only screen and (max-width: 23.438em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==phone-l {
+        @media only screen and (max-width: 26.56em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==phone-lx {
+        @media only screen and (max-width: 30em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==phone {
+        @media (max-width: 37.5em) {
+            @content;
+        }
+
+        // 600px
+    }
+
+    @if $breakpoint ==phone-xxl {
+        @media (max-width: 47.5em) {
+            @content;
+        }
+
+        // 760px
+    }
+
+    @if  $breakpoint ==custon-765p {
+        @media (max-width: 47.813em){
+            @content;
+        }
+    }
+
+    @if $breakpoint ==tab-port {
+        @media only screen and (max-width: 56.25em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==laptop-s {
+        @media only screen and (max-width: 64em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==tab-land {
+        @media only screen and (max-width: 75em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==desktop-m {
+        @media only screen and (max-width: 93.7em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==big-desktop {
+        @media only screen and (max-width: 112.5em) {
+            @content;
+        }
+    }
+}
+
+@mixin respondmin($breakpoint) {
+
+
+    @if $breakpoint ==custom-m {
+        @media only screen and (min-width: 81.188em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==phone-s {
+        @media only screen and (min-width: 20em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==phone-m {
+        @media only screen and (min-width: 23.438em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==phone-l {
+        @media only screen and (min-width: 26.56em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==phone-lx {
+        @media only screen and (min-width: 30em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==phone {
+        @media (min-width: 37.5em) {
+            @content;
+        }
+
+        // 600px
+    }
+
+    @if $breakpoint ==phone-xxl {
+        @media (min-width: 47.5em) {
+            @content;
+        }
+
+        // 760px
+    }
+
+    @if $breakpoint ==tab-port {
+        @media only screen and (min-width: 56.25em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==laptop-s {
+        @media only screen and (min-width: 64em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==tab-land {
+        @media only screen and (min-width: 75em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==desktop-m {
+        @media only screen and (min-width: 93.7em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==big-desktop {
+        @media only screen and (min-width: 112.5em) {
+            @content;
+        }
+    }
+}
+
+//texto normal
+p {
+    font-size: 10px;
+    font-family: "Raleway Medium" !important;
+
+    @include respondmin(phone-s) {
+        font-size: 10px;
+    }
+
+    @include respondmin(phone-m) {
+        font-size: 11px;
+    }
+
+    @include respondmin(phone-l) {
+        font-size: 11px;
+    }
+
+    @include respondmin(phone-lx) {
+        font-size: 12px;
+    }
+
+    @include respondmin(phone) {
+        font-size: 12px;
+    }
+
+    @include respondmin(tab-port) {
+        font-size: 13px;
+    }
+
+    @include respondmin(laptop-s) {
+        font-size: 13px;
+    }
+
+    @include respondmin(tab-land) {
+        font-size: 14px;
+    }
+
+    @include respondmin(desktop-m) {
+        font-size: 14px;
+    }
+
+    @include respondmin(big-desktop) {
+        font-size: 15px;
+    }
+}
+
+//titulo principal
+h1 {
+    font-size: 20px;
+    font-family: "Raleway ExtraBold" !important;
+
+    @include respondmin(phone-s) {
+        font-size: 20px;
+    }
+
+    @include respondmin(phone-m) {
+        font-size: 21px;
+    }
+
+    @include respondmin(phone-l) {
+        font-size: 21px;
+    }
+
+    @include respondmin(phone-lx) {
+        font-size: 22px;
+    }
+
+    @include respondmin(phone) {
+        font-size: 22px;
+    }
+
+    @include respondmin(tab-port) {
+        font-size: 23px;
+    }
+
+    @include respondmin(laptop-s) {
+        font-size: 23px;
+    }
+
+    @include respondmin(tab-land) {
+        font-size: 24px;
+    }
+
+    @include respondmin(desktop-m) {
+        font-size: 24px;
+    }
+
+    @include respondmin(big-desktop) {
+        font-size: 25px;
+    }
+}
+
+//subtitulo
+h2 {
+    font-size: 14px;
+    font-family: "Raleway Bold" !important;
+
+    @include respondmin(phone-s) {
+        font-size: 14px;
+    }
+
+    @include respondmin(phone-m) {
+        font-size: 15px;
+    }
+
+    @include respondmin(phone-l) {
+        font-size: 15px;
+    }
+
+    @include respondmin(phone-lx) {
+        font-size: 16px;
+    }
+
+    @include respondmin(phone) {
+        font-size: 16px;
+    }
+
+    @include respondmin(tab-port) {
+        font-size: 17px;
+    }
+
+    @include respondmin(laptop-s) {
+        font-size: 17px;
+    }
+
+    @include respondmin(tab-land) {
+        font-size: 18px;
+    }
+
+    @include respondmin(desktop-m) {
+        font-size: 18px;
+    }
+
+    @include respondmin(big-desktop) {
+        font-size: 19px;
+    }
+}
+
+//subtitulo 
+h3 {
+    font-size: 11px;
+    font-family: "Raleway SemiBold" !important;
+
+    @include respondmin(phone-s) {
+        font-size: 11px;
+    }
+
+    @include respondmin(phone-m) {
+        font-size: 12px;
+    }
+
+    @include respondmin(phone-l) {
+        font-size: 12px;
+    }
+
+    @include respondmin(phone-lx) {
+        font-size: 13px;
+    }
+
+    @include respondmin(phone) {
+        font-size: 13px;
+    }
+
+    @include respondmin(tab-port) {
+        font-size: 14px;
+    }
+
+    @include respondmin(laptop-s) {
+        font-size: 14px;
+    }
+
+    @include respondmin(tab-land) {
+        font-size: 15px;
+    }
+
+    @include respondmin(desktop-m) {
+        font-size: 15px;
+    }
+
+    @include respondmin(big-desktop) {
+        font-size: 16px;
+    }
+}
+
+.example-sidenav-menuP {
+    width: 23%;
+
+    @include respond(custom-m) {
+        width: 30%;
+    }
+
+    @include respond(laptop-s) {
+        width: 35%;
+    }
+
+    @include respond(tab-port) {
+        width: 40%;
+    }
+
+    @include respond(phone-xxl) {
+        width: 40%;
+    }
+
+    @include respond(phone) {
+        width: 65%;
+    }
+
+    @include respond(phone-lx) {
+        width: 100%;
+    }
+}
+
+
+//auth---
+.mdc-dialog__surface {
+    border-radius: $radiusCardCuston !important;
+}
+
+.mat-mdc-menu-panel.mat-mdc-menu-panel {
+    border-radius: $radiusCardCuston !important;
+    border: 1px solid $colorPrimario1 !important;
+    overflow: hidden !important;
+}
+
+.border-nav-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    .border-custom-navbar {
+        width: 80%;
+        border-width: thin;
+        border-bottom: 1px solid;
+        border-bottom-color: $colorPrimario1;
+    }
+}
+
+.my-class-navbar-menu {
+    &-icon {
+        width: 60px;
+        height: 100%;
+        display: flex;
+    }
+
+    .mat-mdc-menu-content {
+        padding: 0 !important;
+        width: 280px !important;
+
+        button {
+            span {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                place-content: center;
+                color: $colorPrimario1;
+                font-family: Raleway Bold;
+
+                svg {
+                    .st0 {
+                        fill: $colorPrimario1
+                    }
+                }
+            }
+        }
+
+        button:hover {
+            span {
+                color: white;
+
+
+                .st0 {
+                    fill: white !important;
+                }
+            }
+
+            background-color: $colorPrimario1 !important;
+        }
+    }
+}
+
+
+
+
+@media (max-width: 280px) {
+    .card-auth {
+        width: 95% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+@media (min-width: 500px) {
+    .fondo-auth {
+        background-image: url("../../assets/images/background/fondo_ingreso_registro_desktop.png");
+    }
+}
+
+@media (max-width: 500px) {
+    .fondo-auth {
+        background-image: url("../../assets/images/background/fondoIngresoRegistroMobile.png");
+    }
+}
+
+.fondo-auth {
+    background-size: 100% !important;
+    background-repeat: no-repeat !important;
+    background-position: bottom !important;
+    background-color: $colorFondoCielo;
+    height: 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    content-visibility: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    text-align: -moz-center;
+}
+
+.fondo-auth-vertical-center {
+    align-items: center !important;
+}
+
+.card-auth {
+    width: 80%;
+    border-radius: $radiusCardCuston !important;
+    box-shadow: none !important;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.container-card {
+    text-align: -webkit-center !important;
+    text-align: -moz-center !important;
+}
+
+.logo-miM-auth {
+    width: 80%;
+    padding-top: 9%;
+
+    @include respond(phone) {
+        width: 100%;
+    }
+}
+
+.logo-miM-footer-auth {
+    width: 45% !important;
+    padding-bottom: 20px;
+    padding-top: 18px
+}
+
+//auth---
+
+.container-select-miM {
+    width: 100% !important;
+
+    .mdc-notched-outline__leading {
+        border-top-left-radius: $radiusInputCuston !important;
+        border-bottom-left-radius: $radiusInputCuston !important;
+    }
+
+    .mdc-notched-outline__trailing {
+        border-top-right-radius: $radiusInputCuston !important;
+        border-bottom-right-radius: $radiusInputCuston !important;
+    }
+
+    .mat-mdc-text-field-wrapper {
+        height: $heightInput !important;
+    }
+
+    .mat-mdc-form-field-subscript-wrapper {
+        font-size: 8px !important;
+    }
+
+    .mat-icon {
+        font-size: 13px !important;
+        margin-top: -10px !important;
+    }
+
+    button {
+        margin-top: -9px !important;
+    }
+
+    .mat-mdc-form-field-infix {
+        margin-top: -12px !important;
+        padding-bottom: 0 !important;
+        min-height: 0 !important;
+        width: 0 !important;
+    }
+
+    mat-error {
+        margin-top: 0px !important;
+        //font-size: 9px !important;
+    }
+
+    .mat-mdc-select-arrow svg {
+        background-image: url(../icons/chevron-down.svg);
+        background-size: 70% !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+
+        path {
+            display: none !important;
+        }
+    }
+}
+
+.container-imput-filtrar-miM {
+    .mat-mdc-form-field-icon-prefix {
+        margin-top: 4px !important;
+        margin-bottom: 4px !important;
+        margin-left: 20px !important;
+        margin-right: 10px !important;
+    }
+
+    .input-name {
+        text-transform: uppercase !important;
+    }
+
+    width: 100% !important;
+
+    .mdc-notched-outline__leading {
+        width: 0 !important;
+        border: none;
+    }
+
+    .mdc-notched-outline__trailing {
+        border: 1px solid;
+        width: 100%;
+        border-top-left-radius: $radiusInputFiltrarCuston !important;
+        border-bottom-left-radius: $radiusInputFiltrarCuston !important;
+        border-top-right-radius: $radiusInputFiltrarCuston !important;
+        border-bottom-right-radius: $radiusInputFiltrarCuston !important;
+    }
+
+    .mat-mdc-text-field-wrapper {
+        height: $heightInput !important;
+    }
+
+    .mat-mdc-form-field-subscript-wrapper {
+        font-size: 8px !important;
+    }
+
+    .mat-icon {
+        font-size: 13px !important;
+        margin-top: -10px !important;
+    }
+
+    .mat-mdc-form-field-infix {
+        padding-top: 8px !important;
+        padding-bottom: 0 !important;
+        min-height: 0 !important;
+        width: 0 !important;
+    }
+
+    .mat-datepicker-toggle {
+        button {
+            margin-top: -6px !important;
+        }
+
+        .mat-mdc-icon-button svg {
+            background-image: url(../icons/calendar.svg);
+            background-size: 70% !important;
+            background-repeat: no-repeat !important;
+            background-position: center !important;
+
+            path {
+                display: none !important;
+            }
+        }
+    }
+
+    .mdc-floating-label {
+        transform: translateY(-127%) !important;
+    }
+
+    .mdc-floating-label--float-above {
+        transform: translateY(-34.75px)scale(0.75) !important;
+    }
+
+    mat-error {
+        margin-top: -7px !important;
+        //font-size: 9px !important;
+    }
+
+    button {
+        margin-top: -9px !important;
+    }
+}
+
+.container-textarea-miM {
+
+    width: 100% !important;
+
+    .mdc-notched-outline__leading {
+        border-top-left-radius: $radiusInputCuston !important;
+        border-bottom-left-radius: $radiusInputCuston !important;
+    }
+
+    .mdc-notched-outline__trailing {
+        border-top-right-radius: $radiusInputCuston !important;
+        border-bottom-right-radius: $radiusInputCuston !important;
+    }
+
+    .mat-mdc-form-field-subscript-wrapper {
+        font-size: 8px !important;
+    }
+
+    .mat-icon {
+        font-size: 13px !important;
+        margin-top: -10px !important;
+    }
+
+    .mat-mdc-form-field-infix {
+        padding-top: 8px !important;
+        padding-bottom: 0 !important;
+        display: flex;
+        min-height: 0 !important;
+        width: 0 !important;
+    }
+
+    .mdc-floating-label {
+        transform: translateY(-127%) !important;
+    }
+
+    .mdc-floating-label--float-above {
+        transform: translateY(-34.75px)scale(0.75) !important;
+    }
+
+    mat-error {
+        margin-top: -7px !important;
+        //font-size: 9px !important;
+    }
+
+    button {
+        margin-top: -9px !important;
+    }
+}
+
+.container-imput-miM {
+    .input-name {
+        text-transform: uppercase !important;
+    }
+
+    width: 100% !important;
+
+    .mdc-notched-outline__leading {
+        border-top-left-radius: $radiusInputCuston !important;
+        border-bottom-left-radius: $radiusInputCuston !important;
+    }
+
+    .mdc-notched-outline__trailing {
+        border-top-right-radius: $radiusInputCuston !important;
+        border-bottom-right-radius: $radiusInputCuston !important;
+    }
+
+    .mat-mdc-text-field-wrapper {
+        height: $heightInput !important;
+    }
+
+    .mat-mdc-form-field-subscript-wrapper {
+        font-size: 8px !important;
+    }
+
+    .mat-icon {
+        font-size: 13px !important;
+        margin-top: -10px !important;
+    }
+
+    .mat-mdc-form-field-infix {
+        padding-top: 8px !important;
+        padding-bottom: 0 !important;
+        display: flex;
+        min-height: 0 !important;
+        width: 0 !important;
+    }
+
+    .mat-datepicker-toggle {
+        button {
+            margin-top: -6px !important;
+        }
+
+        .mat-mdc-icon-button svg {
+            background-image: url(../icons/calendar.svg);
+            background-size: 70% !important;
+            background-repeat: no-repeat !important;
+            background-position: center !important;
+
+            path {
+                display: none !important;
+            }
+        }
+    }
+
+    .mdc-floating-label {
+        transform: translateY(-127%) !important;
+    }
+
+    .mdc-floating-label--float-above {
+        transform: translateY(-34.75px)scale(0.75) !important;
+    }
+
+    mat-error {
+        margin-top: 0px !important;
+        //font-size: 9px !important;
+    }
+
+    button {
+        margin-top: -9px !important;
+    }
+}
+
+.container-form-miM-v2 {
+    width: 100%;
+    font-family: Raleway SemiBold !important;
+    font-size: 12px !important;
+
+    i-feather svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    i-feather {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .mdc-icon-button {
+        padding: 0 !important;
+    }
+}
+
+.container-form-miM {
+    width: 100%;
+    padding-right: 5px !important;
+    font-family: Raleway SemiBold !important;
+    font-size: 12px !important;
+
+    i-feather svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    i-feather {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .mdc-icon-button {
+        padding: 0 !important;
+    }
+}
+
+.container-form-miM-taxi {
+    width: 50%;
+    padding-right: 5px !important;
+    font-family: Raleway SemiBold !important;
+    font-size: 12px !important;
+
+    i-feather svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    i-feather {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .mdc-icon-button {
+        padding: 0 !important;
+    }
+}
+
+.imput-miM {
+    width: 100% !important;
+    border-radius: $radiusInputCuston !important;
+    min-height: $heightInput !important;
+    font-family: Raleway Bold !important;
+    font-size: 12px !important;
+    color: $colorPrimario1 !important;
+    padding-left: 14px !important;
+    border-width: 1px !important;
+}
+
+.button-miM-imput {
+    position: absolute !important;
+    margin-left: -47px !important;
+    margin-top: -8px !important;
+
+    .mat-icon {
+        font-size: 15px !important;
+        margin-top: 4px !important;
+    }
+}
+
+.select-miM {
+    border: solid !important;
+    border-radius: $radiusInputCuston !important;
+    font-family: Raleway Bold !important;
+    font-size: 12px !important;
+    color: $colorPrimario1 !important;
+    min-height: $heightInput !important;
+    border-width: 1px !important;
+    text-align: left !important;
+    padding-left: 14px !important;
+    display: flex !important;
+
+    .mat-mdc-select-arrow-wrapper {
+        margin-left: -25px !important;
+    }
+}
+
+.button-miM-large {
+    width: 100%;
+    border-radius: $radiusButtonCuston !important;
+    //font-family: Raleway Bold !important;
+    //font-size: 12px;
+    height: 30px !important;
+    border-color: $colorPrimario1 !important;
+}
+
+.button-noty-miM {
+    border-radius: $radiusButtonCuston !important;
+    font-family: Raleway Bold !important;
+    font-size: 11px !important;
+    border-color: $colorPrimario1 !important;
+}
+
+.button-noty-miM-warn {
+    border-radius: $radiusButtonCuston !important;
+    font-family: Raleway Bold !important;
+    font-size: 11px !important;
+    border-color: $colorRojo !important;
+}
+
+.button-miM-text {
+    font-family: Raleway Bold !important;
+    font-size: 12px;
+
+    @include respond(phone) {
+        font-size: 10px
+    }
+
+    @include respond(phone-s) {
+        font-size: 8px
+    }
+
+    @include respond(phone-m) {
+        font-size: 9px
+    }
+}
+
+.titulos-destacados-miM {
+    //font-family: Raleway ExtraBold;
+    //font-size: 26px;
+    color: $colorPrimario1;
+
+    @include respond(phone) {
+        //font-size: 19px;
+    }
+}
+
+.titulos-h1-miM {
+    //font-family: Raleway ExtraBold !important;
+    //font-size: 18px !important;
+    color: $colorPrimario1 !important;
+}
+
+.titulos-miM {
+    //font-family: Raleway Bold !important;
+    //font-size: 12px !important;
+    color: $colorPrimario1 !important;
+    margin-bottom: 19px;
+}
+
+i-feather {
+    stroke-width: 1px !important;
+    //min-inline-size: 7px !important;
+}
+
+.icono-custom {
+    svg {
+        margin-right: 25px;
+        width: 24px;
+        height: 24px;
+
+        .st0 {
+            fill: $colorPrimario1 ;
+        }
+
+    }
+}
+
+.a-custon-footer {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    color: $colorGris1;
+}
+
+.icono-custom-footer {
+    svg {
+        //margin-right: 25px;
+        width: 18px;
+        height: 18px;
+
+        .st0 {
+            fill: $colorGris1;
+        }
+
+    }
+}
+
+//navbar
+.title-user {
+    font-family: Raleway Black;
+    color: $colorPrimario1;
+}
+
+//navbar
+.title-user {
+    font-family: Raleway Black;
+    color: $colorPrimario1;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+::-webkit-input-placeholder {
+    text-transform: initial;
+}
+
+:-moz-placeholder {
+    text-transform: initial;
+}
+
+::-moz-placeholder {
+    text-transform: initial;
+}
+
+:-ms-input-placeholder {
+    text-transform: initial;
+}
+
+::placeholder {
+    text-transform: initial;
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    margin-top: -25px;
+}
+
+::ng-deep {
+    .mat-menu-panel.my-class {
+        width: 400px;
+    }
+}
+
+.ProfileInfo {
+    width: 300px
+}
+
+//home
+
+
+
+
+.btn-custom-icon svg {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.textsub {
+    font-family: Raleway Bold;
+}
+
+.icon-card-tramite svg {
+    width: auto !important;
+    height: 30px !important;
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.icon-card-btnlink-tablero-home svg {
+    width: auto !important;
+    height: 30px !important;
+
+    @include respond(phone) {
+        width: auto !important;
+        height: 20px !important;
+    }
+
+    @include respond(phone-s) {
+        width: auto !important;
+        height: 15px !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.icon-card-btnlink svg {
+    width: auto !important;
+    height: 30px !important;
+
+    @include respond(phone) {
+        width: auto !important;
+        height: 25px !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.icon-card-btnlink-btn-home-v2 svg {
+    width: auto !important;
+    height: 40px !important;
+
+    @include respond(phone-s) {
+        width: auto !important;
+        height: 30px !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.icon-card-header-v1 svg {
+    width: auto !important;
+    height: 27px !important;
+
+    @include respond(phone-s) {
+        width: auto !important;
+        height: 27px !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.icon-card-header-v1 img {
+    width: 70px !important;
+
+    @include respond(phone-s) {
+        width: 50px !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.icon-card-home-v1 svg {
+    width: auto !important;
+    height: 40px !important;
+
+    @include respond(phone) {
+        width: auto !important;
+        height: 35px !important;
+    }
+
+    @include respond(phone-s) {
+        width: auto !important;
+        height: 25px !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.icon-menu-navbar svg {
+    width: 25px !important;
+    height: 25px !important;
+
+    @include respond(phone) {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .st0 {
+        fill: $colorPrimario1 !important;
+    }
+}
+
+.icon-card-no-hay-info svg {
+    width: auto !important;
+    height: 25px !important;
+
+    @include respond(phone) {
+        width: auto !important;
+        height: 20px !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.icon-card-btnlink-fecha-home-v1 svg {
+    width: 30px !important;
+    height: 30px !important;
+
+    @include respond(phone) {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.icon-card-btnlink-btn-home-v2 img {
+    width: 60px !important;
+
+    @include respond(phone-s) {
+        width: 50px !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.icon-card-btnlink-btn-home-v2-v3 svg {
+    width: 90% !important;
+    height: 90% !important;
+
+    @include respond(phone) {
+        width: 80% !important;
+        height: 80% !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.icon-card-btnlink-btn-home-v2-v3 img {
+    width: 90% !important;
+
+    @include respond(phone-s) {
+        width: 80% !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.icon-card-btnlink-subtra svg {
+    width: auto !important;
+    height: 20px !important;
+
+    @include respond(phone) {
+        width: auto !important;
+        height: 20px !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.mapview {
+    height: 100%;
+}
+
+.static-nav-resposive {
+    position: fixed;
+    z-index: 20;
+    //top: 0;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    height: 50px;
+    padding: 0 4% 0 4%;
+}
+
+.static-offline {
+    width: 100%;
+    height: 33px;
+}
+
+.icon-offline-size svg {
+    width: auto !important;
+    height: 20px !important;
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.icon-offline-noty-size svg {
+    width: auto !important;
+    height: 70px !important;
+
+    @include respond(phone-s) {
+        width: auto !important;
+        height: 50px !important;
+    }
+
+    .st0 {
+        fill: $colorMorado !important;
+    }
+}
+
+.offline-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $colorPrimario1;
+
+    span {
+        color: white;
+        margin-left: 10px;
+    }
+}
+
+.static-footer-resposive {
+    position: fixed;
+    z-index: 20;
+    bottom: 0;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    height: 55px;
+    padding: 0 4% 0 4%;
+}
+
+.pages-custom {
+    padding: 30px;
+    padding-top: 105px;
+    padding-left: 70px;
+    padding-right: 70px;
+    height: 100%;
+
+    @include respond(custom-m) {
+        padding-top: 55px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 55px;
+        //height: 90%;
+    }
+
+    @include respond(phone) {
+        padding-top: 55px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 55px;
+        //height: 90%;
+    }
+
+    @include respond(phone-s) {
+        padding: 9px;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 55px;
+        padding-bottom: 55px;
+        //height: 90%;
+    }
+}
+
+.pages-footer-custom {
+    display: none;
+    background-color: white;
+
+    @include respond(custom-m) {
+        //height: 10%;
+        display: flex;
+    }
+
+    @include respond(phone) {
+        //height: 10%;
+        display: flex;
+    }
+
+    @include respond(phone-s) {
+        //height: 10%;
+        display: flex;
+    }
+}
+
+.card-tramite-custom-button .mat-grid-tile-content {
+    justify-content: left;
+    margin-left: 15px;
+
+    @include respond(phone) {
+        margin-left: 0;
+    }
+}
+
+.text-noCard {
+    //font-size: 13px;
+    color: $colorPrimario1;
+    font-family: Raleway Medium;
+    margin-bottom: 30px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(216.92 15.29% 83.33% / 0.40);
+    }
+
+    100% {
+        background-color: hsl(210 13.79% 88.63% / 0.30);
+    }
+}
+
+.skeleton {
+    animation: skeleton-loading 500ms ease-in-out infinite alternate;
+}
+
+.skeleton-none {
+    display: none !important;
+}
+
+.card-content-miM {
+    @include respond(phone) {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    @include respond(phone-s) {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+}
+
+.mdc-checkbox__background {
+    height: 14px !important;
+    width: 14px !important;
+    border-radius: 3px !important;
+}
+
+.mdc-checkbox {
+    flex: 0 0 14px !important;
+    width: 14px !important;
+    height: 14px !important;
+}
+
+.colum-height {
+    margin-bottom: 10px;
+}
+
+.icon-custom-btn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active-custom {
+    color: white !important;
+    background-color: #20223E;
+    width: 100%;
+    border-radius: 10px;
+
+    .st0 {
+        fill: white !important;
+    }
+}
+
+.active-custom-footer {
+    color: $colorPrimario1 !important;
+    text-decoration: underline;
+
+    .st0 {
+        fill: $colorPrimario1 !important;
+    }
+}
+
+.a-custon:not(.active-custom):hover {
+    background-color: #EDEDED;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.app-sidebar-custom {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include respond(custom-m) {
+        height: 95%;
+    }
+}
+
+.close-sidebar-custom {
+    @include respond(custom-m) {
+        height: 5%;
+    }
+}
+
+.card-map {
+    border-radius: $radiusCardCuston !important;
+    box-shadow: none !important;
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.card-map-cnt {
+    height: 100%;
+}
+
+.button-filtrar {
+    width: fit-content;
+}
+
+
+.example-container {
+    width: 100%;
+    height: 100%;
+    background-color: #EDEDED;
+}
+
+.example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-sidenav-filtro {
+    width: 25%;
+
+    @include respond(laptop-s) {
+        width: 30%;
+    }
+
+    @include respond(custom-m) {
+        width: 40%;
+    }
+
+    @include respond(phone-xxl) {
+        width: 100%;
+    }
+}
+
+
+
+//movil
+@media (max-width: 450px) {
+    .example-sidenav {
+        width: 100%;
+    }
+}
+
+.example-sidenav {
+    text-align: -webkit-center;
+    text-align: -moz-center;
+}
+
+.header-custom {
+    //position: fixed;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include respond(phone-xxl) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    @include respond(phone-s) {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .logo-custom-navbar {
+        width: 50%;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: auto;
+            height: 20px;
+
+            @include respond(phone-s) {
+                width: 90%;
+                height: auto;
+            }
+        }
+    }
+
+    .example-icon {
+        width: 15%;
+        text-align: -webkit-right;
+        text-align: -moz-right;
+        align-self: center;
+    }
+
+    .boton-navegacion {
+        width: 25%;
+        align-self: center;
+    }
+
+    .boton-notificacion {
+        width: 10%;
+        text-align: -webkit-right;
+        text-align: -moz-right;
+        align-self: center;
+    }
+}
+
+//escritorio
+@media (min-width: 1300px) {
+    .header-custom {
+        display: none;
+    }
+}
+
+//movil
+@media (max-width: 1300px) {
+    .header-custom {
+        width: 100%;
+        height: 50px;
+        background-color: #fff;
+    }
+}
+
+.card-custom-normal {
+    border-radius: $radiusCardCuston !important;
+    box-shadow: none !important;
+    color: $colorPrimario1;
+    width: 100%;
+    height: 100%;
+}
+
+.card-tramite-custom-button-tablero .mat-grid-tile-content {
+    margin: 10px;
+}
+
+//filtro
+.filtro-subTitulo {
+    color: $colorPrimario1;
+    font-family: Raleway Bold;
+    font-size: 15px;
+}
+
+.filtrar-aplicado {
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .aplicado-container {
+        margin: 5px;
+        padding: 10px;
+        background-color: $colorFondo;
+        width: max-content;
+
+        &_text {
+            color: $colorPrimario1;
+            font-size: 13px;
+            font-family: Raleway SemiBold;
+            display: flex;
+        }
+
+        &_icon {
+            font-size: 14px;
+            width: 14px;
+            height: 14px;
+            align-self: end;
+            margin-right: 3px;
+            cursor: pointer;
+        }
+    }
+}
+
+.filtrar-filtros {
+    .panel-filtro {
+        border-radius: 0;
+        border-bottom: solid 1px;
+        box-shadow: none !important;
+        width: 100%;
+
+        &_header {
+            height: 52px !important;
+
+            &_title {}
+
+            .mat-content {
+                flex-direction: column !important;
+
+                .subTitle-filtro {
+                    color: $colorPrimario1;
+                    font-size: 11px;
+                    font-family: Raleway SemiBold;
+                }
+            }
+        }
+    }
+}
+
+.filtrar-header {
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-bottom: solid 1px;
+
+    &_title {
+        width: 40%;
+        color: $colorPrimario1;
+        font-family: Raleway Bold;
+        font-size: 15px;
+
+        h1 {
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+    }
+
+    &_btn_uno {
+        width: 40%;
+        text-align: -webkit-right;
+        text-align: -moz-right;
+
+        .button-miM-text {
+            font-size: 15px;
+        }
+    }
+
+    &_btn_close {
+        text-align: -webkit-right;
+        text-align: -moz-right;
+        width: 20%;
+    }
+}
+
+.footer-filtro {
+    text-align-last: center;
+    width: 100%;
+    border-top: solid 1px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.filtro-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    &_header {
+        height: 8%;
+    }
+
+    &_filtros {
+        height: 86%;
+        overflow: auto;
+    }
+
+    &_footer {
+        height: 6%;
+    }
+}
+
+.cargando-filtro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, 0.6);
+    visibility: visible;
+
+    &_spener {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+//fin filtro
+
+.menu .border-custom-accordion {
+
+    &_header {
+
+        i-feather {
+            color: #20223E !important;
+        }
+
+        span {
+            margin: 0 !important;
+        }
+
+        .hover-text-custom-title {
+            text-align: left;
+        }
+
+        .mat-panel-title-menu {
+            margin: 0 !important;
+        }
+    }
+
+    &_header:hover {
+        background-color: $colorFondo !important;
+        border-radius: 10px !important;
+    }
+
+    .mat-expansion-panel-body {
+        padding: 0 0 !important;
+    }
+}
+
+.activa-panel-manu {
+    border: solid 1px #999999;
+    border-radius: 10px !important;
+
+    .border-custom-accordion_header {
+        background-color: #20223E !important;
+        border-radius: 10px !important;
+
+        .st0 {
+            fill: white !important;
+        }
+
+        .hover-text-custom-title {
+            color: white !important;
+        }
+    }
+}
+
+.activa-border-custom-accordion_header {
+    background-color: #20223E !important;
+    border-radius: 10px !important;
+
+    .st0 {
+        fill: white !important;
+    }
+
+    .hover-text-custom-title {
+        color: white !important;
+    }
+}
+
+.icon-card-btnlink-centroAyuda svg {
+    width: auto !important;
+    height: 60px !important;
+
+    @include respond(phone-s) {
+        width: auto !important;
+        height: 50px !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+app-graficar {
+    overflow: scroll;
+    display: block;
+}
+
+.sin-registro {
+    color: $colorPrimario1;
+    font-family: Raleway SemiBold;
+}
+
+.sin-registro-container {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+.icon-card-sinRegistro svg {
+    width: 80px !important;
+    height: 80px !important;
+
+    @include respond(phone-s) {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.icon-reporte-btn svg {
+    width: auto !important;
+    height: 40px !important;
+
+    @include respond(phone-s) {
+        width: auto !important;
+        height: 30px !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+//graficas 
+.chart-legend .legend-label-color {
+    border-radius: 50% !important;
+}
+
+.chart-legend .legend-labels {
+    background: transparent !important;
+    overflow-x: auto !important;
+}
+
+//graficas
+
+
+.button-miM-large-os {
+    width: 50%;
+    border-radius: $radiusButtonCuston !important;
+    //font-family: Raleway Bold !important;
+    //font-size: 12px;
+    height: 30px !important;
+    border-color: $colorPrimario1 !important;
+}
+
+.icon-card-btnlink-taxis svg {
+    width: 40px !important;
+    height: 40px !important;
+
+    @include respond(phone-s) {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+.icon-card-btnlink-detalletaxis svg {
+    width: 40px !important;
+    height: 40px !important;
+
+    @include respond(phone-s) {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .st0 {
+        fill: $colorAzul2 !important;
+    }
+}
+
+//graficas
+
+.version-custom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-family: Raleway SemiBold;
+    font-size: 13px;
+    background-color: white;
+}
+
+.icon-version-custom svg {
+    width: 24px !important;
+    height: 24px !important;
+
+    @include respond(phone-s) {
+        width: 24px !important;
+        height: 24px !important;
+    }
+}
+
+.icon-notificacion-size svg {
+    width: auto !important;
+    height: 70px !important;
+
+    @include respond(phone-s) {
+        width: auto !important;
+        height: 50px !important;
+    }
+
+    .st0 {
+        fill: $colorAzul2 !important;
+    }
+}
+
+.icon-btn-notificacion-size svg {
+    width: auto !important;
+    height: 25px !important;
+
+    @include respond(phone) {
+        width: auto !important;
+        height: 20px !important;
+    }
+
+    .st0 {
+        fill: $colorPrimario1 !important;
+    }
+}
+
+
+.icon-btn-menu-movil-size svg {
+    width: auto !important;
+    height: 20px !important;
+
+    @include respond(phone) {
+        width: auto !important;
+        height: 20px !important;
+    }
+
+    .st0 {
+        fill: $colorPrimario1 !important;
+    }
+}
+
+
+//tooltip custom
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: $colorPrimario1;
+    color: #fff;
+    text-align: center;
+    font-family: Raleway Medium;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -100px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: $colorPrimario1 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltip:focus .tooltiptext {
+    visibility: visible;
+}
+
+.activeFocus:focus .tooltiptext {
+    visibility: visible;
+}
+
+//fin tooltip custom
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.mat-horizontal-content-container {
+    padding: 0 !important;
+}
+
+.mat-horizontal-stepper-header-container {
+    display: none !important;
+}
+
+.mat-stepper-horizontal {
+    background-color: transparent !important;
+}
+
+.icono svg {
+    width: 30px;
+    height: 30px;
+
+    .st0 {
+        fill: $colorVerde !important;
+    }
+}
+
+//accesibilidad
+.icon-btn-menu-accesibilidad svg{
+    width: 25px;
+    height: 25px;
+
+    .st0 {
+        fill: white;
+    }
+}
+
+.icon-btn-accesibilidad svg{
+    width: 30px;
+    height: 30px;
+
+    .st0 {
+        fill: $colorPrimario1;
+    }
+}
+
+.btn-card:hover {
+    .icon-btn-accesibilidad svg{
+        .st0 {
+            fill: white;
+        }
+    }
+}
+
+.icon-btn-restablecer svg{
+    width: 15px;
+    height: 15px;
+
+    .st0 {
+        fill: white;
+    }
+}
+
+.btn-accesibilidad {
+    width: fit-content;
+    position: absolute;
+    top: calc(100% - 50% - 40px);
+    right: 15px;
+    z-index: 22;
+}
+
+.manu-accesibilidad {
+    background-color: $colorFondo;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    width: 300px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 21474836453;
+    height: 100%;
+
+    @include respond(phone) {
+        width: 100%;
+    }
+
+    &-header {
+        display: flex;
+        background-color: $colorPrimario1;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &-title {
+            color: white;
+        }
+    }
+
+    &-contenido {
+        padding-left: 20px;
+        padding-right: 20px;
+        height: calc(100% - 150px);
+        display: flex;
+    }
+
+    &-footer {
+        padding-left: 20px;
+        padding-right: 20px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        text-align: center;
+    }
+}
+
+.gird-accesibilidad {
+    display: flex;
+    flex-flow: wrap;
+    width: 100%;
+    place-content: center;
+}
+//FinAccesibilidad
+.gird-asesorias {
+    //display: grid;    
+    //grid-template-columns: 1fr 1fr; 
+    //grid-gap: 10px;    
+    //align-content: center;
+    justify-content: right;
+    display: flex;
+    flex-flow: wrap;
+    align-content: center;
+    width: 40%;
+
+    @include respond(phone) {
+        width: 100%;
+        justify-content: left;
+    }
+}
+
+.my-class-navbar-menu .mat-mdc-menu-content button span {
+    place-content: flex-start !important;
+}
+
+.mdc-data-table__cell {
+    padding: 0 !important;
+}
+
+.mat-mdc-form-field-icon-suffix {
+    padding: 0 !important;
+}
+
+//accesibilidad funcionalidad texto
+
+@mixin custom-letter-spacing($espacio, $espacio2) {
+    letter-spacing: $espacio !important;
+    word-spacing: $espacio2 !important;
+}
+
+@mixin custom-line-height($size) {
+    line-height: $size !important;
+}
+
+@mixin custom-zoom($size) {
+    zoom: $size !important;
+}
+
+.agrandar-zoom-uno {
+    @include custom-zoom(1.2);
+}
+
+.agrandar-zoom-dos {
+    @include custom-zoom(1.3);
+}
+
+.agrandar-zoom-tres {
+    @include custom-zoom(1.5);
+}
+
+.agrandar-zoom-cuatro {
+    @include custom-zoom(1.6);
+}
+
+.line-height-uno {
+    .titulo {
+        @include custom-line-height(2);
+    } 
+    .texto_boton {
+        @include custom-line-height(2);
+    } 
+    .cuerpo_texto {
+        @include custom-line-height(2);
+    } 
+    .texto_formularios {
+        @include custom-line-height(2);
+    } 
+    .cuerpo_texto_resaltado {
+        @include custom-line-height(2);
+    }
+    .cuerpo_texto_info_formulario {
+        @include custom-line-height(2);
+    }
+    .informacion_destacada_bold {
+        @include custom-line-height(2);
+    }
+    .informacion_destacada_Medium {
+        @include custom-line-height(2);
+    }
+    .titulo_destacado {
+        @include custom-line-height(2);
+    }
+    .subtitulo {
+        @include custom-line-height(2);
+    }
+    .texto_menu {
+        @include custom-line-height(2);
+    }
+    .texto_submenu {
+        @include custom-line-height(2);
+    }
+    .titulo_formulario {
+        @include custom-line-height(2);
+    }
+    .numero_Card {
+        @include custom-line-height(2);
+    }
+}
+
+.line-height-dos {
+    .titulo {
+        @include custom-line-height(2.5);
+    } 
+    .texto_boton {
+        @include custom-line-height(2.5);
+    } 
+    .cuerpo_texto {
+        @include custom-line-height(2.5);
+    } 
+    .texto_formularios {
+        @include custom-line-height(2.5);
+    } 
+    .cuerpo_texto_resaltado {
+        @include custom-line-height(2.5);
+    }
+    .cuerpo_texto_info_formulario {
+        @include custom-line-height(2.5);
+    }
+    .informacion_destacada_bold {
+        @include custom-line-height(2.5);
+    }
+    .informacion_destacada_Medium {
+        @include custom-line-height(2.5);
+    }
+    .titulo_destacado {
+        @include custom-line-height(2.5);
+    }
+    .subtitulo {
+        @include custom-line-height(2.5);
+    }
+    .texto_menu {
+        @include custom-line-height(2.5);
+    }
+    .texto_submenu {
+        @include custom-line-height(2.5);
+    }
+    .titulo_formulario {
+        @include custom-line-height(2.5);
+    }
+    .numero_Card {
+        @include custom-line-height(2.5);
+    }
+}
+
+.line-height-tres {
+    .titulo {
+        @include custom-line-height(3);
+    } 
+    .texto_boton {
+        @include custom-line-height(3);
+    } 
+    .cuerpo_texto {
+        @include custom-line-height(3);
+    } 
+    .texto_formularios {
+        @include custom-line-height(3);
+    } 
+    .cuerpo_texto_resaltado {
+        @include custom-line-height(3);
+    }
+    .cuerpo_texto_info_formulario {
+        @include custom-line-height(3);
+    }
+    .informacion_destacada_bold {
+        @include custom-line-height(3);
+    }
+    .informacion_destacada_Medium {
+        @include custom-line-height(3);
+    }
+    .titulo_destacado {
+        @include custom-line-height(3);
+    }
+    .subtitulo {
+        @include custom-line-height(3);
+    }
+    .texto_menu {
+        @include custom-line-height(3);
+    }
+    .texto_submenu {
+        @include custom-line-height(3);
+    }
+    .titulo_formulario {
+        @include custom-line-height(3);
+    }
+    .numero_Card {
+        @include custom-line-height(3);
+    }
+}
+
+.letter-spacing-uno {
+    .titulo {
+        @include custom-letter-spacing(.12em, 0.16em);
+    } 
+    .texto_boton {
+        @include custom-letter-spacing(.12em, 0.16em);
+    } 
+    .cuerpo_texto {
+        @include custom-letter-spacing(.12em, 0.16em);
+    } 
+    .texto_formularios {
+        @include custom-letter-spacing(.12em, 0.16em);
+    } 
+    .cuerpo_texto_resaltado {
+        @include custom-letter-spacing(.12em, 0.16em);
+    }
+    .cuerpo_texto_info_formulario {
+        @include custom-letter-spacing(.12em, 0.16em);
+    }
+    .informacion_destacada_bold {
+        @include custom-letter-spacing(.12em, 0.16em);
+    }
+    .informacion_destacada_Medium {
+        @include custom-letter-spacing(.12em, 0.16em);
+    }
+    .titulo_destacado {
+        @include custom-letter-spacing(.12em, 0.16em);
+    }
+    .subtitulo {
+        @include custom-letter-spacing(.12em, 0.16em);
+    }
+    .texto_menu {
+        @include custom-letter-spacing(.12em, 0.16em);
+    }
+    .texto_submenu {
+        @include custom-letter-spacing(.12em, 0.16em);
+    }
+    .titulo_formulario {
+        @include custom-letter-spacing(.12em, 0.16em);
+    }
+    .numero_Card {
+        @include custom-letter-spacing(.12em, 0.16em);
+    }
+}
+
+.letter-spacing-dos {
+    .titulo {
+        @include custom-letter-spacing(.24em, 0.32em);
+    } 
+    .texto_boton {
+        @include custom-letter-spacing(.24em, 0.32em);
+    } 
+    .cuerpo_texto {
+        @include custom-letter-spacing(.24em, 0.32em);
+    } 
+    .texto_formularios {
+        @include custom-letter-spacing(.24em, 0.32em);
+    } 
+    .cuerpo_texto_resaltado {
+        @include custom-letter-spacing(.24em, 0.32em);
+    }
+    .cuerpo_texto_info_formulario {
+        @include custom-letter-spacing(.24em, 0.32em);
+    }
+    .informacion_destacada_bold {
+        @include custom-letter-spacing(.24em, 0.32em);
+    }
+    .informacion_destacada_Medium {
+        @include custom-letter-spacing(.24em, 0.32em);
+    }
+    .titulo_destacado {
+        @include custom-letter-spacing(.24em, 0.32em);
+    }
+    .subtitulo {
+        @include custom-letter-spacing(.24em, 0.32em);
+    }
+    .texto_menu {
+        @include custom-letter-spacing(.24em, 0.32em);
+    }
+    .texto_submenu {
+        @include custom-letter-spacing(.24em, 0.32em);
+    }
+    .titulo_formulario {
+        @include custom-letter-spacing(.24em, 0.32em);
+    }
+    .numero_Card {
+        @include custom-letter-spacing(.24em, 0.32em);
+    }
+}
+
+.letter-spacing-tres {
+    .titulo {
+        @include custom-letter-spacing(.36em, 0.48em);
+    } 
+    .texto_boton {
+        @include custom-letter-spacing(.36em, 0.48em);
+    } 
+    .cuerpo_texto {
+        @include custom-letter-spacing(.36em, 0.48em);
+    } 
+    .texto_formularios {
+        @include custom-letter-spacing(.36em, 0.48em);
+    } 
+    .cuerpo_texto_resaltado {
+        @include custom-letter-spacing(.36em, 0.48em);
+    }
+    .cuerpo_texto_info_formulario {
+        @include custom-letter-spacing(.36em, 0.48em);
+    }
+    .informacion_destacada_bold {
+        @include custom-letter-spacing(.36em, 0.48em);
+    }
+    .informacion_destacada_Medium {
+        @include custom-letter-spacing(.36em, 0.48em);
+    }
+    .titulo_destacado {
+        @include custom-letter-spacing(.36em, 0.48em);
+    }
+    .subtitulo {
+        @include custom-letter-spacing(.36em, 0.48em);
+    }
+    .texto_menu {
+        @include custom-letter-spacing(.36em, 0.48em);
+    }
+    .texto_submenu {
+        @include custom-letter-spacing(.36em, 0.48em);
+    }
+    .titulo_formulario {
+        @include custom-letter-spacing(.36em, 0.48em);
+    }
+    .numero_Card {
+        @include custom-letter-spacing(.36em, 0.48em);
+    }
+}
+
+
+//fin accesibilidad funcionalidad texto
+
+//tipoGrafia
+
+.titulo {
+    //color: $colorPrimario1;
+    font-family: Raleway ExtraBold !important;
+    font-size: 23px !important;
+
+    @include respond(phone) {
+        font-size: 21px !important;
+    }
+
+    @include respond(phone-s) {
+        font-size: 16px !important;
+    }
+}
+
+.texto_boton {
+    font-family: Raleway Bold !important;
+    font-size: 13.5px !important;
+
+    @include respond(phone) {
+        font-size: 11.5px !important;
+    }
+
+    &-accesibilidad {
+        font-family: Raleway Bold !important;
+        font-size: 13.5px !important;
+    
+        @include respond(phone) {
+            font-size: 11.5px !important;
+        } 
+    }
+}
+
+.cuerpo_texto {
+    //color: $colorPrimario1;
+    line-height: 1.5;
+    font-family: Raleway Medium !important;
+    font-size: 13.5px !important;
+
+    @include respond(phone) {
+        font-size: 11.5px !important;
+    }
+}
+
+.texto_formularios {
+    //color: $colorPrimario1;
+    font-family: Raleway Medium !important;
+    font-size: 13.5px !important;
+
+    @include respond(phone) {
+        font-size: 11.5px !important;
+    }
+}
+
+.cuerpo_texto_resaltado {
+    //color: $colorPrimario1;
+    font-family: Raleway SemiBold !important;
+    font-size: 13.5px !important;
+    line-height: 1.5;
+
+    @include respond(phone) {
+        font-size: 11.5px !important;
+    }
+}
+
+.cuerpo_texto_info_formulario {
+    line-height: 1.5;
+    font-family: Raleway Medium !important;
+    font-size: 12.5px !important;
+
+    @include respond(phone) {
+        font-size: 10.5px !important;
+    }
+}
+
+.informacion_destacada_bold {
+    //color: $colorPrimario1;
+    font-family: Raleway Bold !important;
+    font-size: 16px !important;
+
+    @include respond(phone) {
+        font-size: 14px !important;
+    }
+
+    @include respond(phone-s) {
+        font-size: 12px !important;
+    }
+}
+
+.informacion_destacada_Medium {
+    //color: $colorPrimario1;
+    font-family: Raleway Medium !important;
+    font-size: 16px !important;
+
+    @include respond(phone) {
+        font-size: 14px !important;
+    }
+
+    @include respond(phone-s) {
+        font-size: 12px !important;
+    }
+}
+
+.titulo_destacado {
+    //color: $colorPrimario1;
+    font-family: Raleway ExtraBold !important;
+    font-size: 26px !important;
+
+    @include respond(phone) {
+        font-size: 24px !important;
+    }
+
+    @include respond(phone-s) {
+        font-size: 18px !important;
+    }
+}
+
+.subtitulo {
+    //color: $colorPrimario1;
+    font-family: Raleway Bold !important;
+    font-size: 16px !important;
+
+    @include respond(phone) {
+        font-size: 14px !important;
+    }
+
+    @include respond(phone-s) {
+        font-size: 12px !important;
+    }
+}
+
+.texto_menu {
+    //color: $colorPrimario1;
+    font-family: Raleway SemiBold !important;
+    font-size: 16px !important;
+
+    @include respond(phone) {
+        font-size: 14px !important;
+    }
+
+    @include respond(phone-s) {
+        font-size: 12px !important;
+    }
+}
+
+.texto_submenu {
+    //color: $colorPrimario1;
+    font-family: Raleway SemiBold !important;
+    font-size: 13.5px !important;
+
+    @include respond(phone) {
+        font-size: 11.5px !important;
+    }
+}
+
+.titulo_formulario {
+    //color: $colorPrimario1;
+    font-family: Raleway SemiBold !important;
+    font-size: 13.5px !important;
+
+    @include respond(phone) {
+        font-size: 11.5px !important;
+    }
+}
+
+.numero_Card {
+    font-family: Raleway Medium !important;
+    font-size: 40px !important;
+    margin: 11px 0;
+
+    @include respond(phone) {
+        font-size: 35px !important;
+    }
+
+    @include respond(phone-s) {
+        font-size: 30px !important;
+    }
+}
+
+.cursor-custom:hover {
+    cursor: pointer;
+}
+
+.no-editable {
+    background-color: #EDEDED;
+    //border: 1px solid #425287 !important;
+    border-radius: 6px;
+}
+
+.btn-idioma {
+
+    //margin-right: 40px;
+    span {
+        text-decoration: underline;
+    }
+}
+
+.mdc-dialog__container {
+    height: fit-content !important;
+}
+
+.mdc-text-field--focused .mdc-notched-outline__leading {
+    border-width: 1px !important;
+}
+
+.mdc-text-field--focused .mdc-notched-outline__trailing {
+    border-width: 1px !important;
+}
+
+.webchatStartButtonContainer {
+    width: 150.5px !important;
+    height: 91px !important;
+    left: calc(99% - 150.5px) !important;
+    top: calc(100% - 146px) !important;
+
+    @include respond(phone) {
+        width: 90.3px !important;
+        height: 54.6px !important;
+        left: calc(99% - 90.3px) !important;
+        top: calc(100% - 109.6px) !important;
+    }
+
+    iframe {
+        .chatMinimizedIcon .chatMinimizedIconImage {
+            background-image: url("../images/3d/Lucia_Mesa de trabajo.png") !important;
+        }
+    }
+}
+
+.marguenes-custom {
+    margin-bottom: 1%;
+}
+
+/*.grecaptcha-badge {
+    z-index: 22 !important;
+    bottom: 0 !important;
+
+    top: calc(100% - 146px - 62px) !important;
+
+    @include respond(phone) {
+        top: calc(100% - 109.6px - 62px) !important;
+    }
+}*/
+
+.grecaptcha-badge {
+    z-index: 22 !important;
+    width: 70px !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    left: 4px !important;
+    bottom: 0 !important;
+
+    top: calc(100% - 120px) !important;
+}
+
+.grecaptcha-badge:hover {
+    width: 256px !important;
+}
+
+/*.grecaptcha-badge {
+    bottom: 25px !important;
+}*/

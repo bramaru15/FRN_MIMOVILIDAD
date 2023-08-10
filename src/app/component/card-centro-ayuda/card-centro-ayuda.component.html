@@ -1,0 +1,24 @@
+<mat-card [class]="proceso? 'skeleton card-header':'card-header'">
+    <mat-card-content>
+        <div class="card-custom-header" >
+            <div class="card-custom-btnlink__icon" style="width: 11%;align-self: center;">
+                <img [class]="proceso? 'skeleton-none card-custom-header__image':'card-custom-header__image'" style="width: 70%;" [src]="imgLink" [alt]="title" />
+            </div>
+            <div class="card-custom-header__text">
+                <h2 [class]="proceso? 'skeleton-none':''" id="titleEscritorio" style="font-family: Raleway Extrabold;">
+                    {{title}}</h2>
+                <p style="font-family: Raleway Medium;">
+                    <span [class]="proceso? 'skeleton-none':''" [innerHTML]="safehtmlStr"></span>
+                </p>
+            </div>
+            <div class="card-tramite-miMo__button" style="width: 20%; align-self: center;">
+                <div class="card-tramite-miMo__button__uno" style="align-self: center;">
+                    <a rel="noopener" target="_blank" style="text-decoration: none;" [href]="dataCardTramite.linkButtonMas">
+                        <button class="button-miM-large"  mat-flat-button color="primary">{{textBoton}}
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

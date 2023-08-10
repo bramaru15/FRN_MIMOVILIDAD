@@ -1,0 +1,52 @@
+<mat-card [class]="proceso? 'skeleton card-header':'card-header'">
+    <mat-card-content>
+        <div class="card-custom-header">
+
+            <div class="card-custom-header__icon cambio-none">
+                <app-icon-menu
+                    [class]="proceso? 'skeleton-none icon-card-btnlink-centroAyuda':'icon-card-btnlink-centroAyuda'"
+                    [icon]="imgLink"></app-icon-menu>
+            </div>
+            <div class="flex-custom-vs">
+                <div class="flex-custom-vs-icon">
+                    <app-icon-menu
+                        [class]="proceso? 'skeleton-none icon-card-btnlink-btn-home-v2-v3':'icon-card-btnlink-btn-home-v2-v3 cambio-none-vi'"
+                        [icon]="imgLink"></app-icon-menu>
+                </div>
+                <div class="flex-custom flex-custom-vs-textbtn">
+                    <div [class]="proceso? 'skeleton-none':'card-custom-header__text'">
+                        <div style="display: flex; align-items: center;">
+                            <h2 [class]="proceso? 'skeleton-none':'subtitulo'" id="titleEscritorio"
+                                style="font-family: Raleway bold;">
+                                {{title}}</h2>
+                        </div>
+    
+                        <p style="font-family: Raleway Medium;">
+                            <span [class]="proceso? 'skeleton-none':'cuerpo_texto'" [innerHTML]="safehtmlStr"></span>
+                            <a aria-label="Haz clic si tienes problemas con el portal y deseas reportarlo por correo electrónico" class="a-enlace cuerpo_texto_resaltado" [href]="'mailto:'+linkCorreo">{{linkCorreo}}</a>.
+                        </p>
+                    </div>
+                    <div [class]="proceso? 'skeleton-none':'card-custom-header__textV2'">
+                        <p style="font-family: Raleway Medium;">
+                            <span [class]="proceso? 'skeleton-none':'cuerpo_texto'" [innerHTML]="safehtmlStr2"></span>
+                        </p>
+                        <div style="display: flex; align-items: center;">
+                            <app-icon-menu style="align-self: center;"
+                                [class]="proceso? 'skeleton-none icon-card-btnlink':'icon-card-btnlink'"
+                                [icon]="imgLink2"></app-icon-menu>
+                            <a aria-label="Haz clic si deseas comunicarte telefónicamente con el soporte del portal. Recuerda el horario de atención" class="a-enlace" [href]="'tel:'+linkTelefo">
+                                <h2 [class]="proceso? 'skeleton-none':'titulo'" id="titleEscritorio"
+                                    style="font-family: Raleway Extrabold;">{{title2}}</h2>
+                            </a>
+                        </div>
+                        <p style="font-family: Raleway Medium;">
+                            <span [class]="proceso? 'skeleton-none':'cuerpo_texto'" [innerHTML]="safehtmlStr3"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,16 @@
+<div class="btn-custom" [style]="styleBtn" [ariaLabel]="accesibilidad" tabindex="0" (keydown.enter)="custonClick(name)" (click)="custonClick(name)">
+    <mat-card [class]="proceso? 'skeleton btn-card':'btn-card'">
+        <mat-card-content>
+            <div>
+                <div style="text-align: center;">
+                    <app-icon-menu [class]="classIcon" [style]="styleIcon"
+                        [icon]="icon"></app-icon-menu>
+                </div>
+                <div style="text-align: center;">
+                    <h1 [class]="proceso? 'skeleton-none':'texto_boton-accesibilidad'"> {{name}} </h1>
+                    <h2 [class]="proceso? 'skeleton-none':'texto_boton-accesibilidad'">{{estadoBtn}}</h2>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

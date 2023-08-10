@@ -1,0 +1,496 @@
+<mat-drawer-container [style]="sytleCustomOnDrawer" class="example-container" autosize>
+
+    <mat-drawer class="example-sidenav-filtro" #drawer2 [mode]="'over'" style="height: 100%;" position="end">
+        <div *ngIf="isCargarFiltro" class="cargando-filtro">
+            <div class="cargando-filtro_spener">
+                <mat-spinner color="primary" diameter="50"></mat-spinner>
+            </div>
+        </div>
+        <div class="filtro-container">
+            <div class="filtrar-header filtro-container_header">
+                <div class="filtrar-header_title">
+                    <h1 class="subtitulo">{{'reporte.filtrar'| transloco}}</h1>
+                </div>
+                <div class="filtrar-header_btn_uno">
+                    <button class="button-miM-large" mat-stroked-button color="primary" (click)="restablecer()">
+                         <span class="texto_boton">{{'reporte.reestablecer'| transloco}}</span> 
+                    </button>
+                </div>
+                <div class="filtrar-header_btn_close">
+                    <button mat-icon-button (click)="drawer2.toggle()">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="filtro-container_filtros">
+                <div class="filtrar-aplicado">
+                    <h1 class="filtro-subTitulo subtitulo">
+                        {{'reporte.filtros'| transloco}}
+                    </h1>
+                    <div style="display: flex; flex-flow: wrap;">
+                        <div class="aplicado-container">
+                            <span class="aplicado-container_text cuerpo_texto_resaltado">{{momentCustom(range.controls['start'].value,
+                                "DD/MM/YYYY")+ " - " +momentCustom(range.controls['end'].value, "DD/MM/YYYY")}}</span>
+                        </div>
+                        <div class="aplicado-container">
+                            <span class="aplicado-container_text cuerpo_texto_resaltado">{{selectionTypeReporte(typeReporte)}}</span>
+                        </div>
+                        <div *ngFor="let index of selectionCatalogoDispositivo.selected" class="aplicado-container">
+                            <span class="aplicado-container_text cuerpo_texto_resaltado">
+                                <mat-icon class="aplicado-container_icon"
+                                    (click)="selectionCatalogoDispositivo.toggle(index); selectionDispositivo(selectionCatalogoDispositivo)">close</mat-icon>{{index.nombre}}
+                            </span>
+                        </div>
+                        <div *ngFor="let index of selectionCatalogoNavegador.selected" class="aplicado-container">
+                            <span class="aplicado-container_text cuerpo_texto_resaltado">
+                                <mat-icon class="aplicado-container_icon"
+                                    (click)="selectionCatalogoNavegador.toggle(index); selectionNavegador(selectionCatalogoNavegador)">close</mat-icon>{{index.nombre}}
+                            </span>
+                        </div>
+                        <div *ngFor="let index of selectionCatalogoSO.selected" class="aplicado-container">
+                            <span class="aplicado-container_text cuerpo_texto_resaltado">
+                                <mat-icon class="aplicado-container_icon"
+                                    (click)="selectionCatalogoSO.toggle(index); selectionSO(selectionCatalogoSO)">close</mat-icon>{{index.nombre}}
+                            </span>
+                        </div>
+                        <div *ngFor="let index of selectionCatalogoCategoria.selected" class="aplicado-container">
+                            <span class="aplicado-container_text cuerpo_texto_resaltado">
+                                <mat-icon class="aplicado-container_icon"
+                                    (click)="selectionCatalogoCategoria.toggle(index); selectionCategoria(selectionCatalogoCategoria)">close</mat-icon>{{index.nombre}}
+                            </span>
+                        </div>
+                        <div *ngFor="let index of selectionCatalogoTramite.selected" class="aplicado-container">
+                            <span class="aplicado-container_text cuerpo_texto_resaltado">
+                                <mat-icon class="aplicado-container_icon"
+                                    (click)="selectionCatalogoTramite.toggle(index); selectionTramite(selectionCatalogoTramite)">close</mat-icon>{{index.nombre}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!--Filtro de Categoria-->
+                <div class="filtrar-filtros">
+                    <mat-accordion>
+                        <mat-expansion-panel #panelTipoReporte class="panel-filtro">
+                            <mat-expansion-panel-header class="panel-filtro_header">
+                                <mat-panel-title class="panel-filtro_header_title filtro-subTitulo">
+                                    <span class="subtitulo">{{'reporte.categorias' | transloco}}</span>
+                                </mat-panel-title>
+                                <span class="subTitle-filtro cuerpo_texto_resaltado">{{selectionTypeReporte(typeReporte)}}</span>
+                            </mat-expansion-panel-header>
+                            <div *ngFor="let index of categorias">
+                                <a [routerLink]="[index.link]" style="text-decoration: none;">
+                                    <button class="button-miM-text" color="primary" mat-button
+                                        (click)="selectionTypeGrafica(index.type)">
+                                        <span class="cuerpo_texto_resaltado">{{index.name}}</span>
+                                    </button>
+                                </a>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+                <!--Filtro de Categoria-->
+                <!--Filtro de Tipo Reporte Dispositivo-->
+                <div class="filtrar-filtros">
+                    <mat-accordion>
+                        <mat-expansion-panel #panelTipoReporte class="panel-filtro">
+                            <mat-expansion-panel-header class="panel-filtro_header">
+                                <mat-panel-title class="panel-filtro_header_title filtro-subTitulo">
+                                    <span class="subtitulo">{{'reporte.dispositivo' | transloco}}</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <app-checkbox-filtro-tablero *ngIf="isCatalogo.dispositivo" [data]="catalogoDispositivo"
+                                (messageEvent)="selectionDispositivo($event)"></app-checkbox-filtro-tablero>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+                <!--Filtro de Tipo Reporte Dispositivo-->
+                <!--Filtro de Tipo Reporte Navegador-->
+                <div class="filtrar-filtros">
+                    <mat-accordion>
+                        <mat-expansion-panel #panelTipoReporte class="panel-filtro">
+                            <mat-expansion-panel-header class="panel-filtro_header">
+                                <mat-panel-title class="panel-filtro_header_title filtro-subTitulo">
+                                    <span class="subtitulo">{{'reporte.navegador' | transloco}}</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <app-checkbox-filtro-tablero *ngIf="isCatalogo.navegador" [data]="catalogoNavegador"
+                                (messageEvent)="selectionNavegador($event)"></app-checkbox-filtro-tablero>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+                <!--Filtro de Tipo Reporte Navegador-->
+                <!--Filtro de Tipo Reporte Sistema Operativo-->
+                <div class="filtrar-filtros">
+                    <mat-accordion>
+                        <mat-expansion-panel #panelTipoReporte class="panel-filtro">
+                            <mat-expansion-panel-header class="panel-filtro_header">
+                                <mat-panel-title class="panel-filtro_header_title filtro-subTitulo">
+                                    <span class="subtitulo">{{'reporte.sistemaOperativo'| transloco}}</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <app-checkbox-filtro-tablero *ngIf="isCatalogo.SO" [data]="catalogoSO"
+                                (messageEvent)="selectionSO($event)"></app-checkbox-filtro-tablero>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+                <!--Filtro de Tipo Reporte Sistema Operativo-->
+                <!--Filtro de Tipo Reporte Servicios-->
+                <div class="filtrar-filtros" *ngIf="typeReporte === 'tramite'">
+                    <mat-accordion>
+                        <mat-expansion-panel #panelTipoReporte class="panel-filtro">
+                            <mat-expansion-panel-header class="panel-filtro_header">
+                                <mat-panel-title class="panel-filtro_header_title filtro-subTitulo">
+                                    <span class="subtitulo">{{'reporte.servicios'| transloco}}</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <app-checkbox-filtro-tablero *ngIf="isCatalogo.categoria" [data]="catalogoCategoria"
+                                (messageEvent)="selectionCategoria($event)"></app-checkbox-filtro-tablero>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+                <!--Filtro de Tipo Reporte Servicios-->
+                <!--Filtro de Tipo Reporte Tramite-->
+                <div class="filtrar-filtros" *ngIf="typeReporte === 'tramite' && (catalogoTramite.length > 0)">
+                    <mat-accordion>
+                        <mat-expansion-panel #panelTipoReporte class="panel-filtro">
+                            <mat-expansion-panel-header class="panel-filtro_header">
+                                <mat-panel-title class="panel-filtro_header_title filtro-subTitulo">
+                                    <span class="subtitulo">{{'reporte.nombre-tramite'| transloco}}</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <app-checkbox-filtro-tablero *ngIf="!(isCatalogo.tramite)" [data]="catalogoTramite"
+                                (messageEvent)="selectionTramite($event)"></app-checkbox-filtro-tablero>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+                <!--Filtro de Tipo Reporte Tramite-->
+                <!--Filtro de facha-->
+                <div class="filtrar-filtros">
+                    <mat-accordion>
+                        <mat-expansion-panel #panel class="panel-filtro">
+                            <mat-expansion-panel-header class="panel-filtro_header">
+                                <mat-panel-title class="panel-filtro_header_title filtro-subTitulo">
+                                    <span class="subtitulo">{{'reporte.rango-fechas' | transloco}}</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                                        <input class="texto_formularios" matStartDate formControlName="start" placeholder="Start date">
+                                        <input class="texto_formularios" (dateChange)="rengoFecha()" matEndDate formControlName="end"
+                                            placeholder="End date">
+                                    </mat-date-range-input>
+                                    <mat-error *ngIf="range.controls['start'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="range.controls['start']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                    <mat-error *ngIf="range.controls['end'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="range.controls['end']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-date-range-picker #picker></mat-date-range-picker>
+                                </mat-form-field>
+                            </div>
+                            <button class="button-miM-text" color="primary" mat-button (click)="filtrarRango(1)">
+                                <span class="cuerpo_texto_resaltado">{{'reporte.rango1'| transloco}}</span>
+                            </button>
+                            <button class="button-miM-text" color="primary" mat-button (click)="filtrarRango(3)">
+                                <span class="cuerpo_texto_resaltado">{{'reporte.rango2'| transloco}}</span>
+                            </button>
+                            <button class="button-miM-text" color="primary" mat-button (click)="filtrarRango(6)">
+                                <span class="cuerpo_texto_resaltado">{{'reporte.rango3'| transloco}}</span>
+                            </button>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+                <!--Filtro de facha-->
+            </div>
+            <div class="footer-filtro filtro-container_footer">
+                <button (click)="aplicar(); drawer2.toggle()" [disabled]="!range.valid" style="width: 90%;"
+                    class="button-miM-large" mat-flat-button color="primary">
+                    <span class="texto_boton">{{'reporte.aplicar'  | transloco}}</span>
+                </button>
+            </div>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content style="width: 100%;" (window:resize)="onResize()">
+
+        <mat-drawer-container class="example-container" autosize>
+
+            <mat-drawer #drawer class="example-sidenav example-sidenav-menuP" [mode]="mode" [opened]="open"
+                (window:resize)="window.innerWidth >= 1300? drawer.open() : drawer.close(); onResize()">
+                <div class="close-sidebar-custom" style="text-align: -webkit-right; text-align: -moz-right;">
+                    <button [style]="styleCustom" mat-icon-button (click)="drawer.toggle()">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </div>
+                <app-sidebar class="app-sidebar-custom" [drawer]="drawer"
+                    [listaMenu]="listaManuRolFuncionario" [funcionarioIs]="false"></app-sidebar>
+            </mat-drawer>
+            <mat-drawer-content style="height: 100%;">
+
+
+                <div style="width: 100%; height: 100%;">
+                    <div class="header-custom static-nav-resposive">
+                        <div class="boton-navegacion">
+                            <app-navegacion [width]="'24px'" [height]="'24px'"></app-navegacion>
+                        </div>
+                        <div class="logo-custom-navbar">
+                            <img alt="logo" src="../../../../assets/images/logos/miMovilidadFondoBlanco.svg" />
+                        </div>
+                        <div class="boton-notificacion">
+                            <!--button class="cuerpo_texto_resaltado btn-idioma" color="primary" mat-button style="min-width: 0 !important;">
+                                <span>Es</span>
+                            </button-->
+                            <app-btn-idioma></app-btn-idioma>
+                        </div>
+                        <!--div class="example-icon">
+                            <button mat-icon-button (click)="drawer.toggle()">
+                                <mat-icon>menu</mat-icon>
+                            </button>
+                        </div-->
+                        <div class="example-icon">
+                            <button aria-label="haz clic para abrir el menú" name="menu" mat-icon-button
+                                (click)="drawer.toggle()">
+                                <!--mat-icon style="font-size: 10px;" [matBadge]="numeroNotificacion >= 100? '+99' : numeroNotificacion" matBadgeOverlap="false" matBadgeSize="medium" matBadgeColor="accent" [matBadgeHidden]="hidden" name="bell">menu</mat-icon-->
+                                <app-icon-menu class="icon-btn-menu-movil-size"
+                                    [icon]="'assets/icons/Menú mobile_icono.svg'"></app-icon-menu>
+                            </button>
+                        </div>
+                    </div>
+                    <app-navbar [isHome]="false" [style]="sytleCustomNavbar"></app-navbar>
+                    <div class="pages-custom">
+                        <app-card-header [proceso]="false" [imgLink]="'assets/images/3d/Elemento 3D_Reportes_baja.png'"
+                            [title]="'reporte.titleCard' | transloco"
+                            [text]="'reporte.textCard' | transloco"></app-card-header>
+
+                        <div style="margin-top: 20px; margin-bottom: 10px;">
+                            <app-slider-date-custom [icono]="'assets/icons/Grafica_icono.svg'" [title]="selectionTypeReporte(typeReporte)" [proceso]="!isGrafica"
+                                [fechaI]="range.controls['start'].value" [fechaF]="range.controls['end'].value"
+                                (messageEvent)="drawer2.toggle()"></app-slider-date-custom>
+                        </div>
+
+                        <!--tramite-->
+
+                        <div class="group-graficas-home" *ngIf="typeReporte === 'tramite'">
+                            <div class="group-graficas-home_uno" style="width: 100% !important;">
+                                <div class="group-graficas-home_uno_card">
+                                    <mat-card [class]="'card-custom-normal'">
+                                        <mat-card-content style="min-height: 200px;">
+                                            <div *ngIf="!isGrafica" class="cargando-filtro"
+                                                style="border-radius: 30px;">
+                                                <div class="cargando-filtro_spener">
+                                                    <mat-spinner color="primary" diameter="30"></mat-spinner>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h2 class="title-home-fun subtitulo">{{'reporte.cantidad'| transloco}}</h2>
+                                            </div>
+                                            <div *ngIf="!(graficatramite.length === 0)">
+                                                <app-graficar *ngIf="isGrafica" [view]="[width,height]"
+                                                    [colorScheme]="colorScheme" [legend]="true" [xAxis]="true"
+                                                    [yAxis]="true" [legendTitle]="'Detalle'" [multi]="graficatramite"
+                                                    [tooltipDisabled]="false" [typeGrafica]="'linea'" [timeline]="true"
+                                                    [legendPosition]="window.innerWidth >= 1300? legendPositionRight : legendPositionBelow"></app-graficar>
+                                            </div>
+                                            <div *ngIf="graficatramite.length === 0 && isGrafica">
+                                                <app-mensaje-grafica [icon]="iconSinRistro"
+                                                    [mensaje]="sinRegistro"></app-mensaje-grafica>
+                                            </div>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Fin tramite-->
+
+                        <div class="group-graficas-home">
+                            <div class="group-graficas-home_uno">
+                                <div class="group-graficas-home_uno_card">
+                                    <mat-card [class]="'card-custom-normal'">
+                                        <mat-card-content style="min-height: 200px;">
+                                            <div *ngIf="!isGrafica" class="cargando-filtro"
+                                                style="border-radius: 30px;">
+                                                <div class="cargando-filtro_spener">
+                                                    <mat-spinner color="primary" diameter="30"></mat-spinner>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h2 class="title-home-fun subtitulo">{{'reporte.sistemaOperativo' | transloco}}</h2>
+                                            </div>
+                                            <div *ngIf="!(graficaSO.length === 0)">
+                                                <app-graficar *ngIf="isGrafica" [view]="[width,height]"
+                                                    [colorScheme]="colorScheme" [legend]="true" [legendTitle]="''"
+                                                    [multi]="graficaSO" [tooltipDisabled]="false"
+                                                    [showLabels]="window.innerWidth >= 550? true : false"
+                                                    [typeGrafica]="'torta'"
+                                                    [legendPosition]="window.innerWidth >= 1300? legendPositionRight : legendPositionBelow"></app-graficar>
+                                            </div>
+                                            <div *ngIf="graficaSO.length === 0 && isGrafica">
+                                                <app-mensaje-grafica [icon]="iconSinRistro"
+                                                    [mensaje]="sinRegistro"></app-mensaje-grafica>
+                                            </div>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            </div>
+                            <div class="group-graficas-home_dos">
+                                <div class="group-graficas-home_dos_card">
+                                    <mat-card [class]="'card-custom-normal'">
+                                        <mat-card-content style="min-height: 200px;">
+                                            <div *ngIf="!isGrafica" class="cargando-filtro"
+                                                style="border-radius: 30px;">
+                                                <div class="cargando-filtro_spener">
+                                                    <mat-spinner color="primary" diameter="30"></mat-spinner>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h2 class="title-home-fun subtitulo">{{'reporte.dispositivo' | transloco}}</h2>
+                                            </div>
+                                            <div *ngIf="!(graficaDispositivo.length === 0)">
+                                                <app-graficar *ngIf="isGrafica" [isDoughnut]="true"
+                                                    [view]="[width,height]" [colorScheme]="colorScheme" [legend]="true"
+                                                    [legendTitle]="''" [multi]="graficaDispositivo"
+                                                    [tooltipDisabled]="false"
+                                                    [showLabels]="window.innerWidth >= 550? true : false"
+                                                    [typeGrafica]="'torta'"
+                                                    [legendPosition]="window.innerWidth >= 1300? legendPositionRight : legendPositionBelow"></app-graficar>
+                                            </div>
+                                            <div *ngIf="graficaDispositivo.length === 0 && isGrafica">
+                                                <app-mensaje-grafica [icon]="iconSinRistro"
+                                                    [mensaje]="sinRegistro"></app-mensaje-grafica>
+                                            </div>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group-graficas-home">
+                            <div class="group-graficas-home_uno"
+                                [style]="typeReporte === 'notificacion_electronica'? window.innerWidth >= 760? 'width:50% !important;' : 'width:100% !important;':'width:100% !important;'">
+                                <div class="group-graficas-home_uno_card" [style]="typeReporte === 'notificacion_electronica'? window.innerWidth >= 760? '' : 'margin: 10px 0px !important;':'margin: 10px 0px !important;'">
+                                    <mat-card [class]="'card-custom-normal'">
+                                        <mat-card-content style="min-height: 200px;">
+                                            <div *ngIf="!isGrafica" class="cargando-filtro"
+                                                style="border-radius: 30px;">
+                                                <div class="cargando-filtro_spener">
+                                                    <mat-spinner color="primary" diameter="30"></mat-spinner>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h2 class="title-home-fun subtitulo">{{'reporte.navegador'| transloco}}</h2>
+                                            </div>
+                                            <div *ngIf="!(graficaNavegador.length === 0)">
+                                                <app-graficar *ngIf="isGrafica" [showDataLabel]="true"
+                                                    [view]="[width,height]" [colorScheme]="colorScheme" [legend]="true"
+                                                    [legendTitle]="''" [multi]="graficaNavegador"
+                                                    [typeGrafica]="'barra-hor'"
+                                                    [legendPosition]="window.innerWidth >= 1300? legendPositionRight : legendPositionBelow"></app-graficar>
+                                            </div>
+                                            <div *ngIf="graficaNavegador.length === 0 && isGrafica">
+                                                <app-mensaje-grafica [icon]="iconSinRistro"
+                                                    [mensaje]="sinRegistro"></app-mensaje-grafica>
+                                            </div>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            </div>
+                            <div class="group-graficas-home_dos"
+                                [style]="typeReporte === 'notificacion_electronica'? window.innerWidth >= 760? 'width:50% !important;' : 'width:100% !important;' :''"
+                                *ngIf="typeReporte === 'notificacion_electronica'">
+                                <div class="group-graficas-home_dos_card">
+                                    <mat-card [class]="'card-custom-normal'">
+                                        <mat-card-content style="min-height: 200px;">
+                                            <div *ngIf="!isGrafica" class="cargando-filtro"
+                                                style="border-radius: 30px;">
+                                                <div class="cargando-filtro_spener">
+                                                    <mat-spinner color="primary" diameter="30"></mat-spinner>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h2 class="title-home-fun subtitulo">{{'reporte.notificacion'| transloco}}</h2>
+                                            </div>
+                                            <div *ngIf="!(graficanotificacionElec.length === 0)">
+                                                <app-graficar *ngIf="isGrafica" [isDoughnut]="true"
+                                                    [view]="[width,height]" [colorScheme]="colorScheme" [legend]="true"
+                                                    [legendTitle]="''" [multi]="graficanotificacionElec"
+                                                    [tooltipDisabled]="false"
+                                                    [showLabels]="window.innerWidth >= 550? true : false"
+                                                    [typeGrafica]="'torta'"
+                                                    [legendPosition]="window.innerWidth >= 1300? legendPositionRight : legendPositionBelow"></app-graficar>
+                                            </div>
+                                            <div *ngIf="graficanotificacionElec.length === 0 && isGrafica">
+                                                <app-mensaje-grafica [icon]="iconSinRistro"
+                                                    [mensaje]="sinRegistro"></app-mensaje-grafica>
+                                            </div>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-btn-reporte">
+                            <div class="group-graficas-home-btn">
+                                <div class="group-graficas-home-btn_uno">
+                                    <div class="group-graficas-home-btn_uno_card">
+                                        <mat-card [class]="'card-custom-normal'">
+                                            <mat-card-content style="height: 100%;">
+                                                <div *ngIf="!isGrafica" class="cargando-filtro"
+                                                    style="border-radius: 30px;">
+                                                    <div class="cargando-filtro_spener">
+                                                        <mat-spinner color="primary" diameter="30"></mat-spinner>
+                                                    </div>
+                                                </div>
+                                                <div style="text-align: center; height: 100%; justify-content: center;" class="flex-custom">
+                                                    <div style="display: flex; justify-content: center;" class="none-width-vi">
+                                                        <div *ngIf="window.innerWidth >= 850" class="icon-reporte-btn flex-custom-iconv2 none-width-vi-icon">
+                                                            <app-icon-menu
+                                                                [icon]="'assets/icons/Cantidad de instalaciones_icono.svg'"></app-icon-menu>
+                                                        </div>
+                                                        <h1 style="margin: 0; overflow-y: auto; width: 100%;"  class="flex-custom-text2 none-flex none-width-vi-text numero_Card">{{this.formatterPeso.format(cantidad)}}</h1>
+                                                    </div>
+                                                    
+                                                    <h1  class="flex-custom-text subtitulo">
+                                                        {{textCantidad}}
+                                                    </h1>
+                                                    <h1 style="margin: 0; overflow-y: auto; width: 100%;" class="flex-custom-text2 none-flex-vi numero_Card">{{this.formatterPeso.format(cantidad)}}</h1>
+                                                </div>
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </div>
+                                </div>
+                                <div class="group-graficas-home-btn_dos">
+                                    <div class="group-graficas-home-btn_dos_card">
+                                        <mat-card (click)="archivo()"
+                                            [class]="'card-custom-normal card-hover-reporte-btn'">
+                                            <mat-card-content style="height: 100%;">
+                                                <div *ngIf="isArchivo" class="cargando-filtro"
+                                                    style="border-radius: 15px;">
+                                                    <div class="cargando-filtro_spener">
+                                                        <mat-spinner color="primary" diameter="30"></mat-spinner>
+                                                    </div>
+                                                </div>
+                                                <div style="text-align: center; height: 100%; justify-content: center;" class="flex-custom">
+                                                    <div class="icon-reporte-btn flex-custom-icon">
+                                                        <app-icon-menu
+                                                            [icon]="'assets/icons/Descargar documento_icono.svg'"></app-icon-menu>
+                                                    </div>
+                                                    <h1 class="flex-custom-text subtitulo">
+                                                        {{'reporte.descargar-archivo'| transloco}}
+                                                    </h1>
+                                                </div>
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-drawer-content>
+        </mat-drawer-container>
+    </mat-drawer-content>
+</mat-drawer-container>

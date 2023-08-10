@@ -1,0 +1,55 @@
+<mat-drawer-container class="example-container" autosize>
+
+    <mat-drawer #drawer class="example-sidenav example-sidenav-menuP" [mode]="mode" [opened]="open"
+        (window:resize)="window.innerWidth >= 1300? drawer.open() : drawer.close(); onResize()">
+        <div class="close-sidebar-custom" style="text-align: -webkit-right; text-align: -moz-right;">
+            <button [style]="styleCustom" mat-icon-button (click)="drawer.toggle()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <app-sidebar class="app-sidebar-custom" [drawer]="drawer" [listaMenu]="listaManuRolFuncionario"
+            [funcionarioIs]="false"></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content style="height: 100%;">
+
+
+        <div style="width: 100%; height: 100%;">
+            <div class="header-custom static-nav-resposive">
+                <div class="boton-navegacion">
+                    <app-navegacion [width]="'24px'" [height]="'24px'"></app-navegacion>
+                </div>
+                <div class="logo-custom-navbar">
+                    <img alt="logo" src="../../../../assets/images/logos/miMovilidadFondoBlanco.svg" />
+                </div>
+                <div class="boton-notificacion">
+                    <!--button class="cuerpo_texto_resaltado btn-idioma" color="primary" mat-button
+                        style="min-width: 0 !important;">
+                        <span>Es</span>
+                    </button-->
+                    <app-btn-idioma></app-btn-idioma>
+                </div>
+                <!--div class="example-icon">
+                    <button mat-icon-button (click)="drawer.toggle()">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </div-->
+                <div class="example-icon">
+                    <button aria-label="haz clic para abrir el menú" name="menu" mat-icon-button (click)="drawer.toggle()">
+                        <!--mat-icon style="font-size: 10px;" [matBadge]="numeroNotificacion >= 100? '+99' : numeroNotificacion" matBadgeOverlap="false" matBadgeSize="medium" matBadgeColor="accent" [matBadgeHidden]="hidden" name="bell">menu</mat-icon-->
+                        <app-icon-menu class="icon-btn-menu-movil-size" [icon]="'assets/icons/Menú mobile_icono.svg'"></app-icon-menu>
+                    </button>
+                </div>
+            </div>
+            <app-navbar [isHome]="false" [style]="sytleCustomNavbar"></app-navbar>
+            <div class="pages-custom">
+                <app-card-header-centro-ayuda [proceso]="proceso" [imgLink]="'assets/icons/Centro_de_ayuda_icono.svg'"
+                    [imgLink2]="'assets/icons/Telefono_icono.svg'" [title]="'centroAyuda.titulo'| transloco"
+                    [text]="'centroAyuda.text' | transloco" [text2]="'centroAyuda.lineaAtencion' | transloco"
+                    [title2]="'centroAyuda.telText' | transloco"
+                    [linkCorreo]="environment.direccionamiento.centroAyuda.correo"
+                    [linkTelefo]="environment.direccionamiento.centroAyuda.tel"
+                    [text3]="'centroAyuda.horario' | transloco"></app-card-header-centro-ayuda>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

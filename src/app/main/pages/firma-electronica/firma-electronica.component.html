@@ -1,0 +1,267 @@
+<div class="marguenes-custom"></div>
+<app-card-header [proceso]="proceso" [imgLink]="'assets/images/3d/Fimar_electronica_elemento 3D.png'" [title]="'firmaElectronica.titulo' | transloco"
+    [text]="'firmaElectronica.cardText.mensajeUno' | transloco"></app-card-header>
+<br>
+<mat-stepper linear #stepper>
+    <mat-step [stepControl]="registerForm" [editable]="false">
+        <app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'firmaElectronica.confirmaDatos' | transloco" [text]="'firmaElectronica.cardText3' | transloco"></app-title-pages>
+        <br>
+        <div *ngIf="isFirmaConsulta" class="container-card">
+            <mat-card [class]="proceso? 'skeleton card-auth':'card-auth'" [style]="styleCustom">
+                <mat-card-content class="card-content-miM">
+                    <form [class]="proceso? 'skeleton-none':'example-form'" [formGroup]="registerForm">
+
+                        <div class="grid-registro-mMo">
+                            <div class="grid-registro-mMo__colum">
+                                <div class="container-form-miM" style="text-align: left !important;">
+                                    <mat-label class="label-custom titulo_formulario">{{'firma-electronica.tipo-documento'| transloco}}</mat-label>
+                                    <mat-form-field class="container-imput-miM no-editable" appearance="outline"
+                                        subscriptSizing="dynamic" color="primary">
+                                        <input class="texto_formularios" readonly matInput [placeholder]="'firmaElectronica.tipoDocumento' | transloco"
+                                            formControlName="tipoDocumento">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="grid-registro-mMo__colum">
+                                <div class="container-form-miM" style="text-align: left !important;">
+                                    <mat-label class="label-custom titulo_formulario">{{'firma-electronica.documento'| transloco}}</mat-label>
+                                    <mat-form-field class="container-imput-miM no-editable" appearance="outline"
+                                        subscriptSizing="dynamic" color="primary">
+                                        <input class="texto_formularios" readonly matInput [placeholder]="'firmaElectronica.documento' | transloco"
+                                            formControlName="numeroDocumento">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid-registro-mMo">
+                            <div class="grid-registro-mMo__colum">
+                                <div class="container-form-miM" style="text-align: left !important;">
+                                    <mat-label class="label-custom titulo_formulario">{{'firma-electronica.nombre'| transloco}}</mat-label>
+                                    <mat-form-field class="container-imput-miM no-editable" appearance="outline"
+                                        subscriptSizing="dynamic" color="primary">
+                                        <input class="texto_formularios" readonly matInput [placeholder]="'firmaElectronica.nombre' | transloco" formControlName="nombre">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="grid-registro-mMo__colum">
+                                <div class="container-form-miM" style="text-align: left !important;">
+                                    <mat-label class="label-custom titulo_formulario">{{'firma-electronica.correo'| transloco}}</mat-label>
+                                    <mat-form-field class="container-imput-miM no-editable" appearance="outline"
+                                        subscriptSizing="dynamic" color="primary">
+                                        <input class="texto_formularios" readonly matInput [placeholder]="'firmaElectronica.correo' | transloco"
+                                            formControlName="email">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <mat-grid-list [class]="proceso? 'skeleton-none':''" [cols]="1" rowHeight="2rem"
+                            style="margin-top: 15px;">
+                            <mat-grid-tile>
+                                <button class="button-miM-large"
+                                    style="width: fit-content; height: 30px;" [disabled]="!registerForm.valid"
+                                    mat-flat-button matStepperNext color="primary">
+                                    <p class="texto_boton">{{'firma-electronica.continuar'| transloco}}</p>
+                                </button>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div *ngIf="isFechaExpiracion">
+            <app-sin-informacion [text]="'firmaElectronica.firmaVigente' | transloco" [text]="mensajeValidacionFirma"></app-sin-informacion>
+        </div>
+        <!--form [formGroup]="registerForm">
+            <ng-template matStepLabel>Fill out your name</ng-template>
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="tipoDocumento" placeholder="Last name, First name" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form-->
+    </mat-step>
+    <mat-step [stepControl]="registerFormTwo" [editable]="false">
+        <app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'firmaElectronica.generarFirma' | transloco" 
+            [text]="('firmaElectronica.cardText.mensajeDos' | transloco)"></app-title-pages>
+        <br>
+        <div class="container-card">
+            <mat-card [class]="proceso? 'skeleton card-auth':'card-auth'" [style]="styleCustom">
+                <mat-card-content class="card-content-miM">
+                    <form [class]="proceso? 'skeleton-none':'example-form'" [formGroup]="registerFormTwo">
+
+                        <div class="grid-registro-mMo">
+                            <div class="grid-registro-mMo__colum">
+                                <div class="container-form-miM" style="text-align: left !important;">
+                                    <mat-label class="label-custom titulo_formulario">{{'firma-electronica.contrasena'| transloco}}</mat-label>
+                                    <mat-form-field class="container-imput-miM" appearance="outline"
+                                        subscriptSizing="dynamic" color="primary">
+                                        <input class="texto_formularios" matInput [type]="hide1 ? 'password' : 'text'" [placeholder]="'firmaElectronica.contrasena' | transloco"
+                                            formControlName="contrasena">
+                                        <mat-error *ngIf="registerFormTwo.controls['contrasena'].invalid">
+                                            <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerFormTwo.controls['contrasena']">
+                                            </app-error-menssage>
+                                        </mat-error>
+                                        <button color="primary" mat-icon-button matSuffix (click)="hide1 = !hide1"
+                                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+                                            <div class="icon-custom-btn" *ngIf="!hide1" [innerHTML]="iconoVer"></div>
+                                            <div class="icon-custom-btn" *ngIf="hide1" [innerHTML]="iconoNoVer"></div>
+                                            <!--i-feather [name]="hide ? 'eye-off' : 'eye'"></i-feather-->
+                                        </button>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="grid-registro-mMo__colum">
+                                <div class="container-form-miM" style="text-align: left !important;">
+                                    <mat-label class="label-custom">{{'firma-electronica.confirmar-contrasena'| transloco}}</mat-label>
+                                    <mat-form-field class="container-imput-miM" appearance="outline"
+                                        subscriptSizing="dynamic" color="primary">
+                                        <input class="texto_formularios" matInput [type]="hide2 ? 'password' : 'text'" [placeholder]="('firmaElectronica.confirmarContrasena' | transloco)" formControlName="confirmarContrasena">
+                                        <mat-error *ngIf="registerFormTwo.controls['confirmarContrasena'].invalid">
+                                            <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerFormTwo.controls['confirmarContrasena']">
+                                            </app-error-menssage>
+                                        </mat-error>
+                                        <button color="primary" mat-icon-button matSuffix (click)="hide2 = !hide2"
+                                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+                                            <div class="icon-custom-btn" *ngIf="!hide2" [innerHTML]="iconoVer"></div>
+                                            <div class="icon-custom-btn" *ngIf="hide2" [innerHTML]="iconoNoVer"></div>
+                                            <!--i-feather [name]="hide ? 'eye-off' : 'eye'"></i-feather-->
+                                        </button>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-form-miM" style="text-align: left !important;">
+                            <mat-label class="label-custom">{{'firma-electronica.acuerdo'| transloco}}</mat-label>
+                            <div
+                                style="height: 170px; padding: 0 20px 20px 20px; overflow-y: scroll; margin-top: 10px;">
+                                <p style="margin-top: 0;" class="cuerpo_texto">
+                                    {{'firma-electronica.privacidad'| transloco}}<br>
+                                    {{'firma-electronica.privacidad1'| transloco}}<br>
+                                    {{'firma-electronica.privacidad2'| transloco}}<br>
+                                    {{'firma-electronica.privacidad3'| transloco}}
+                                    <br>
+                                    <br>
+                                    {{'firma-electronica.veracidad'| transloco}}<br>
+                                    {{'firma-electronica.veracidad1'| transloco}}<br>
+                                    {{'firma-electronica.veracidad2'| transloco}}
+                                    <br>
+                                    <br>
+                                    {{'firma-electronica.responsabilidad'| transloco}}<br>
+                                    {{'firma-electronica.responsabilidad1'| transloco}}<br>
+                                    {{'firma-electronica.responsabilidad2'| transloco}}
+                                    <br>
+                                    <br>
+                                    {{'firma-electronica.uso'| transloco}}<br>
+                                    {{'firma-electronica.uso1'| transloco}}<br>
+                                    {{'firma-electronica.uso2'| transloco}}
+                                    <br>
+                                    <br>
+                                    {{'firma-electronica.suspension'| transloco}}<br>
+                                    {{'firma-electronica.suspension1'| transloco}}<br>
+                                    {{'firma-electronica.suspension2'| transloco}}
+                                    <br>
+                                    <br>
+                                    {{'firma-electronica.consentimiento'| transloco}}<br>
+                                    {{'firma-electronica.consentimiento1'| transloco}}
+                                    <br>
+                                    {{'firma-electronica.consentimiento2'| transloco}}
+                                    <br>
+                                    <br>
+                                    {{'firma-electronica.recompilacion'| transloco}}<br>
+                                    {{'firma-electronica.recompilacion1'| transloco}}<br>
+                                    {{'firma-electronica.recompilacion2'| transloco}}
+                                    <br>
+                                    <br>
+                                    {{'firma-electronica.cookies'| transloco}}<br>
+                                    {{'firma-electronica.cookies1'| transloco}}
+                                    <br>
+                                    <br>
+                                    {{'firma-electronica.seguridad'| transloco}}<br>
+                                    {{'firma-electronica.seguridad1'| transloco}}<br>
+                                    {{'firma-electronica.seguridad2'| transloco}}
+                                    <br>
+                                    <br>
+                                    {{'firma-electronica.comunicaciones'| transloco}}<br>
+                                    {{'firma-electronica.comunicaciones1'| transloco}}.<br>
+                                    {{'firma-electronica.comunicaciones2'| transloco}}
+                                    <br>
+                                    <br>
+                                    {{'firma-electronica.retencion'| transloco}}<br>
+                                    {{'firma-electronica.retencion1'| transloco}}<br>
+                                    {{'firma-electronica.retencion2'| transloco}}
+                                    <br>
+                                    <br>
+                                    {{'firma-electronica.transferencia'| transloco}}<br>
+                                    {{'firma-electronica.transferencia1'| transloco}}
+                                    <br>
+                                    <br>
+                                    {{'firma-electronica.acceso'| transloco}}<br>
+                                    {{'firma-electronica.acceso1'| transloco}}
+                                    <br>
+                                    <br>
+                                    {{'firma-electronica.menores'| transloco}}<br>
+                                    {{'firma-electronica.menores1'| transloco}}
+                                    <br>
+                                    <br>
+                                    {{'firma-electronica.modificaciones'| transloco}}<br>
+                                    {{'firma-electronica.modificaciones1'| transloco}}
+                                </p>
+
+                                <section class="example-section" style="text-align: left;">
+                                    <mat-checkbox #checkboxSi class="example-margin" value="si"
+                                        (click)="checkboxNo.checked = false;isAcuerdo(checkboxSi)">
+                                        <p class="cuerpo_texto_info_formulario">{{'firma-electronica.acepto'| transloco}}</p>
+                                    </mat-checkbox>
+                                    <mat-checkbox #checkboxNo class="example-margin" value="no"
+                                        (click)="checkboxSi.checked = false;isAcuerdo(checkboxNo)">
+                                        <p class="cuerpo_texto_info_formulario">{{'firma-electronica.no-acepto'| transloco}}</p>
+                                    </mat-checkbox>
+                                </section>
+                            </div>
+                            <!--mat-form-field class="container-textarea-miM" appearance="outline"
+                                subscriptSizing="dynamic" color="primary">
+                                <textarea readonly style="min-height: 150px;" matInput formControlName="nombre"
+                                    placeholder="Ex. It makes me feel..."></textarea>
+                            </mat-form-field-->
+                        </div>
+
+
+
+                        <mat-grid-list [class]="proceso? 'skeleton-none':''" [cols]="1" rowHeight="2rem"
+                            style="margin-top: 15px;">
+                            <mat-grid-tile>
+                                <button class="button-miM-large" (click)="isConsulta? '': consultar()"
+                                    style="width: fit-content; height: 30px;" [disabled]="!registerFormTwo.valid"
+                                    mat-flat-button color="primary">
+                                    <mat-spinner *ngIf="isConsulta" color="accent" diameter="20"></mat-spinner>
+                                    <p *ngIf="!isConsulta" class="texto_boton">{{'firma-electronica.aceptar'| transloco}}</p>
+                                </button>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <!--form [formGroup]="registerFormTwo">
+            <ng-template matStepLabel>Fill out your address</ng-template>
+            <mat-form-field appearance="fill">
+                <mat-label>Address</mat-label>
+                <input matInput formControlName="tipoDocumento" placeholder="Ex. 1 Main St, New York, NY" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form-->
+    </mat-step>
+</mat-stepper>
+<br>
+<app-title-pages [class]="proceso? 'skeleton-none':''" [title]="('firmaElectronica.otrasOpciones' | transloco)"></app-title-pages>
+<app-groups-button-card [proceso]="proceso" [listButton]="listButton"></app-groups-button-card>
+<div class="marguenes-custom"></div>
+
+

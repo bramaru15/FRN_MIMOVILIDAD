@@ -1,0 +1,9 @@
+@import "../../../../assets/sass/styles.scss";
+
+.example-container {
+  width: 100%;
+  background-color: transparent;
+  @include respond(custom-m) {
+    
+  }
+}

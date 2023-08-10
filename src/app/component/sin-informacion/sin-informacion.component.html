@@ -1,0 +1,14 @@
+<mat-card [class]="proceso? 'skeleton card-header':'card-header'">
+    <mat-card-content class="card-container">
+        <div style="display: flex; align-items: center;">
+            <div style="margin-left: 50px;">
+                <!--i-feather style="color:#bed000;width: 30px" name="alert-circle"></i-feather-->
+                <app-icon-menu [class]="proceso? 'skeleton-none':'icon-card-no-hay-info'"
+                    [icon]="'assets/icons/No tiene trámites_icono.svg'"></app-icon-menu>
+            </div>
+            <div style="margin-left: 15px;">
+                <p class="informacion_destacada_bold">{{text}}</p>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

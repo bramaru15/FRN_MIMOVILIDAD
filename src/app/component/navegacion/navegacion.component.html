@@ -1,0 +1,21 @@
+
+<div class="navegacion-custon">
+    <button aria-label="haz clic para volver atrás" name="haz clic para volver atrás" class="btn-custom-navegacion" [style]="{'width':width, 'height':height}" [disabled]="onUrlChange()" mat-icon-button color="primary" (click)="goBack()">
+        <i-feather class="btn-custom-icon" [name]="'arrow-left-circle'"></i-feather>
+    </button>
+   
+    <button aria-label="haz clic para ir adelante" name="haz clic para ir adelante" style="margin-left: 20%;" class="btn-custom-navegacion" [style]="{'width':width, 'height':height}" [disabled]="onUrlChange2()" mat-icon-button color="primary" (click)="goForward()">
+        <i-feather class="btn-custom-icon" [name]="'arrow-right-circle'"></i-feather> 
+    </button>
+    <!--svg (click)="goBack()" xmlns="http://www.w3.org/2000/svg" 
+        [style]="{'width':width, 'height':height, 'color': color, 'cursor': cursor}" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+        class="feather feather-alert-circle">
+        <line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    <svg style="margin-left: 13%;" [style]="{'width':width, 'height':height, 'color': '#999999'}" xmlns="http://www.w3.org/2000/svg"
+        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        stroke-linejoin="round" class="feather feather-alert-circle">
+        <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+    </svg-->
+</div>

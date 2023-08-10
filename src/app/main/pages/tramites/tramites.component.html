@@ -1,0 +1,14 @@
+<div class="marguenes-custom"></div>
+
+<app-card-header [proceso]="proceso" [imgLink]="'assets/images/3d/Elemento_3D_Tramites_y_servicios.png'" [title]="'tramites.titulo'| transloco" [text]="('tramites.cardText.mensajeUno'| transloco)"></app-card-header>
+
+<app-title-pages [class]="proceso? 'skeleton-none':''" [title]="('tramites.ultimoTramite'| transloco)"></app-title-pages>
+<app-card-tramites [class]="proceso? 'skeleton-none':''" *ngIf="listaTramites.length > 0" [dataCardTramite]="dataCardTramite"></app-card-tramites>
+<div [class]="proceso? 'skeleton-none':''" *ngIf="listaTramites.length <= 0">
+    <p class="text-noCard">
+        <app-sin-informacion text="'tramites.firma'| transloco" [text]="'tramites.noFirma'| transloco"></app-sin-informacion>
+    </p>
+</div>
+<app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'tramites.nuevoTramite'| transloco" [text]="('tramites.cardText.mensajeDos'| transloco)"></app-title-pages>
+<app-groups-button-card [proceso]="proceso" [listButton]="listButton"></app-groups-button-card>
+<div class="marguenes-custom"></div>

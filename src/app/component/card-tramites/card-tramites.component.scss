@@ -1,0 +1,94 @@
+@import "../../../assets/sass/styles.scss";
+
+.card-tramite{
+    border-radius: $radiusCardCuston !important;
+    box-shadow: none !important;
+    color: $colorPrimario1;
+    padding: 35px;
+    @include respond(phone) {
+        padding: 25px;
+    } 
+    @include respond(phone-s) {
+        padding: 15px;
+    }   
+}
+
+h2 {
+    margin: 0;
+    margin-left: 15px;
+    //font-size: 17px;
+    font-family: Raleway Bold;
+}
+
+.card-tramite-miMo {
+    display: flex; 
+    width: 100%;
+
+    @include respond(phone) {
+        flex-direction: column;
+    }
+
+    &__text {
+        width: 80%;
+        @include respond(phone) {
+            width: 100%; 
+        }
+        &__custom {
+            display: flex;
+        }
+
+        &__title {
+            align-self: center;
+            
+        }
+
+        &__icon {
+
+        }
+    }
+
+    &__button {
+
+        width: 20%; 
+        align-self: center;
+        @include respond(phone) {
+            display: flex;
+            width: 100% !important;  
+        }
+        &__uno {
+            @include respond(phone) {
+                width: 50%;
+                text-align: center;  
+            }
+            margin-bottom: 15px; 
+            button {
+                @include respond(phone) {
+                    width: 95% !important;
+                    font-size: 11px !important;  
+                }
+                @include respond(phone-s) {
+                   font-size: 9px !important; 
+                }
+                max-height: 29px !important;
+            }
+        }
+        
+        &__dos {
+            @include respond(phone) {
+                width: 50%;
+                text-align: center;  
+            }
+            button {
+                @include respond(phone) {
+                    width: 95% !important;
+                    font-size: 11px !important;    
+                }
+                @include respond(phone-s) {
+                    font-size: 9px !important; 
+                 }
+                max-height: 29px !important;
+            }
+        }
+    }
+}
+

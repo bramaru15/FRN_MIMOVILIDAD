@@ -1,0 +1,48 @@
+<mat-card [class]="proceso? 'skeleton card-header':'card-header'">
+    <mat-card-content style="padding-left: 0;padding-right: 0;">
+        <div class="card-custom-header">
+            <div class=" card-custom-header__text rango-fecha-container">
+                <div [style]="window.innerWidth > 300?'display: flex; align-self: center; width: 40%;':'display: flex; align-self: center; width: 50%;'">
+                    <app-icon-menu style="align-self: center;" [class]="proceso? 'skeleton-none icon-card-btnlink-fecha-home-v1':'icon-card-btnlink-fecha-home-v1'" [icon]="icono"></app-icon-menu>
+                    <h1 [class]="proceso? 'skeleton-none':'subtitulo'" style="font-family: Raleway Extrabold; margin: 0px 15px 0px 15px; align-self: center;">
+                        {{title}}
+                    </h1>
+                </div>
+                <div class="rango-fecha-container_fecha" [style]="window.innerWidth > 300?'width: 60%;':'width: 50%;'">
+                    <div style="font-family: Raleway Medium;">
+                        <p>
+                            <span [class]="proceso? 'skeleton-none':'informacion_destacada_Medium'">
+                                <span class="fecha-borde aplicado-container_text">{{momentCustom(fechaI,
+                                    "DD/MM/YYYY")}}</span> - <span
+                                    class="fecha-borde aplicado-container_text">{{momentCustom(fechaF,
+                                    "DD/MM/YYYY")}}</span>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div [class]="proceso? 'skeleton-none':'card-custom-header__btn'">
+                <button class="button-miM-large button-filtrar" mat-flat-button (click)="eventoClick($event)"
+                    color="primary">
+                    <span class="texto_boton">{{'reporte.filtrar' | transloco}}</span>
+                </button>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<!--div>
+    <div class="dibujo-slider">
+        <div class="dibujo-slider__line"></div>
+        <div class="text-slider" style="width: 25%; text-align: -webkit-center;">
+            <div class="dibujo-slider__circle_uno"></div>
+            <span>{{fechaI}}</span>
+        </div>
+        <div style="width: 25%; text-align: -webkit-center;"></div>
+        <div style="width: 25%; text-align: -webkit-center;"></div>
+        <div class="text-slider" style="width: 25%; text-align: -webkit-center;">
+            <div class="dibujo-slider__circle_dos"></div>
+            <span>{{fechaF}}</span>
+        </div>
+    </div>
+</div-->

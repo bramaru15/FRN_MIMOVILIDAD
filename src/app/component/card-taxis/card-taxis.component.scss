@@ -1,0 +1,55 @@
+@import "../../../assets/sass/styles.scss";@import "../../../assets/sass/styles.scss";
+
+
+
+
+
+.card-custom-header {
+    display: flex;
+    width: 100%;
+
+    @include respond(phone) {
+        flex-direction: column;
+    }
+
+    &__text {
+        width: 300%;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        @include respond(phone) {
+            width: 100%;
+            text-align: left;
+            padding-left: 0px;
+            padding-right: 0px;
+            h1 {
+                padding-left: 15px;
+            }  
+        }
+    }
+    &__button {
+        width: -webkit-fill-available;
+        width: -moz-fill-available;
+        justify-content: flex-end;
+        display: flex; 
+        flex-flow: wrap;
+        align-self: center;
+        padding-right: 20px;
+        @include respond(phone) {
+            width: 100%;
+            align-self: normal;
+            justify-content: left;
+        }
+    }
+}
+
+.card-header{
+    border-radius: $radiusCardCuston !important;
+    box-shadow: none !important;
+    color: $colorPrimario1;
+    min-height: 100px;   
+}
+
+
+
+

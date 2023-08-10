@@ -1,0 +1,16 @@
+<div class="marguenes-custom"></div>
+<app-card-header [proceso]="proceso"
+    [imgLink]="'assets/images/3d/Elemento_3D_Mapas_de_Bogota.png'" [title]="'mapas.titulo' | transloco"
+    [text]="'mapas.text'| transloco"></app-card-header>
+<app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'mapas.mapasDisponibles' | transloco"></app-title-pages>
+
+<app-groups-button-card [proceso]="proceso" [listButton]="listaMapas"></app-groups-button-card>
+<div class="marguenes-custom"></div>
+
+<!--app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'Otras opciones'"></app-title-pages-->
+
+<!--div style="display: flex; flex-flow: wrap;">
+    <div *ngFor="let index of listButton" [style]="'width: 100%; margin: 1% 0% 1% 0%;'">
+        <app-card-btn-home-v2 [proceso]="proceso" [listButton]="index"></app-card-btn-home-v2>
+    </div>
+</div-->

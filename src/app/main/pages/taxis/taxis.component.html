@@ -1,0 +1,50 @@
+<div class="marguenes-custom"></div>
+<div *ngFor="let index of listButton" [style]="'width: 100%;'">
+    <app-card-header-v1 [proceso]="proceso" [listButton]="index"></app-card-header-v1>
+</div>
+
+
+<app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'taxis.ingresaDatos' | transloco"></app-title-pages>
+<br>
+<div class="container-card">
+    <mat-card [class]="proceso? 'skeleton card-auth':'card-auth'" [style]="styleCustom">
+        <mat-card-content class="card-content-miM">
+            <form [class]="proceso? 'skeleton-none':'example-form'" [formGroup]="registerForm">
+                <div class="flex-custom">
+                    <div class="container-form-miM-taxi colum-height flex-custom-input">
+                        <mat-form-field class="container-select-miM" appearance="outline" subscriptSizing="dynamic"
+                            color="primary">
+                            <mat-select aria-label="Escoge si quieres consultar por placa del taxi o por tarjeta de control del taxista para validar que tenga su documentación al día" class="texto_formularios" matNativeControl [placeholder]="'taxis.selecciona' | transloco"
+                                formControlName="selectedTipoConsulta">
+                                <mat-option class="texto_formularios" value="placa">{{'taxis.placa' | transloco}}</mat-option>
+                                <mat-option class="texto_formularios" value="tarjeta">{{'taxis.tarjeta' | transloco}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="container-form-miM-taxi colum-height flex-custom-input">
+                        <mat-form-field class="container-imput-miM" appearance="outline" subscriptSizing="dynamic"
+                            color="primary">
+                            <input aria-label="Ingresa el dato correspondiente para poder consultar" class="input-name texto_formularios" matInput placeholder="{{'taxis.numeroPlaca' | transloco}}"
+                                formControlName="valor">
+                        </mat-form-field>
+                    </div>
+                    <button class="button-miM-large flex-custom-btn" (click)="isConsulta? '': consultar()"
+                        style="width: max-content; min-width: 100px; height: 30px;" [disabled]="!registerForm.valid" mat-flat-button
+                        color="primary">
+                        <mat-spinner *ngIf="isConsulta" color="accent" diameter="20"></mat-spinner>
+                        <p *ngIf="!isConsulta" class="texto_boton">{{'taxis.consultar' | transloco}}</p>
+                    </button>
+                </div>
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+</div>
+<app-title-pages *ngIf="mostrarResultados" [class]="proceso? 'skeleton-none':''"
+    [title]="'taxis.resultado'| transloco"></app-title-pages>
+<app-card-taxis *ngIf="mostrarResultados" [class]="proceso? 'skeleton-none':''"
+    [imgLink]="icono" [title]="title" [textBoton]="'taxis.verTarjeta'| transloco"
+    [listadoConductores]="listTaxistas" [resultadoBusqueda]="resultadoBusqueda" [placa]="placaOT"
+    [linkVermas]="'https://www.movilidadbogota.gov.co/web/taxis'" [tipoResiltado]="tipoResiltado"
+    [text]="('taxis.textoResultado.textUno'| transloco)+' '+placa+' '+('taxis.textoResultado.textDos' | transloco)"></app-card-taxis>
+<div class="marguenes-custom"></div>

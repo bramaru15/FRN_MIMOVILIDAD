@@ -1,0 +1,17 @@
+<div class="marguenes-custom"></div>
+<div *ngFor="let index of mapa.listButton" [style]="'width: 100%;'">
+    <app-card-header-v1 [proceso]="proceso" [listButton]="index"></app-card-header-v1>
+</div>
+
+
+<!--app-card-header [proceso]="proceso" [imgLink]="'assets/images/3d/citas.png'" [title]="mapa.nombre"
+    [text]="mapa.descripcion"></app-card-header-->
+<app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'visor.titulo' | transloco"></app-title-pages>
+<mat-card [class]="proceso? 'skeleton card-map':'card-map'">
+    <mat-card-content class="card-map-cnt">
+        <div [class]="proceso? 'skeleton-none mapview':'mapview'" #mapViewDiv></div>
+    </mat-card-content>
+</mat-card>
+<div class="marguenes-custom"></div>
+
+

@@ -1,0 +1,23 @@
+@import "../../../assets/sass/styles.scss";
+
+.table-link {
+    background-color: transparent;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-column-name {
+    border: none !important;
+    font-family: Raleway SemiBold;
+    color: $colorPrimario1;
+    padding: 0;
+    font-size: 13px;
+}
+
+.mat-column-accion {
+    border: none !important;
+    width: 5%;
+    padding: 0;
+}

@@ -1,0 +1,652 @@
+{
+    "notificaciones": {
+        "login":{
+            "erroUno":{
+                "text": "Error consultando la información de la persona, por favor vuelva a realizar el ingreso si desea realizar tramites"
+            },
+            "errorDos":{
+                "text":"Rol no permitido"
+            },
+            "errorTres":{
+                "title":"Usuario y contraseña inválido",
+                "text":"Verifica los datos ingresados e intenta nuevamente"
+
+            }
+            
+        },
+        "addNuevaVersion":{
+            "title":"Nueva versión de Mi Movilidad",
+            "text":"Hay una nueva versión disponible. ¿Desea actualizar la aplicación?"
+
+        },
+        "buttonCard":{
+            "title":"Crear recordatorio",
+            "text":"¿Quieres agregar esta cita a tu agenda? Si aceptas, abre el archivo que se descargará y asócialo con tu calendario personal",
+            "error":"No se pudo generar el archivo de calendario ics."
+        },
+        "sesion":{
+            "info":{
+                "title":"Cierre de sesión",
+                "text":"Tu sesión ha caducado por razones de seguridad. Por favor, vuelve a iniciar sesión para continuar utilizando nuestros servicios."
+            },
+            "error":{
+                "text":"Error inesperado del sistema, Tu sesión ha caducado por razones de seguridad. Por favor, vuelve a iniciar sesión más tarde."
+            }
+        },
+        "comparendos":{
+            "error":{
+                "text":"Error del Sistema"
+            }
+        },
+        "firmaElectronica":{
+            "error":"Error"
+        },
+        "inmovilzacion":{
+            "error":"Error del Sistema"
+        },
+        "recuperarContrasena":{
+            "custom":{
+                "title":"Proceso exitoso",
+                "text":"Correo enviado exitosamente."
+            },
+            "error":{
+                "text":"El usuario no esta registrado en el sistema"
+            }
+
+        },
+        "cierreSession": {
+            "v1": {
+                "title": "Log out",
+                "text": "Are you sure you want to log out?"
+            }
+        },
+        "offline": {
+            "v1": {
+                "title": "No internet connection",
+                "text": "You are currently in offline mode. You do not have an internet connection and some options may be limited. Please reset your connection to access all features."
+            },
+            "v2": {
+                "title": "Offline mode",
+                "text": "To access this option, an internet connection is required. Please check your connection and try again."
+            },
+            "v3": {
+                "title": "No internet connection",
+                "text": "You are currently in offline mode. Since you have lost the internet connection, the session will be closed since some options are limited. Please, reset your connection to continue browsing authenticated."
+            }
+        }
+    },  
+    "login":{
+        "titulo":"¡Welcome!",
+        "cuerpo-texto":"Register or access your account to manage appointments, subpoenas, immobilizations and mobility procedures.",
+        "ingresar":"Log in",
+        "olvido-contrasena":"I forgot my password",
+        "cargando":"Loading...",
+        "version":"Its use is recommended in:",
+        "crear-cuenta":"Create account",
+        "usuario":"User",
+        "tipoDocumento":"Document type",
+        "documento":"Document number",
+        "contrasena":"Password",
+        "regresar" :"Back"
+
+    },
+    "recupera-contrasena":{
+        "titulo":"Did you forget your password?        ",
+        "descripcion":"Enter the following information and we will send you an email so you can recover your password",
+        "regresar":"Back",
+        "enviar":"Send"
+        },
+    "registro":{
+            "titulo":"Account creation",
+            "subtitulo":"Enter the following information",
+            "formato-fecha":"The format must be yyyy-mm-dd and the latest date is today",
+            "genero":"--Gender--",
+            "grupo-sanguineo":"--Blood type--",
+            "rh":"--RH--",
+            "mensaje":"Remember that with this email your account will be created",
+            "acepto":"I accept the",
+            "terminos":"Personal Data Treatment Policy",
+            "regresar":"Back",
+            "tipoDocumento":"Type document",
+            "documento":"Document number",
+            "confirmaDocumento":"Confirm document number",
+            "fechaNacimiento":"Birthdate",
+            "fechaExpedicion":"Expedition date",
+            "primerNombre":"First name",
+            "segundoNombre":"Second name",
+            "primerApellido":"Surname",
+            "segundoApellido":"Second surname",
+            "sexo":"Gender",
+            "grupoSanguineo":"Blood type",
+            "rhs":"rh",
+            "celular":"Cell phone",
+            "confirmarCelular":"Confirm cell",
+            "correo":"Email",
+            "confirmarCorreo":"Confirm Email",
+            "contrasena":"Password",
+            "confirmarConstrasena":"Confirm Password",
+            "tratamientoDatos":"I accept the Personal Data Treatment Policy",
+            "cuenta":"Create account",
+            "razonSocial":"Razón social"
+
+    },
+    "inicio":{
+        "close":"close",
+        "menu":"menu",
+        "inicio":"Start",
+        "mapas":"Maps",
+        "apps":"Apps",
+        "ayuda":"Help",
+        "ingreso":"Login",
+        "asesoriasyconsultas":"Advice and consultations",
+        "mapasBogota":"Maps of Bogota",
+        "appsRecomendadas":"Recommended apps",
+        "centroAyuda":"Help Center",
+        "miPerfil":"My profile",
+        "actualizacionDatos":"Data update",
+        "firmaElectronica":"Electronic signature",
+        "notificacion":"Electronic notification",
+        "misCitas":"My dates",
+        "tramitesyservicios":"Procedures and services",
+        "tramites":"Formalities",
+        "comparendos":"subpoenas",
+        "inmovilizaciones":"Immobilizations",
+        "reportes":"Reports"
+    },
+    "home" :{
+        "restablecer":"Reset",
+        "rango-fechas": "Date range",
+        "aplicar":"Apply",
+        "menu": "Menu",
+        "demanda-tramites":"Top 5 demand for procedures",
+        "ver-mas":"See more",
+        "usuarios-activos":"Active users per month",
+        "titulo-card-header":"Here you will find updated information on the procedures and services offered. Enter each option for more details.",
+        "rango1":"30 days",
+        "rango2":"3 months",
+        "rango3":"6 months",
+        "filtrar":"Look for",
+        "filtrosAplicados":"Filters applied",
+        "numeroInstalaciones":"Number of installations",
+        "firmasElectronicas":"Active electronic signatures",
+        "notificaciones":"Authorized electronic notifications",
+        "usuariosActivos":"Active users",
+        "misCitas":"My dates",
+        "comparendos":"Subpoenas",
+        "inmovilizaciones":"Immobilizations",
+        "tramites":"Formalities",
+        "otrosServicios":"Other services",
+        "asesoriasyconsultas":"Advice and consultations",
+        "explora":"Explore other services available to you.",
+        "explorar":"Explore",
+        "mapasBogota":"Bogota Maps",
+        "descubre":"Discover the locations of the different services in Bogotá",
+        "verMas":"See more",
+        "firmaElectronica":"Electronic signature",
+        "activarFirmaElectronica":"Activate your electronic signature in just a few minutes.",
+        "activar":"Activate",
+        "notificacion":"Electronic notification",
+        "correo":"Authorize email notifications.",
+        "autorizar":"Authorize",
+        "cardText":"<span> From here you can start or continue with any process and/or service you have with the <strong>District Mobility Secretary.</strong> </spam>",
+        "saludo":"Hello"
+
+    },
+    "reporte":{
+        "filtrar":"Look for",
+        "reestablecer":"Reset",
+        "close":"close",
+        "navegador":"Browser",
+        "sistema-opertaivo":"Operating system",
+        "servicio":"Service",
+        "nombre-tramite":"Procedure name",
+        "rango-fechas": "Date range",
+        "aplicar":"Apply",
+        "rango1":"30 days",
+        "rango2":"3 months",
+        "rango3":"6 months",
+        "cantidad-servicio":"Amount per service",
+        "dispositivo":"Device",
+        "notificacion-electronica":"Electronic notification",
+        "descargar-archivo":"Download File",
+        "categorias":"Categorias",
+        "sistemaOperativo":"S O",
+        "servicios":"Services",
+        "cardText":"<span>Access up-to-date and detailed information. Use the button<strong>Filter</strong> to customize the search criteria and display the data according to your needs. </span>",
+        "cantidad":"Amount per service",
+        "notificacion":"Electronic notification",
+        "filtros":"Filters applied",
+        "instalaciones":"Facilities",
+        "usuarios":"Users",
+        "tramite":"Formalities",
+        "firma":"Electronic signature",
+        "titleCard": "Reportes",
+        "textCard": "<span>Accede a información actualizada y detallada. Utiliza el botón de <strong>Filtrar</strong> para personalizar los criterios de búsqueda y visualizar los datos según tus necesidades. </span>",
+        "total": {
+            "tramite": "Total mayor trámite utilizado en",
+            "firmaElectronica": "Total de Firmas electrónicas en",
+            "instalaciones": "Total de instalaciones en",
+            "usuario": "Total de usuarios habilidados en",
+            "notificacion": "Total de Notificaciones electrónicas en"
+        }
+    },
+    "firma-electronica":{
+        "documento":"Document number",
+        "tipo-documento":"Document type",
+        "nombre":"Name",
+        "correo":"Email",
+        "continuar":"Continue",
+        "contrasena": "Password",
+        "confirmar-contrasena": "Confirm Password",
+        "acuerdo":"Electronic signature agreement",
+        "privacidad":"1. Data privacy:",
+        "privacidad1":"a. XYZ Page is committed to protecting the privacy of personal data provided during the registration process.",
+        "privacidad2":"b. The data collected during registration will be used only for the purposes related to the services offered by XYZ.",
+        "privacidad3":"c. We will not share, sell or otherwise disclose users' personal data to third parties without their explicit consent, unless required by law.",
+        "veracidad":"2 .Veracity of the information:",
+        "veracidad1":"a. Users must provide true, complete and up-to-date information during registration on the XYZ page.",
+        "veracidad2":"b. Any false, misleading or incomplete information may result in the suspension or termination of the user's account.",
+        "responsabilidad":"3. Account Responsibility:",
+        "responsabilidad1":"a. Users are responsible for maintaining the confidentiality of their login information and for protecting their account from unauthorized access.",
+        "responsabilidad2":"b. Any activity carried out through the user's account will be considered the sole responsibility of the account holder.",
+        "uso":"4. Proper use:",
+        "uso1":"a. Users agree to use the XYZ page in an appropriate and respectful manner, without engaging in illegal, fraudulent, defamatory, obscene or harmful activities.",
+        "uso2":"b. The use of the page to send spam, junk mail or other types of unsolicited communications is prohibited.",
+        "suspension":"5. Suspension or termination of accounts:",
+        "suspension1":"a. XYZ reserves the right to suspend or terminate the account of any user who violates these registration policies or the site's terms of service.",
+        "suspension2":"b. In case of suspicion of fraudulent activity, XYZ may take the necessary measures, including cooperation with the competent authorities.",
+        "consentimiento":"6. User Consent:",
+        "consentimiento1":"a. By registering on the XYZ page, the user consents to the processing of their personal data in accordance with applicable data protection laws.",
+        "consentimiento2":"b. The user has the right to withdraw their consent at any time, which will result in the deletion of their personal data from our database.",
+        "recopilacion":"7. Data collection:",
+        "recopilacion1":"a. XYZ Page will collect personal information such as name, email address and date of birth during the registration process. This data is necessary to provide personalized services and improve the user experience.",
+        "recopilacion2":"b. In addition to the data provided during registration, we may collect additional information automatically, such as IP address, browser type and device used, for statistical and security purposes.",
+        "cookies":"8. Use of cookies:",
+        "cookies1":"a. The XYZ page uses cookies to improve the user experience and provide personalized functionalities. By using the page, the user accepts the use of cookies in accordance with our cookie policy.",
+        "seguridad":"9. Data security:",
+        "seguridad1":"a. The XYZ page implements appropriate security measures to protect users' personal data against unauthorized access, disclosure or alteration.",
+        "seguridad2":"b. However, it is important to note that no data transmission over the Internet is completely secure. Although we strive to protect user information, we cannot guarantee the absolute security of data transmitted through our site.",
+        "comunicaciones":"10. Marketing Communications:",
+        "comunicaciones1":"a. With the user's consent, XYZ Page may send marketing communications, such as newsletters or promotions, to the email address provided during registration.",
+        "comunicaciones2":"b. The user has the right to opt out of receiving such communications at any time, using the unsubscribe link included in each email or modifying their preferences in their account.",
+        "retencion":"11. Data retention:",
+        "retencion1":"a. XYZ Page will retain users' personal data for the time necessary to fulfill the purposes for which it was collected, unless otherwise requested or required by law.",
+        "retencion2":"b. At the end of the relationship with the page, personal data will be securely deleted, unless it must be kept to comply with legal obligations or resolve disputes.",
+        "transferencia":"12. Data transfer:",
+        "transferencia1":"a. In the event of a transfer of data to third parties, XYZ Page will ensure that applicable legal data protection requirements are met and that appropriate confidentiality agreements are established.",
+        "acceso":"13. Access and rectification of data:",
+        "acceso1":"a. Users have the right to access, correct or update their personal data stored on our page. To exercise this right, you can contact our support team or use the options available in your account.",
+        "menores":"14. Minors:",
+        "menores1":"a. The XYZ Page is designed for use by persons 18 years of age or older. We do not knowingly collect personal information from minors. If a minor is identified as having provided information without parental or guardian consent, we will take steps to delete such information.",
+        "modificaciones":"15. Modifications in registration policies:",
+        "modificaciones1":"a. XYZ reserves the right to modify these registration policies at any time. Any change will be notified to users through the page or by email. Users are encouraged to regularly review these policies to be informed of updates.",
+        "acepto":"I agree",
+        "no-acepto":"I do not accept",
+        "aceptar":"Accept"
+    },
+    "mi-perfil":{
+        "cerrar-sesion":"Sign off",
+        "documento":"Document number",
+        "tipo-documento":"Document type",
+        "primer-nombre":"First name",
+        "segundo-nombre":"Second name",
+        "primer-apellido":"Surname",
+        "segundo-apellido":"Second surname",
+        "razon-social":"Business name",
+        "sexo":"Gender",
+        "sexo1":"--Gender--",
+        "celular":"Cell phone",
+        "correo":"Email",
+        "fecha-nacimiento":"Birthdate",
+        "formato":"The format must be yyyy-mm-dd and the latest date is today",
+        "actualizar":"Update"
+
+    },
+    "notificacion-electro":{
+        "correo":"Email",
+        "continuar":"Continue"
+
+    },
+    "taxis":{
+        "placa":"Plate",
+        "tarjeta":"Control card number",
+        "consultar":"Consult",
+        "vehiculoPlaca":"Vehicle license plate ",
+        "tarjetaControl":"Control card ",
+        "titulo":"Taxi Consultation",
+        "categoria":"Help Center",
+        "asistente":"Virtual assistant",
+        "subText":"<span>Check if a taxi is legally registered in Bogotá and has the necessary documents or permits to provide public transport services.</span>",
+        "selecciona":"Select the type of query",
+        "ingresaDatos":"Enter the taxi data",
+        "numeroPlaca":"Control board or card number"
+
+    },
+    "anonimo":{
+        "textCard":"<span>Descarga estas aplicaciones móviles esenciales para mejorar tu movilidad en la ciudad.</spam>",
+        "title":"Mi Movilidad at a click",
+        "textCard2":"<spam>Explore mobility services, procedures and consultations in Bogotá quickly and easily.</spam>",
+        "otros-servicios":"Other services",
+        "general":"Services",
+        "apptext":"Discover the best mobile applications to optimize your mobility in the city.",
+        "app":"Recommended apps",
+        "appBtn":"See more",
+        "masServicios":"More services",
+        "masServiciosText":"<a class='a-custon-anonimo' href='/#/signin'>Log in</a><span> or register to access more services and update your information.</span>",
+        "registrate":"Sign up",
+        "inmovilizaciones":"Immobilizations",
+        "comparendos":"Subpoenas",
+        "exceptuados":"Excepted",
+        "taxis":"Cab",
+        "picoyplaca":"Beak and solidarity plate",
+        "excepcionDiscapacitados":"Disabled exception"
+
+    },
+    "navbar":{
+        "iniciar-sesion":"Log in",
+        "cerrar-sesion":"Sign off",
+        "actualizacion":"Data update"
+    },
+    "appDescarga":{
+        "textCard":"<span>Download these essential mobile applications to improve your mobility in the city.</spam>",
+        "title":"Recommended Apps",
+        "planificaViaje":"Plan your trip with TransMiApp",
+        "appRecomendadas":"Recommended Apps",
+        "subtitulo": "Aplicaciones móviles en",
+        "transmiApp":"TransMiApp",
+        "planificaViajeText":"<spam>Find routes, schedules and whereabouts of <strong>TransMilenio</strong> and of all the <strong>Integrated Public Transport System</strong> in Bogotá Travel more easily and conveniently.</spam>",
+        "descargar":"Download now",
+        "bici":"TemBici: Rent a bike in minutes",
+        "temBici":"TemBici",
+        "temBiciText":"<spam>Transform the way you move around the city, find a bike near you and enjoy a comfortable and safe trip.</spam>"
+    },
+    "actoresViales":{
+        "titulo":"Procedures for Road Actors",
+        "categoria1":"Help Center",
+        "asistente":"Virtual assistant",
+        "subText":"<span>Discover the virtual procedures for road stakeholders in the<strong>Single Window for Services</strong>. </span>",
+        "expedicion":"Issuance of driver's license",
+        "filterExpedicion1":"Driving license issuance",
+        "filterExpedicion2":"Issue driving license",
+        "derechosyrequisitos":"See rights and requirements",
+        "categoriaTramite":"Road stakeholders",
+        "tipoTramite1":"License issuance",
+        "renovacion":"Driver's license renewal",
+        "filterRenovacion1":"Renew driving license",
+        "recategorizacion":"Driver's license recategorization",
+        "filterRecategorizacion1":"Recategorization of driver's license upwards",
+        "filterRecategorizacion2":"Driver's license downgrading",
+        "tipoTramite2":"License recategorization",
+        "duplicado":"Duplicate driving license",
+        "tipoTramite":"Duplicate license",
+        "renovacionLicencia":"Renovación licencia"
+    },
+    "asesorias":{
+        "titulo":"Advice and consultations",
+        "cardText":"<span> From here you will be able to know and access other services of the <span class='+'textsub'+'> District Department of Mobility. </span></span>",
+        "servicioTaxi":"Taxi service",
+        "subTextservicioTaxi":"Get to know and enjoy the legal taxi service in Bogotá.",
+        "asesoriasyconsultas":"Advice and consultations",
+        "servicioTaxis":"Taxi service",
+        "consultar":"Consult",
+        "calificar":"Rate your experience",
+        "verMas":"See more",
+        "excepcionDiscapacidad":"Disability Exception",
+        "btnExcepcionDiscapacidad": "Disability Exception",
+        "picoyplaca":"Pay pico and solidarity plaque",
+        "orientacionVictimas":"Guidance for Victims of Road Accidents",
+        "asesoriasyconsultasText":"If you are the victim of a road accident in the Capital District and/or have an affected family member, access free legal, social and psychological counseling services offered by the <strong>District Mobility Secretariat.</strong>",
+        "accederOrvi":"Access ORVI",
+        "picoyplacaText":"Verify the authorization of a vehicle to circulate without restrictions by peak and license plate.",
+        "servicios":"Services"
+    },
+    "centroAyuda":{
+        "asesoraVirtual":"Virtual advisor",
+        "centrodeAyuda":"Help Center",
+        "asistenteVirtual":"Virtual assistant",
+        "subText1":"<spam>Contact Lucía, the virtual advisor for citizen services of the District Mobility Secretariat, who is available 24 hours a day, 7 days a week. </spam>",
+        "hablaLucia":"Talk to Lucia",
+        "orientacionVictimas":"Guidance for Victims of Road Accidents",
+        "subText2":"If you are the victim of a road accident in the Capital District and/or have an affected family member, access free legal, social and psychological counseling services offered by the <strong>District Mobility Secretariat.</strong>",
+        "orvi":"ORVI",
+        "chatea":"Chat with us",
+        "lineaAtencion":"Citizen helpline",
+        "titulo":"Need help?",
+        "text":"If you have problems with our platform or with the management you are carrying out, send us an email to ",
+        "horario":"Monday to Friday: 7:00 a.m. to 7:00 p.m. - Saturdays: 8:00 a.m. to 2:00 p.m.",
+        "telText": "(601) 364 9400 option 2"
+
+    },
+    "comparendos":{
+        "titulo":"Subpoenas",
+        "multa":"Fine(s)",
+        "noTieneComparendos":"You do not have valid comparisons.",
+        "tieneComparendos":"You already have a valid signature until",
+        "pagos":"Payments",
+        "ultimoComparendo":"Last Comparendo Tax",
+        "cardText":"<span>Consult the comparisons in force with the <spam class='+'textsub'+'>District Mobility Secretariat </spam>and make your payments.</span>",
+        "comparendosInfraccion":"Comparing for Violation",
+        "comparendos":"Subpoenas",
+        "comparendosVigentes":"Comparendums in force",
+        "pagarComparendo":"Pay by comparing",
+        "fechaImposicion":"Imposition date",
+        "estado":"State"
+
+    },
+    "inmovilizaciones":{
+        "titulo":"Immobilized vehicles",
+        "cardText":"<span>Check the vehicles you own that are in the patios of the </span> <strong> District Department of Mobility.</strong>",
+        "inmovilizados":"You already have a valid signature until",
+        "noInmovilizados":"You have no immobilized vehicles.",
+        "tramitesRelacionados":"Related procedures",
+        "consultaPlaca":"Consult by plate",
+        "detalles":"Know the details of this procedure",
+        "salidaPatios":"Request exit from patios",
+        "vehiculoPlaca":"Vehicle plate plate",
+        "salida":"Courtyard exit",
+        "fechaIngreso":"Date of admission",
+        "patio":"Yard",
+        "comparendo":"Subpoena",
+        "categoria":"Immobilizations"
+
+
+    },
+    "mapas":{
+        "titulo":"Bogota Maps",
+        "text":"<span>Find the location of different services in the city. Click on the option you need.</span>",
+        "planificaViaje":"Plan your trip with TransMiApp",
+        "appsRecomendadas":"Recommended Apps",
+        "appsMoviles":"Aplicaciones móviles",
+        "subText1":"<spam>Find routes. schedules and whereabouts <strong>TransMilenio</strong> and of all the <strong>Integrated Public Transport System</strong> in Bogotá Travel more easily and conveniently.</spam>",
+        "descargar":"Download now",
+        "temBici":"TemBici: Rent a bike in minutes",
+        "subText2":"<spam>Transform the way you move around the city, find a bike near you and enjoy a comfortable and safe trip.</spam>",
+        "cicloRutas":"Bike paths",
+        "mapa":"Maps",
+        "cicloVias":"Bike lanes",
+        "cicloParqueaderos":"Cycle parking",
+        "parqueoPago":"Paid parking areas",
+        "incidentes":"Incidents on the road",
+        "obras":"Road works",
+        "mapasDisponibles":"Available maps"
+
+    },
+    "misCitas":{
+        "titulo":"My appointment",
+        "cardText":"<span> Here you can schedule, consult, reschedule or cancel your appointments at the different service points of the<spam class='+'textsub'+'> District Department of Mobility.</spam>'",
+        "proximaCita":"Next appointment",
+        "noTieneCitas":"You have no scheduled appointments.",
+        "tieneCitas":"You already have a valid signature until",
+        "otrasOpciones":"Other dating options",
+        "modificarCita":"Modificar cita",
+        "fecha":"Date",
+        "text":"February 10, 2023",
+        "nueva":"New appointment",
+        "historico":"History of Appointments",
+        "comoAgendar":"How to schedule an appointment?",
+        "citas":"Appointments",
+        "reagendar" :"Reschedule appointment",
+        "ubicacion":"Location",
+        "puntoAtencion":"Point of attention"
+
+    },
+    "sidebar":{
+        "iniciarSesion":"Login",
+        "cerrarSesion":"Log Out"
+    },
+    "consultaVehiculos":{
+        "resultados":"Results",
+        "consultar":"Consult",
+        "digitaPlaca":"Type the plate to consult",
+        "ingresaPlaca":"Enter the plate",
+        "vehiculosInmobilizados":"Immobilized vehicless",
+        "subText":"Exit if your vehicle is in a yard authorized by the <strong> District Mobility Secretariat.</strong>",
+        "asesoriasyconsultas":"Advice and consultations",
+        "servicioTaxi":"Taxi Services",
+        "inmovilizacion":"Immobilization",
+        "mensajeBusqueda1":"The vehicle consulted has been immobilized since the day",
+        "mensajeBusqueda2":"for the violation(s) ",
+        "mensajeBusqueda3":"in the backyard",
+        "titleCardResul": "Vehicle license plate",
+        "vertarjeta": "Ver tarjeta En"
+    },
+    "cardTaxis": {
+        "verMas": "Ver más en",
+        "placa": {
+            "mensajeUno": "La placa en <strong>",
+            "mensajeDos": "</strong> no cuenta con Tarjeta de Control activa a la fecha en <strong>",
+            "mensajeTres": " </strong> para la ciudad de Bogotá. en"
+        },
+        "tarjetaOperation": {
+            "mensajeUno": " La tarjeta de control en <strong>",
+            "mensajeDos": "</strong> no se encuentra activa a la fecha en <strong>",
+            "mensajeTres": " </strong> para la ciudad de Bogotá. en"
+        },
+        "exceptuado": "El vehículo consultado No se encuentra inscrito en el registro de vehículos exentos de la restricción de circulación vial en Bogotá D.C en.",
+        "inmovilizacion": {
+            "mensajeUno": "El vehículo de placa en ",
+            "mensajeDos": " no se encuentra inmovilizado en el patio Álamos en."
+        }
+    },
+    "exceptuados":{
+        "digitaPlaca":"Type the plate to consult",
+        "consultar":"Consult",
+        "verExcepcion":"See exception",
+        "vehiculosExceptuados":"Excepted Vehicles",
+        "centroAyuda":"Help Center",
+        "asistente":"Virtual assistant",
+        "ingresaPlaca":"Enter the plate",
+        "subText":"<span> Check if your vehicle is in the registration of exceptions to beak and license plate. </span>",
+        "cardText":"The vehicle consulted is in the register of vehicles exempted from the road traffic restriction in Bogotá D.C., and has the exception grounds listed below."
+    },
+    "firmaElectronica":{
+        "mensajeFirma":"You already have a valid signature until",
+        "error1":"Error when trying to check the electronic signature, please try again.",
+        "procesoExitoso":"Successful process",
+        "text":"The electronic signature was created correctly and the time expires",
+        "error2":"Error when trying to generate the electronic signature, please try again",
+        "titulo":"Electronic signature",
+        "cardText":"<span>Identify yourself securely in official documents with the electronic signature.</span>",
+        "tipoDocumento":"Document type",
+        "documento":"Document number",
+        "nombre":"Name",
+        "correo":"Email",
+        "firmaVigente":"You already have a valid signature until",
+        "cardText2":"<span>Enter a password to assign to your signature.</span>",
+        "generarFirma":"Generate electronic signature",
+        "contrasena":"Password",
+        "confirmarContrasena":"Confirm Password",
+        "confirmaDatos":"Confirm your data",
+        "otrasOpciones":"Other options",
+        "cardText3":"<span>These data will be reflected in your signature. If they are not correct, modify them in the Data update section.</span>",
+        "activarFirmaElectronica":"How to activate your electronic signature?",
+        "actualizacionDatos":"Data update"
+    },
+    "miPerfil":{
+        "procesoExitoso":"Successful process",
+        "actualizar":"Thank you for updating your details.",
+        "datos":"User Data",
+        "cardText":"Here you can see your personal data and contact information, do not forget to keep them updated."
+
+
+    },
+    "notificacionElectro":{
+        "actualizacion":"Data update",
+        "comoAutorizar":"How to authorize electronic notification?",
+        "notificacion":"Electronic notification",
+        "opciones":"Other options",
+        "cardText":"<span>Speed ​​up and simplify communication with the electronic notification of administrative acts.</span>",
+        "cardText2":"<span>Verify that the registered email is correct, if not, modify it in the Data update section.</span>",
+        "titulo":"Electronic notification",
+        "autorizacion":"Authorization",
+        "otrasOpciones":"Other options"
+    },
+    "serviciosPublicos":{
+        "tramitesServicios":"Public Service Procedures",
+        "centroAyuda":"Help Center",
+        "asistenteVirtual":"Virtual assistantl",
+        "subText1":"<span> Find the virtual procedures available for the public service in the <strong>Single Window for Services</strong>.</span>",
+        "expedicion":"Issuance of operation card",
+        "filterExpedicion1":"Issuance of operation card",
+        "filterExpedicion2":"See rights and requirements",
+        "filterExpedicion3":"Issue operation card",
+        "derechosyrequisitos":"See rights and requirements",
+        "servicios":"Public services",
+        "expedicionTO":"TO expedition",
+        "renovacion":"Operation card renewal",
+        "filterRenovacion1":"Operation card renewal",
+        "filterRenovacion2":"See rights and requirements",
+        "filterRenovacion3":"Renew operation card",
+        "renovacionTO":"OT renewal",
+        "renovar":"Renew operation card",
+        "cancelacion":"Operation card cancellation",
+        "filterCancelacion1":"Operation card cancellation",
+        "filterCancelacion2":"See rights and requirements",
+        "filterCancelacion3":"Cancel operation card",
+        "cancelacionTO":"TO cancellation",
+        "duplicado":"Duplicate operation card",
+        "filterDuplicado1":"Duplicate operation card",
+        "filterDuplicado2":"See rights and requirements",
+        "filterDuplicado3":"Duplicate operation card",
+        "duplicadoTO":"TO duplicate"
+
+    },
+    "tramites":{
+        "nuevoTramite":"New procedure",
+        "noFirma":"You do not have current procedures.",
+        "firma":"You already have a valid signature until",
+        "titulo":"Formalities",
+        "cardTramite":"<span> Know the requirements and start a new face-to-face or virtual procedure of the <spam class='+'textsub'+'>Single Window for Services</spam>, You can also consult and manage your current requests. </span>",
+        "tramitede":"Procedure of",
+        "consultar":"Check procedure",
+        "tramitesVigentes":"Current procedures",
+        "fecha":"Date",
+        "estado":"State",
+        "vehiculos":"Vehicles",
+        "actoresViales":"Road stakeholders",
+        "servicioPublico":"Public service",
+        "ultimoTramite":"Último trámite solicitado",
+        "cardText":{
+            "mensajeUno":"<span> Conoce los requisitos e inicia un nuevo trámite presencial o virtual de la <spam class='+'textsub'+'>Ventanilla Única de Servicios</spam>, también puedes consultar y gestionar tus solicitudes vigentes. </span>",
+            "mensajeDos":"<span>Para realizar una nueva solicitud, selecciona la categoría del trámite que deseas.</span>"
+        }
+
+    },
+    "vehiculo":{
+        "traspaso":"Transfer of ownership",
+        "derechosyrequisitos":"See rights and requirements",
+        "traspasarVehiculo":"Transfer vehicle",
+        "vehiculo":"Vehicles",
+        "levantarPrenda":"Lift garment",
+        "inscribirPrenda":"Register pledge",
+        "prenda":"Garment",
+        "insclevantPrenda":"Registration or lifting of pledge",
+        "matricula":"Tuition",
+        "matricular":"Register vehicle"
+    },
+    "visor":{
+        "titulo":"Geographic viewer",
+        "irUbicacion":"Go to my location"
+
+    }
+}

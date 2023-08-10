@@ -1,0 +1,15 @@
+@import "../../../assets/sass/styles.scss";
+
+.card-header{
+    border-radius: $radiusCardCuston !important;
+    box-shadow: none !important;
+    color: $colorPrimario1;
+    min-height: 100px;   
+}
+
+.card-container{
+    padding: 0;
+    height: 100px !important;
+    display: flex;
+    align-items: center;
+}

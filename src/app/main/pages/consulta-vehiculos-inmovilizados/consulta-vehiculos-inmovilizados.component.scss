@@ -1,0 +1,121 @@
+@import "../../../../assets/sass/styles.scss";
+
+.card-button-link {
+    border-radius: $radiusCardCuston !important;
+    box-shadow: none !important;
+    color: $colorPrimario1; 
+    width: 100%;
+    height: 100%;
+    min-height: 60px;
+}
+
+.card-content-link-miMo {
+    @include respond(phone) {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+}
+
+h1 {
+    //font-size: 26px;
+    font-family: Raleway Bold;
+    margin-bottom: 0;
+    @include respond(phone) { 
+       //font-size: 24px;
+    }
+    @include respond(phone-s) {
+        //font-size: 20px;
+    }
+}
+
+p {
+    font-family: Raleway SemiBold;
+}
+
+.card-custom-btnlink {
+    display: flex; 
+    width: 100%;
+
+    @include respond(phone) {
+        flex-direction: column;
+    }
+
+    &__icon {
+        padding-left: 15px;
+        width: fit-content;
+        align-self: center; 
+        @include respond(phone) {
+            width: 100%;
+            padding-left: 0;
+            width: fit-content; 
+        }
+    }
+
+    &__title {
+        align-self: center;
+        //width: 300%;
+        padding-left: 20px;
+        padding-right: 20px;
+        
+        @include respond(phone) {
+            width: 100% !important;
+            text-align: left;
+            padding-left: 0px;
+            padding-right: 0px;
+            h2 {
+                padding-left: 15px;
+            }  
+        }
+    }
+
+    &__btn {
+        width: -webkit-fill-available;
+        width: -moz-fill-available;
+        justify-content: flex-end;
+        display: flex; 
+        flex-flow: wrap;
+        align-self: center;
+        padding-right: 20px;
+        @include respond(phone) {
+            width: 100%;
+            justify-content: left;
+            align-self: normal;
+        }
+    }
+}
+
+.cambio-none{
+    display: block;
+    @include respond(phone) {
+        display: none;
+    } 
+    &-vi {
+        display: none;
+        @include respond(phone) {
+            display: block;
+        } 
+    }
+}
+
+.flex-custom {
+    display: flex;
+    @include respond(phone) {
+        flex-direction: column;
+    }
+
+    &-input{
+        width: 50%;
+        @include respond(phone) {
+            width: 100%;
+        }
+    }
+
+    &-btn{
+        @include respond(phone) {
+            margin-top: 10px;
+            align-self: center;
+            margin-left: 0 !important;
+        }
+    }
+}

@@ -1,0 +1,99 @@
+@import "../../../assets/sass/styles.scss";
+
+.text-color{
+    color: $colorPrimario1;
+}
+.example-card {
+    height: 100%;
+    width: 100%;
+    box-shadow: none;
+    p{
+        margin: 0;
+    }
+}
+
+.example-card-content {
+    margin: 17px;
+    overflow: scroll;
+    @include respond(phone) {
+        margin: 0;
+    }
+}
+
+.card-custom-header {
+    display: flex;
+    width: 100%;
+
+    @include respond(phone) {
+        flex-direction: column;
+    }
+
+    &_img {
+        width: fit-content;
+        align-self: center;
+        text-align: center;
+        @include respond(phone) {
+            width: 100%;
+            align-self: normal;
+        }
+    }
+
+    &_text {
+        align-self: center;
+        width: fit-content;
+        padding-left: 20px;
+
+        @include respond(phone) {
+            width: 100%;
+            text-align: left;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+
+    
+}
+
+.card-header{
+    border-radius: $radiusCardCuston !important;
+    box-shadow: none !important;
+    color: $colorPrimario1;
+    min-height: 100px;   
+}
+
+
+.tarjeta-detalle-conductor {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+}
+.row {
+    flex: 1;
+    display: flex;
+    
+}
+.column {
+    flex: 1;
+    align-self: flex-start;
+}
+
+
+.foto-conductor{
+    border-radius: 50%;
+    width: 100%;
+    @include respond(phone) {
+        width: 50%;
+    }
+    align-self: center;
+}
+
+.placa-taxi-detalle{
+    border: 1px solid;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 4px;
+    height: 7%;
+    
+}
+

@@ -1,0 +1,19 @@
+<mat-card [class]="proceso? 'skeleton card-header':'card-header'">
+    <mat-card-content style="padding: 0">
+        <div class="card-custom-header">
+            <div class="card-custom-header__text">
+                <h1 [class]="proceso? 'skeleton-none':'titulo_destacado '+styleTitle" style="margin: 11px 0 !important;">{{title}}</h1>
+                <p [class]="proceso? 'skeleton-none':''">
+                    <span class="cuerpo_texto" [innerHTML]="safehtmlStr"></span>
+                    <!--span [class]="proceso? 'skeleton-none':'cuerpo_texto'">{{dataCardHeader.text}}</span-->
+                </p>
+            </div>
+            <div class="card-custom-header__image">
+                <!--h1 [class]="proceso? 'skeleton-none':''" id="titleMovil" style="font-family: Raleway Extrabold; z-index: 5;">{{title}}</h1-->
+                <div class="card-custom-header__image__img">
+                    <img [class]="proceso? 'skeleton-none':''" [style]="styleImg != undefined? styleImg : ''" [src]="imgLink" [alt]="title" />
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

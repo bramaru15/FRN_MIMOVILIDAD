@@ -1,0 +1,18 @@
+<div class="marguenes-custom"></div>
+<app-card-header [proceso]="proceso" [imgLink]="'assets/images/3d/Elemento_3D_comparendos.png'"
+    [title]="'comparendos.titulo' | transloco" [text]="'comparendos.cardText' | transloco"></app-card-header>
+
+<app-title-pages [class]="proceso? 'skeleton-none':''"
+    [title]="'comparendos.ultimoComparendo' | transloco"></app-title-pages>
+
+<app-card-tramites [dataCardTramite]="dataCardTramite" *ngIf="listaComparendos.length > 0"></app-card-tramites>
+<div [class]="proceso? 'skeleton-none':''" *ngIf="listaComparendos.length <= 0">
+    <p class="text-noCard">
+        <app-sin-informacion text="'comparendos.tieneComparendos' | transloco"
+            [text]="'comparendos.noTieneComparendos' | transloco"></app-sin-informacion>
+    </p>
+</div>
+
+<app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'comparendos.pagos' | transloco"></app-title-pages>
+<app-groups-button-card [listButton]="listButton" [proceso]="proceso"></app-groups-button-card>
+<div class="marguenes-custom"></div>

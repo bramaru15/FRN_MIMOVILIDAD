@@ -1,0 +1,9 @@
+<div class="marguenes-custom"></div>
+<div style="display: flex; flex-flow: wrap;">
+    <div *ngFor="let index of listButton" [style]="'width: 100%;'">
+        <app-card-header-v1 [proceso]="proceso" [listButton]="index"></app-card-header-v1>
+    </div>
+</div>
+
+<app-grups-button-link-subtramite [listSubTramites]="listSubTramites"></app-grups-button-link-subtramite>
+<div class="marguenes-custom"></div>

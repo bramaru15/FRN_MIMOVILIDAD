@@ -1,0 +1,122 @@
+<div class="marguenes-custom"></div>
+<div class="home">
+
+    <!--div [class]="proceso? 'card-home skeleton': 'card-home'">
+        <div class="card-home__text">
+            <h1 [class]="proceso? 'skeleton-none':''" style="text-transform: capitalize;">¡Bienvenido {{minString(usuario)}}!</h1>
+            <p [class]="proceso? 'skeleton-none':''">Desde aquí podrás iniciar o continuar con cualquier trámite y/o servicio que tengas con la <strong>Secretaría Distrital de Movilidad.</strong></p>
+        </div>
+        <div class="card-home__image">
+            <img [class]="proceso? 'skeleton-none':''" src="../../../../assets/images/3d/Elemento_3D_home.png" />
+        </div>
+    </div-->
+
+    <app-card-header [proceso]="proceso" [imgLink]="'assets/images/3d/Elemento_3D_home.png'"
+        [title]="'¡'+('home.saludo'| transloco)+' '+minString(usuario)+'!'"
+        [text]="'home.cardText' |transloco"></app-card-header>
+
+    <app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'home.servicio' | transloco"></app-title-pages>
+
+
+    <div style="display: flex; flex-flow: wrap; width: 100%;">
+        <div class="flex-colum-custom">
+            <div class="custom-button" tabindex="0" (click)="proceso? '' :routerClick('cita')"
+                (keydown.enter)="proceso? '' :routerClick('cita')">
+                <mat-card [class]="proceso? 'skeleton': ''" class="example-card">
+                    <mat-card-content class="example-card-content" style="text-align: center; text-align: -moz-center;">
+                        <div class="icon-num-custom">
+                            <div class="icon-card-mMin">
+                                <app-icon-menu [class]="proceso? 'skeleton-none':'icon-card-home-v1'"
+                                    [icon]="'assets/icons/Citas_icono_home.svg'"></app-icon-menu>
+                            </div>
+                            <div class="mun-card-mMin">
+                                <h1 [class]="proceso? 'skeleton-none':'numero_Card'">{{cantidadCitas >= 100? '99+' :
+                                    cantidadCitas}}</h1>
+                            </div>
+                        </div>
+                        <h2 [class]="proceso? 'skeleton-none card-label':'card-label subtitulo'">
+                            {{'inicio.misCitas' | transloco}}
+                        </h2>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+        <div class="flex-colum-custom-finv2">
+            <div class="custom-button" tabindex="0" (click)="proceso? '' :routerClick('comparendo')"
+                (keydown.enter)="proceso? '' :routerClick('comparendo')">
+                <mat-card [class]="proceso? 'skeleton': ''" class="example-card">
+                    <mat-card-content class="example-card-content" style="text-align: center; text-align: -moz-center;">
+                        <div class="icon-num-custom">
+                            <div class="icon-card-mMin">
+                                <app-icon-menu [class]="proceso? 'skeleton-none':'icon-card-home-v1'"
+                                    [icon]="'assets/icons/Comparendos_icono _home.svg'"></app-icon-menu>
+                            </div>
+                            <div class="mun-card-mMin">
+                                <h1 [class]="proceso? 'skeleton-none':'numero_Card'">{{cantidadComperandos >= 100? '99+'
+                                    : cantidadComperandos}}</h1>
+                            </div>
+                        </div>
+                        <h2 [class]="proceso? 'skeleton-none':'subtitulo'">
+                            {{'home.comparendos' | transloco}}
+                        </h2>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+        <div class="flex-colum-custom">
+            <div class="custom-button" tabindex="0" (click)="proceso? '' :routerClick('inmovilizacion')"
+                (keydown.enter)="proceso? '' :routerClick('inmovilizacion')">
+                <mat-card [class]="proceso? 'skeleton': ''" class="example-card">
+                    <mat-card-content class="example-card-content" style="text-align: center; text-align: -moz-center;">
+                        <div class="icon-num-custom">
+                            <div class="icon-card-mMin">
+                                <app-icon-menu [class]="proceso? 'skeleton-none':'icon-card-home-v1'"
+                                    [icon]="'assets/icons/Inmovilizaciones_icono.svg'"></app-icon-menu>
+                            </div>
+                            <div class="mun-card-mMin">
+                                <h1 [class]="proceso? 'skeleton-none':'numero_Card'"> {{cantidadInmovilizaciones >= 100?
+                                    '99+' : cantidadInmovilizaciones}}</h1>
+                            </div>
+                        </div>
+                        <h2 [class]="proceso? 'skeleton-none':'subtitulo'">
+                            {{'home.inmovilizaciones' | transloco}}
+                        </h2>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+        <div class="flex-colum-custom-fin">
+            <div class="custom-button" tabindex="0" (click)="proceso? '' :routerClick('tramite')"
+                (keydown.enter)="proceso? '' :routerClick('tramite')">
+                <mat-card [class]="proceso? 'skeleton': ''" class="example-card">
+                    <mat-card-content class="example-card-content" style="text-align: center; text-align: -moz-center;">
+                        <div class="icon-num-custom">
+                            <div class="icon-card-mMin">
+                                <app-icon-menu [class]="proceso? 'skeleton-none':'icon-card-home-v1'"
+                                    [icon]="'assets/icons/Trámites_icono.svg'"></app-icon-menu>
+                            </div>
+                            <div class="mun-card-mMin">
+                                <h1 [class]="proceso? 'skeleton-none':'numero_Card'">{{cantidadTramites >= 100? '99+' :
+                                    cantidadTramites}}</h1>
+                            </div>
+                        </div>
+                        <h2 [class]="proceso? 'skeleton-none':'subtitulo'">
+                            {{'home.tramites' | transloco}}
+                        </h2>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <app-title-pages [class]="proceso? 'skeleton-none':''"
+        [title]="'home.otrosServicios' | transloco"></app-title-pages>
+
+    <div style="display: flex; flex-flow: wrap;">
+        <div *ngFor="let index of listButton; let i = index"
+            [style]="window.innerWidth >= 730? (i+1) % 2 === 0 ? 'width: 49%; margin: 1% 0% 1% 0%;':'width: 49%; margin: 1% 2% 1% 0%;' : 'width: 100%; margin: 1% 0% 1% 0%;'  ">
+            <app-card-header-v4 [proceso]="proceso" [listButton]="index"></app-card-header-v4>
+        </div>
+    </div>
+</div>
+<div class="marguenes-custom"></div>

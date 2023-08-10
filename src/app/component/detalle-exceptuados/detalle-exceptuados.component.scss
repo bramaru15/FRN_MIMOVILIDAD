@@ -1,0 +1,50 @@
+@import "../../../assets/sass/styles.scss";
+
+.text-color{
+    color: $colorPrimario1;
+}
+.example-card {
+    height: 100%;
+    width: 100%;
+    box-shadow: none;
+    p{
+        margin: 0;
+    }
+}
+
+.example-card-content {
+    margin: 17px;
+    overflow: scroll;
+    @include respond(phone) {
+        margin: 0;
+    }
+}
+
+.inf-vehiculo {
+    display: flex;
+    width: 100%;
+
+    @include respond(phone) {
+        flex-direction: column;
+    }
+
+    &_text1 {
+        width: 50%;
+        @include respond(phone) {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+    }
+
+    &_text {
+        width: 50%;
+        @include respond(phone) {
+            width: 100%;
+            padding-top: 8px;
+            border-top: inset 1px;
+        }
+    }
+}
+
+
+

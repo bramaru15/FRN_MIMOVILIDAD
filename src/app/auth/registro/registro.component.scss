@@ -1,0 +1,27 @@
+@import "../../../assets/sass/styles.scss";
+
+.example-form {
+    width: 100%;
+}
+
+.none-mMo {
+    display: none;
+}
+
+.grid-registro-mMo {
+    display: flex;
+    @include respond(phone) {
+        flex-direction: column;
+    }
+    &__colum {
+        margin-bottom: 10px;
+        width: 50%;
+        @include respond(phone) {
+            width: 100%;
+        }
+    }
+}
+
+.registro-colum-height {
+    margin-bottom: 10px;
+}

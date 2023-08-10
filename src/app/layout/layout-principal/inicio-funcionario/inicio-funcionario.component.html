@@ -1,0 +1,36 @@
+<router-outlet></router-outlet>
+<!--mat-drawer-container class="example-container" autosize>
+
+    <mat-drawer #drawer class="example-sidenav" [mode]="mode" [opened]="open"
+        (window:resize)="window.innerWidth >= 1300? drawer.open() : drawer.close(); onResize()">
+        <div class="close-sidebar-custom" style="text-align: -webkit-right;">
+            <button [style]="styleCustom" mat-icon-button (click)="drawer.toggle()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <app-sidebar class="app-sidebar-custom" [drawer]="drawer" [listaMenu]="listaManuRolFuncionario"></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content style="height: 100%;">
+        
+        
+        <div style="width: 100%; height: 100%;">
+            <div class="header-custom">
+                <div class="boton-navegacion">
+                    <app-navegacion [width]="'24px'" [height]="'24px'"></app-navegacion>
+                </div>
+                <div class="logo-custom-navbar">
+                    <img alt="logo" src="../../../../assets/images/logos/miMovilidadFondoBlanco.svg" />
+                </div>
+                <div class="boton-notificacion">
+                    <app-button-notificacion></app-button-notificacion>
+                </div>
+                <div class="example-icon">
+                    <button mat-icon-button (click)="drawer.toggle()">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container-->

@@ -1,0 +1,12 @@
+<div class="marguenes-custom"></div>
+<app-card-header [proceso]="proceso" [imgLink]="'assets/images/3d/Elemento_3D_asesorías y consultas.png'" [title]="'asesorias.asesoriasyconsultas' | transloco" [text]="'asesorias.cardText' | transloco"></app-card-header>
+<app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'asesorias.servicios' | transloco"></app-title-pages>
+
+<!--app-groups-button-card [proceso]="proceso" [listButton]="listButton"></app-groups-button-card-->
+
+<div style="display: flex; flex-flow: wrap;">
+    <div *ngFor="let index of listButton" [style]="'width: 100%; margin: 1% 0% 1% 0%;'">
+        <app-card-btn-home-v2 [proceso]="proceso" [listButton]="index"></app-card-btn-home-v2>
+    </div>
+</div>
+<div class="marguenes-custom"></div>

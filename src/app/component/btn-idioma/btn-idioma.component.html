@@ -1,0 +1,15 @@
+<button aria-label="haz clic para traducir la pagina" name="traducirMovil" *ngIf="window.innerWidth < 1300 && !isAccesibilidad" class="cuerpo_texto_resaltado btn-idioma" (click)="selectLanguage(selectLang)" color="primary" mat-button
+    style="min-width: 0 !important;">
+    <span>{{selectLang === 'es'? 'En':'Es'}}</span>
+</button>
+
+<button aria-label="haz clic para traducir la pagina" name="traducirEscritorio" *ngIf="window.innerWidth >= 1300 && !isAccesibilidad" class="button-miM-text cuerpo_texto_resaltado btn-idioma" color="primary" style="padding-right: 20px;"
+    mat-button (click)="selectLanguage(selectLang)">
+    <span>{{selectLang === 'es'?'English':'Español'}}</span>
+</button>
+
+<button aria-label="haz clic para traducir la pagina" name="traducirEscritorio" *ngIf="isAccesibilidad" class="button-miM-text cuerpo_texto_resaltado btn-idioma" color="primary" style="padding-right: 20px;"
+    mat-button (click)="selectLanguage(selectLang)">
+    <span>{{selectLang === 'es'?'language English':'Idioma Español'}}</span>
+</button>
+

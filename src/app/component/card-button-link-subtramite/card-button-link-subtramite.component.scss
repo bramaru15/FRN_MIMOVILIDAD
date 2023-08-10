@@ -1,0 +1,60 @@
+@import "../../../assets/sass/styles.scss";
+
+.card-content-link-subtra {
+    padding: 12px;
+}
+
+.card-button-link-subtra {
+    border-radius: $radiusCardCuston !important;
+    box-shadow: none !important;
+    color: $colorPrimario1; 
+    width: 100%;
+}
+
+.card-button-link-subtra:hover {
+    cursor: pointer;
+    background-color: $colorPrimario1;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    margin-left: 10px;
+    //font-size: 17px;
+    font-family: Raleway Bold;
+    @include respond(phone) {
+        margin-left: 0;
+        //font-size: 12px;
+    }
+    @include respond(phone-s) {
+        margin-left: 0;
+        //font-size: 9px;
+    }
+}
+
+.card-custom-btnlink-subtra {
+    display: flex; 
+    width: 100%;
+
+    &__icon {
+        width: 20%;
+        text-align: center;
+        align-self: center; 
+    }
+
+    &__title {
+        align-self: center;
+        width: 80%;
+    }
+}
+
+.custom-button {
+    //display: inline-block;
+    cursor: pointer;
+}
+  
+.custom-button:focus {
+    //outline: none;
+    /* Estilos adicionales para resaltar el foco si lo deseas */
+    //box-shadow: 0 0 4px $colorPrimario1;
+}

@@ -1,0 +1,173 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$md-myprimarycolor: (
+    50 : #e4e4e8,
+    100 : #bcbdc5,
+    200 : #90919f,
+    300 : #636478,
+    400 : #41435b,
+    500 : #20223e,
+    600 : #1c1e38,
+    700 : #181930,
+    800 : #131428,
+    900 : #0b0c1b,
+    A100 : #5d5dff,
+    A200 : #2a2aff,
+    A400 : #0000f6,
+    A700 : #0000dc,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #ffffff,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-myaccentcolor: (
+    50 : #f7f9e0,
+    100 : #ecf1b3,
+    200 : #dfe880,
+    300 : #d2de4d,
+    400 : #c8d726,
+    500 : #bed000,
+    600 : #b8cb00,
+    700 : #afc400,
+    800 : #a7be00,
+    900 : #99b300,
+    A100 : #f9ffdc,
+    A200 : #f1ffa9,
+    A400 : #e8ff76,
+    A700 : #e4ff5d,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-mywarncolor: (
+    50 : #f6e9e9,
+    100 : #e8c7c7,
+    200 : #d9a2a2,
+    300 : #c97c7d,
+    400 : #be6061,
+    500 : #b24445,
+    600 : #ab3e3e,
+    700 : #a23536,
+    800 : #992d2e,
+    900 : #8a1f1f,
+    A100 : #ffc5c5,
+    A200 : #ff9292,
+    A400 : #ff5f5f,
+    A700 : #ff4646,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #ffffff,
+    )
+);
+
+$md-mcgpalette0: (
+    50 : #e8eaf1,
+    100 : #c6cbdb,
+    200 : #a1a9c3,
+    300 : #7b86ab,
+    400 : #5e6c99,
+    500 : #425287,
+    600 : #3c4b7f,
+    700 : #334174,
+    800 : #2b386a,
+    900 : #1d2857,
+    A100 : #97a9ff,
+    A200 : #647eff,
+    A400 : #3154ff,
+    A700 : #183eff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$miMovilidad-primary: mat.define-palette($md-myprimarycolor);
+$miMovilidad-accent: mat.define-palette($md-myaccentcolor);
+
+// The warn palette is optional (defaults to red).
+$miMovilidad-warn: mat.define-palette($md-mywarncolor);
+
+$miMovilidad-azul2: mat.define-palette($md-mcgpalette0);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$miMovilidad-theme: mat.define-light-theme((
+  color: (
+    primary: $miMovilidad-primary,
+    accent: $miMovilidad-azul2,
+    warn: $miMovilidad-warn,
+    colorcustomazul2: $miMovilidad-azul2
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($miMovilidad-theme);
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

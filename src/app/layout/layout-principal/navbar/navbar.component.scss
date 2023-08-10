@@ -1,0 +1,21 @@
+.example-spacer{
+  flex: 1 1 auto;
+} 
+
+.mat-toolbar-single-row {
+  background-color: #EDEDED !important;
+}
+
+.static-nav{
+  position: fixed;
+  z-index: 20;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: 78%;
+  height: 100px;
+  padding: 0 5% 0 4%;
+}
+ 
+
+
+  

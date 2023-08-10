@@ -1,0 +1,24 @@
+<div style="height: 100%;" tabindex="0" (click)="accion(listButton.link)" (keydown.enter)="accion(listButton.link)">
+    <mat-card
+        [class]="proceso? 'skeleton card-button-link card-content-link-miMo':'card-button-link card-content-link-miMo'">
+        <mat-card-content>
+            <div style="display: flex;">
+                <div style="width: fit-content;">
+                    <div [class]="proceso? 'skeleton-none icon-card-btnlink-tablero-home':'icon-card-btnlink-tablero-home'"
+                        [innerHTML]="icono"></div>
+                </div>
+                <div class="card-custom-btnlink" style="width: 90%;">
+                    <div class="text-button-tb-home" style="min-height: 39px;">
+                        <h1 style="margin: 0 !important;" [class]="proceso? 'skeleton-none':'subtitulo'">
+                            {{listButton.name}}</h1>
+                    </div>
+                    <div class="card-custom-btnlink__title">
+                        <h1 style="margin: 0 !important; overflow-y: auto;"
+                            [class]="proceso? 'skeleton-none':'numero_Card'">
+                            {{this.formatterPeso.format(listButton.cantidad)}} </h1>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,22 @@
+<table mat-table [dataSource]="dataSource" class="table-link">
+
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="accion">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation(); eventoSelect()" (change)="$event ? selection.toggle(row) : null"
+                [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+            </mat-checkbox>
+        </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element" class="cuerpo_texto"> {{element.nombre}} </td>
+    </ng-container>
+
+    <tr style="height: 0 !important;" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr style="height: fit-content !important;" mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+</table>

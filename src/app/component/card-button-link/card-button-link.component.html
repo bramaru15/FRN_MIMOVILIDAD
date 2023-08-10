@@ -1,0 +1,16 @@
+<div [ariaLabel]="listButton.accesibilidad !== undefined? listButton.accesibilidad : ''" class="custom-button" tabindex="0" (click)="proceso? '' :accion(listButton.link, listButton.linkVus ,listButton.name)" (keydown.enter)="proceso? '' :accion(listButton.link, listButton.linkVus ,listButton.name)">
+    <mat-card [class]="proceso? 'skeleton card-button-link':'card-button-link'">
+        <mat-card-content class="card-content-link-miMo">
+            <div class="card-custom-btnlink">
+                <div class="card-custom-btnlink__icon">
+                    <div [class]="proceso? 'skeleton-none icon-card-btnlink':'icon-card-btnlink'" [innerHTML]="icono"></div>
+                </div>
+                <div class="card-custom-btnlink__title">
+                    <h1 [class]="proceso? 'skeleton-none':'subtitulo'"> {{listButton.name}} </h1>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+

@@ -1,0 +1,204 @@
+@import "../../../../assets/sass/styles.scss";
+
+
+.card-home {
+    font-family: "Raleway Bold";
+    display: flex;
+    width: 100%;
+    min-height: 100px;
+    /* height: 55%; */
+    border-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    color: #20223E;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #ffffff;
+
+    @include respond(phone-lx) {
+        flex-direction: column;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    &__image-container {
+        flex: auto;
+        align-self: center;
+        order: 2;
+
+        @include respond(phone-lx) {
+            order: 1;
+            justify-items: center;
+        }
+    }
+
+    &__image {
+        width: 30%;
+        img {
+            height: 80px;
+        }
+        align-self: center;
+        text-align: center;
+
+        @include respond(phone-lx) {
+            width: 100%;
+            padding-top: 10px;
+        }
+    }
+
+    &__text {
+        
+        flex: 0 0 70%;
+
+
+        @include respond(phone-lx) {
+            flex: 1;
+            order: 2;
+
+            &>img {
+                width: 80%;
+            }
+        }
+    }
+
+    &__title {}
+
+
+}
+
+.icon-num-custom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 70%;
+
+    @include respond(phone-lx) {
+        width: 100%;
+
+    }
+
+    @include respond(laptop-s) {
+        width: 90%;
+
+    }
+
+
+    .icon-card-mMin {
+        width: 50%;
+        align-self: center;
+    }
+
+
+    .mun-card-mMin {
+        align-self: center;
+        color: #20223E;
+        width: 50%;
+    }
+}
+
+
+.example-card:hover {
+    cursor: pointer;
+
+    p {
+        color: #ffffff;
+    }
+
+    h2 {
+        color: #ffffff;
+    }
+
+    h1 {
+        color: #ffffff;
+    }
+
+    background-color: #20223E;
+}
+
+h2 {
+    font-family: "Raleway Bold";
+    color: #20223E;
+    margin-top: 0;
+    //font-size: 15px;
+
+    @include respond(phone-lx) {
+        //font-size: 10px;
+    }
+}
+
+p {
+    font-family: "Raleway Bold";
+    color: #20223E;
+    margin-top: 0;
+    //font-size: 15px;
+
+    @include respond(phone-lx) {
+        //font-size: 10px;
+    }
+}
+
+.example-card {
+    width: 100% !important;
+    height: 100%;
+    border-radius: 15px !important;
+    box-shadow: none !important;
+}
+
+.flex-colum-custom {
+    width: 23.5%;
+    margin: 1% 2% 1% 0%;
+    @include respond(phone-xxl) {
+        width: 49%;
+        margin: 1% 2% 1% 0%;
+    }
+    @include respond(phone-s) {
+        width: 49%;
+        margin: 1% 2% 1% 0%;
+    }
+}
+
+.flex-colum-custom-fin {
+    width: 23.5%;
+    margin: 1% 0% 1% 0%;
+    @include respond(phone-xxl) {
+        width: 49%;
+        margin: 1% 0% 1% 0%;
+    }
+    @include respond(phone-s) {
+        width: 49%;
+        margin: 1% 0% 1% 0%;
+    }
+}
+
+.flex-colum-custom-finv2 {
+    width: 23.5%;
+    margin: 1% 2% 1% 0%;
+    @include respond(phone-xxl) {
+        width: 49%;
+        margin: 1% 0% 1% 0%;
+    }
+    @include respond(phone-s) {
+        width: 49%;
+        margin: 1% 0% 1% 0%;
+    }
+}
+
+
+.example-card-content {
+    border-radius: 15px !important;
+    text-align: -webkit-center !important;
+    text-align: -moz-center !important;
+}
+
+.custom-button {
+    //display: inline-block;
+    cursor: pointer;
+}
+  
+.custom-button:focus {
+    //outline: none;
+    /* Estilos adicionales para resaltar el foco si lo deseas */
+    //box-shadow: 0 0 4px $colorPrimario1;
+}

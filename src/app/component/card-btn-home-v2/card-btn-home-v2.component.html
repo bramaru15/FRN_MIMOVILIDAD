@@ -1,0 +1,79 @@
+<mat-card [class]="proceso? 'skeleton card-button-link':'card-button-link'">
+    <mat-card-content class="card-content-link-miMo">
+        <div class="card-custom-btnlink">
+            <div class="card-custom-btnlink__icon cambio-none">
+                <div *ngIf="listButton.linkIcon !== ''">
+                    <div [class]="proceso? 'skeleton-none icon-card-btnlink-btn-home-v2':'icon-card-btnlink-btn-home-v2'"
+                        [innerHTML]="icono"></div>
+                </div>
+                <div *ngIf="listButton.linkImg !== undefined">
+                    <div
+                        [class]="proceso? 'skeleton-none icon-card-btnlink-btn-home-v2':'icon-card-btnlink-btn-home-v2'">
+                        <img [src]="listButton.linkImg" [alt]="listButton.name">
+                    </div>
+                </div>
+            </div>
+            <div class="flex-custom-vs">
+                <div class="flex-custom-vs-icon">
+                    <div>
+                        <div *ngIf="listButton.linkIcon !== ''" style="width: fit-content;"
+                            class="card-custom-btnlink__icon cambio-none-vi">
+                            <div [class]="proceso? 'skeleton-none':'icon-card-btnlink-btn-home-v2-v3'"
+                                [innerHTML]="icono"></div>
+                        </div>
+                        <div *ngIf="listButton.linkImg !== undefined" class="card-custom-btnlink__icon cambio-none-vi">
+                            <div [class]="proceso? 'skeleton-none':'icon-card-btnlink-btn-home-v2-v3'">
+                                <img [src]="listButton.linkImg" [alt]="listButton.name">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-custom flex-custom-vs-textbtn">
+                    <div class="card-custom-btnlink__title" [style]="'width: 60%;'">
+                        <h1 *ngIf="listButton.tamanoTitulo === 'h1'" [class]="proceso? 'skeleton-none':'subtitulo'"
+                            style="margin-top: 0;">
+                            {{listButton.name}} </h1>
+                        <h2 *ngIf="listButton.tamanoTitulo === 'h2' || listButton.tamanoTitulo === undefined"
+                            [class]="proceso? 'skeleton-none':'subtitulo'" style="margin-top: 0;"> {{listButton.name}} </h2>
+                        <h3 *ngIf="listButton.tamanoTitulo === 'h3'" [class]="proceso? 'skeleton-none':'subtitulo'"
+                            style="margin-top: 0;">
+                            {{listButton.name}} </h3>
+                        <p [class]="proceso? 'skeleton-none':''">
+                            <span class="cuerpo_texto" [innerHTML]="safehtmlStr"></span>
+                        </p>
+                    </div>
+                    <div *ngIf="listButton.btnList === undefined" [class]="proceso? 'skeleton-none':'gird-asesorias'">
+                        <div *ngFor="let index of listButton.btnList" style="margin: 1%;">
+                            <button [ariaLabel]="listButton.accesibilidad !== undefined? listButton.accesibilidad : ''" *ngIf="listButton.btnVersion === 'v1'" style="width: max-content; min-width: 100px;"
+                                class="button-miM-large" color="primary" mat-stroked-button
+                                (click)="accion(listButton.link, listButton.direciona, listButton.btnText+'')">
+                                <p class="texto_boton">{{listButton.btnText}}</p>
+                            </button>
+                            <button [ariaLabel]="listButton.accesibilidad !== undefined? listButton.accesibilidad : ''" *ngIf="listButton.btnVersion === 'v2'" style="width: max-content; min-width: 100px;"
+                                class="button-miM-large" color="primary" mat-flat-button
+                                (click)="accion(listButton.link, listButton.direciona, listButton.btnText+'')">
+                                <p class="texto_boton">{{listButton.btnText}}</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div *ngIf="listButton.btnList !== undefined" [class]="proceso? 'skeleton-none':'gird-asesorias'">
+                        <div *ngFor="let index of listButton.btnList" style="margin: 1%;">
+                            <button [ariaLabel]="index.accesibilidad !== undefined? index.accesibilidad : ''" *ngIf="index.btnVersion === 'v1'"
+                                style="width: max-content; min-width: 100px; height: 25px !important;" class="button-miM-large"
+                                color="primary" mat-stroked-button
+                                (click)="accion(index.link, index.direciona, index.btnText+'')">
+                                <p class="texto_boton">{{index.btnText}}</p>
+                            </button>
+                            <button [ariaLabel]="index.accesibilidad !== undefined? index.accesibilidad : ''" *ngIf="index.btnVersion === 'v2'"
+                                style="width: max-content; min-width: 100px; height: 25px !important;" class="button-miM-large"
+                                color="primary" mat-flat-button
+                                (click)="accion(index.link, index.direciona, index.btnText+'')">
+                                <p class="texto_boton">{{index.btnText}}</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

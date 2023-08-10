@@ -1,0 +1,53 @@
+<mat-drawer-container class="example-container" autosize>
+
+    <mat-drawer #drawer class="example-sidenav example-sidenav-menuP" [mode]="mode" [opened]="open"
+        (window:resize)="window.innerWidth >= 1300? drawer.open() : drawer.close(); onResize()">
+        <div class="close-sidebar-custom" style="text-align: -webkit-right; text-align: -moz-right;">
+            <button name="clone" aria-label="haz clic para cerrar menú" [style]="styleCustom" mat-icon-button (click)="drawer.toggle()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <app-sidebar class="app-sidebar-custom" [drawer]="drawer" [listaMenu]="isSession? listaMenuRolCliente : listaMenuRolAnonimo"></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="header-custom static-nav-resposive">
+            <div class="boton-navegacion">
+                <app-navegacion [width]="'20px'" [height]="'20px'"></app-navegacion>
+            </div>
+            <div class="logo-custom-navbar">
+                <img alt="logo" class="cursor-custom" (click)="linkLogo()" src="../../../../assets/images/logos/miMovilidadFondoBlanco.svg" />
+            </div>
+            <div class="boton-notificacion">
+                <!--app-button-notificacion *ngIf="isSession"></app-button-notificacion-->
+                <!--button class="cuerpo_texto_resaltado btn-idioma" (click)="selectLanguage(selectLang)" color="primary" mat-button style="min-width: 0 !important;">
+                    <span>{{selectLang === 'es'?'En':'Es'}}</span>
+                </button-->
+                <app-btn-idioma></app-btn-idioma>
+            </div>
+            <div class="example-icon">
+                <button aria-label="haz clic para abrir el menú" name="menu" mat-icon-button (click)="drawer.toggle()">
+                    <!--mat-icon style="font-size: 10px;" [matBadge]="numeroNotificacion >= 100? '+99' : numeroNotificacion" matBadgeOverlap="false" matBadgeSize="medium" matBadgeColor="accent" [matBadgeHidden]="hidden" name="bell">menu</mat-icon-->
+                    <app-icon-menu class="icon-btn-menu-movil-size" [icon]="'assets/icons/Menú mobile_icono.svg'" style="font-size: 10px; font-family: Raleway Bold;" [matBadge]="numeroNotificacion >= 100? '99+' : numeroNotificacion" matBadgeOverlap="true" matBadgeSize="medium" matBadgeColor="accent" [matBadgeHidden]="hidden" name="bell"></app-icon-menu>
+                </button>
+            </div>
+        </div>
+        <app-navbar [style]="sytleCustomNavbar" [selectLang]="selectLang" ></app-navbar>
+        <div class="pages-custom">
+            <router-outlet></router-outlet>
+            <div style="padding-bottom: 60px;"></div>
+        </div>
+        <div class="pages-footer-custom static-footer-resposive">
+            <div style="width: 20%; align-self: center;" *ngFor="let index of listaMenuFooter">
+                <a *ngIf="index.nameMenu !== 'Salir'" class="icono-custom-footer a-custon-footer" [routerLink]="[index.link]" routerLinkActive="active-custom-footer"
+                [routerLinkActiveOptions]="{exact: false}">
+                    <app-icon-menu [icon]="index.iconLink"></app-icon-menu>
+                    <span class="texto_submenu">{{index.nameMenu}}</span>
+                </a>
+                <a *ngIf="index.nameMenu === 'Salir'" class="icono-custom-footer a-custon-footer" (click)="cerrarSession()">
+                    <app-icon-menu [icon]="index.iconLink"></app-icon-menu>
+                    <span class="texto_submenu">{{index.nameMenu}}</span>
+                </a>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

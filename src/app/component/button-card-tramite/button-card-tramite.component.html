@@ -1,0 +1,13 @@
+<div>
+    <h3 class="subtitulo"> {{buttonCardTramite.name}} </h3>
+    <div [tabindex]="buttonCardTramite.type === 'agenda' || buttonCardTramite.type === 'ubicacion'? 0:-1" [class]="buttonCardTramite.type === 'agenda' || buttonCardTramite.type === 'ubicacion'? 'tooltip':''" (keydown.enter)="accion(buttonCardTramite.type)">
+        <p [class]="buttonCardTramite.estadoButton? 'activo-buttom informacion_destacada_Medium '+buttonCardTramite.type  : 'inactivo-buttom informacion_destacada_Medium '+buttonCardTramite.type" (click)="accion(buttonCardTramite.type)" *ngIf="buttonCardTramite.text"> {{buttonCardTramite.text}}</p>
+        <span *ngIf="buttonCardTramite.type === 'agenda' || buttonCardTramite.type === 'ubicacion'" class="tooltiptext cuerpo_texto_info_formulario">
+            {{buttonCardTramite.type === 'agenda'? 'Crea recordatorio' : 'Ver ubicación'}}
+        </span>
+    </div>
+    <p *ngIf="buttonCardTramite.type === 'estado'">
+        <span [class]="buttonCardTramite.estado? buttonCardTramite.estado : 'activo informacion_destacada_Medium'"></span> 
+        {{buttonCardTramite.estado? buttonCardTramite.estado : 'activo'}}
+    </p>
+</div>

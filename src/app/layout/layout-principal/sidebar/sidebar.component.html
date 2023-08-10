@@ -1,0 +1,62 @@
+<div style="height: 10%; text-align: -moz-center;">
+    <img class="cursor-custom" (click)="funcionarioIs? linkLogo():'';closed()"
+        [style]="window.innerWidth >= 1300?'width: 80%; padding-top: 34.847px;':'width: 80%;'" alt="logo de mi movilidad"
+        src="../../../assets/images/logos/miMovilidadFondoBlanco.svg">
+</div>
+<div style="height: 80%; padding: 40px;">
+    <div style="display: flex; height: 100%;">
+        <mat-accordion style="width: 100%;">
+            <ul class="menu">
+                <li *ngFor="let index of listaMenu">
+                    <a *ngIf="!index.isSubMenu" style="text-align: left;" class="a-custon icono-custom"
+                        [routerLink]="[index.link]" routerLinkActive="active-custom"
+                        [routerLinkActiveOptions]="{exact: false}" (click)="closed(); closeAll()">
+                        <app-icon-menu [icon]="index.iconLink"></app-icon-menu>
+                        <span class="texto_menu">{{index.nameMenu}}</span>
+                    </a>
+                    <div *ngIf="!index.isSubMenu" class="border-custom-li"></div>
+                    <div *ngIf="index.isSubMenu" class="border-custom-accordion">
+                        <mat-expansion-panel hideToggle [id]="index.nameMenu" [class]="'border-custom-accordion_panel'"
+                            (opened)="onPanelOpened(index.nameMenu)" (closed)="onPanelClosed(index.nameMenu)">
+                            <mat-expansion-panel-header class="border-custom-accordion_header">
+                                <mat-panel-title class="icono-custom mat-panel-title-menu">
+                                    <app-icon-menu [icon]="index.iconLink"></app-icon-menu>
+                                    <span class="hover-text-custom-title texto_menu"
+                                        style="color: #20223E !important; text-align: left;">{{index.nameMenu}}</span>
+                                    <div style="position: absolute; right: 0; padding-right: 4px;">
+                                        <i-feather style="stroke-width: 0.5px !important;"
+                                            [name]="!openClose(index.nameMenu) ? 'chevron-right' : 'chevron-down'"></i-feather>
+                                    </div>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <li *ngFor="let _index of index.subMenu">
+                                <a  style="text-align: left;" class="a-custon" [routerLink]="[_index.link]"
+                                    routerLinkActive="active-custom" [routerLinkActiveOptions]="{exact: false}"
+                                    (click)="closed();">
+                                    <span class="texto_submenu" style="margin-left: 44px">{{_index.nameMenu}}</span>
+                                </a>
+                            </li>
+                        </mat-expansion-panel>
+                    </div>
+                    <div *ngIf="index.isSubMenu" class="border-custom-li"></div>
+                </li>
+                <li class="border-custom-li-end">
+                    <div *ngIf="isSession" tabindex="0" aria-label="haz clic para cerrar sesión" class="a-custon icono-custom" (click)="closed();cerrarsession()" (keydown.enter)="closed();cerrarsession()">
+                        <app-icon-menu
+                            [icon]="'assets/icons/Cerrar sesión_icono.svg'"></app-icon-menu>
+                        <span class="texto_menu">{{'sidebar.cerrarSesion'|transloco}}</span>
+                    </div>
+                    <div *ngIf="!isSession" tabindex="0" aria-label="haz clic para iniciar sesión" class="a-custon icono-custom" (click)="closed();iniciarsesion()" (keydown.enter)="closed();iniciarsesion()">
+                        <app-icon-menu
+                            [icon]="'assets/icons/Perfil_icono.svg'"></app-icon-menu>
+                        <span class="texto_menu">{{'sidebar.iniciarSesion'|transloco}}</span>
+                    </div>
+                </li>
+            </ul>
+        </mat-accordion>
+    </div>
+</div>
+<div style="height: 10%; text-align: -moz-center;">
+    <img src="../../../../assets/images/logos/tripticoMovilidadVerde.png"
+        alt="logos de alcaldía mayor de bogotá, secretaría de mimovilidad y de Bogotá" style="width: 70%;" />
+</div>

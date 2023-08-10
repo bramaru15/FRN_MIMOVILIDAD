@@ -1,0 +1,79 @@
+@import "../../../assets/sass/styles.scss";
+
+.card-button-link {
+    border-radius: $radiusCardCuston !important;
+    box-shadow: none !important;
+    color: $colorPrimario1; 
+    width: 100%;
+    height: 100%;
+    min-height: 60px;
+}
+
+.card-content-link-miMo {
+    @include respond(phone) {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+}
+
+.card-button-link:hover {
+    cursor: pointer;
+    background-color: $colorPrimario1;
+    color: white;
+}
+
+.custom-button {
+    //display: inline-block;
+    height: 100%;
+    cursor: pointer;
+}
+  
+.custom-button:focus {
+    //outline: none;
+    /* Estilos adicionales para resaltar el foco si lo deseas */
+    //box-shadow: 0 0 4px $colorPrimario1;
+}
+  
+
+h1 {
+    margin: 0;
+    margin-left: 10px;
+    //font-size: 17px;
+    font-family: Raleway Bold;
+    @include respond(phone) {
+        margin-top: 20px;
+        margin-left: 0;
+        //font-size: 12px;
+    }
+    @include respond(phone-s) {
+        margin-left: 0;
+        //font-size: 9px;
+    }
+}
+
+.card-custom-btnlink {
+    display: flex; 
+    width: 100%;
+
+    @include respond(phone) {
+        flex-direction: column;
+    }
+
+    &__icon {
+        width: 20%;
+        text-align: center; 
+        @include respond(phone) {
+            width: 100%; 
+        }
+    }
+
+    &__title {
+        align-self: center;
+        width: 80%;
+        @include respond(phone) {
+            width: 100%;
+            text-align: center; 
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<div class="marguenes-custom"></div>
+<app-card-header [proceso]="proceso" [imgLink]="'assets/images/3d/Elemento_3D_mis citas.png'"
+    [title]="'misCitas.titulo' | transloco" [text]="('misCitas.cardText'| transloco)"></app-card-header>
+<app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'misCitas.proximaCita' | transloco"></app-title-pages>
+<app-card-tramites [class]="proceso? 'skeleton-none':''" *ngIf="listaCitas.length > 0"
+    [dataCardTramite]="dataCardTramite"></app-card-tramites>
+<div [class]="proceso? 'skeleton-none':''" *ngIf="listaCitas.length <= 0">
+    <p class="text-noCard">
+        <app-sin-informacion text="'misCitas.tieneCitas' | transloco"
+            [text]="'misCitas.noTieneCitas' | transloco"></app-sin-informacion>
+    </p>
+</div>
+<app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'misCitas.otrasOpciones' | transloco"></app-title-pages>
+<app-groups-button-card [proceso]="proceso" [listButton]="listButton"></app-groups-button-card>
+<div class="marguenes-custom"></div>

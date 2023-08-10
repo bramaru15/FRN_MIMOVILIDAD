@@ -1,0 +1,46 @@
+<mat-card class="card-tramite">
+    <mat-card-content style="padding: 0;">
+        <div class="card-tramite-miMo">
+            <div class="card-tramite-miMo__text">
+                <div class="card-tramite-miMo__text__custom">
+                    <div class="card-tramite-miMo__text__icon">
+                        <div class="icon-card-tramite" [innerHTML]="icono"></div>
+                    </div>
+                    <div class="card-tramite-miMo__text__title">
+                        <h2 class="subtitulo"> {{dataCardTramite.title}} </h2>
+                    </div>
+                </div>
+                <!--mat-grid-list [cols]="breakpoint" rowHeight="4rem" (window:resize)="onResize()">
+                    <mat-grid-tile class="card-tramite-custom-button" *ngFor="let index of dataCardTramite.listaButtonCardTramite">
+                        <app-button-card-tramite [buttonCardTramite]="index"></app-button-card-tramite>
+                    </mat-grid-tile>
+                </mat-grid-list-->
+                <div style="display: flex; flex-flow: wrap;">
+                    <div class="card-tramite-custom-button" *ngFor="let index of dataCardTramite.listaButtonCardTramite" [style]="dataCardTramite.listaButtonCardTramite.length > 2 && window.innerWidth >= 730? 'width: 31%; margin: 1%;' : 'width: 47%; margin: 1%;' ">
+                        <app-button-card-tramite [buttonCardTramite]="index"></app-button-card-tramite>
+                    </div>
+                </div>
+            </div>
+            <div class="card-tramite-miMo__button" style="width: 20%; align-self: center;">
+                <div class="card-tramite-miMo__button__uno">
+                    <a (click)="dataCardTramite.linkVusBtnUno !== undefined? accion(dataCardTramite.linkButtonUno, dataCardTramite.linkVusBtnUno,dataCardTramite.textButton):accion(dataCardTramite.linkButtonUno, false,dataCardTramite.textButton)" style="text-decoration: none;">
+                        <button class="button-miM-large" color="primary"
+                            mat-flat-button>
+                            <p class="texto_boton">{{dataCardTramite.textButton}}</p>
+                        </button>
+                    </a>
+                </div>
+                <div class="card-tramite-miMo__button__dos">
+                    <a (click)="tablero(ver_mas)" [href]="dataCardTramite.linkButtonMas" rel="noopener" target="_blank" style="text-decoration: none;">
+                        <button class="button-miM-large" mat-stroked-button
+                            color="primary">
+                            <p class="texto_boton">Ver más</p>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        
+    </mat-card-content>
+</mat-card>

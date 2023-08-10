@@ -1,0 +1,182 @@
+<div class="marguenes-custom"></div>
+<app-title-pages [title]="'miPerfil.datos' | transloco" [text]="'miPerfil.text' | transloco"></app-title-pages>
+<br />
+<mat-card [class]="proceso? 'skeleton card-button-link':'card-button-link'">
+    <mat-card-content class="card-content-link-miMo">
+        <div style="display: flex;">
+            <div class="perfil-img">
+                <img [src]="'assets/images/3d/avatar.png'" [alt]="'avatar.perfil'" />
+            </div>
+            <div class="perfil-titulo">
+                <h1 class="titulo" style="text-transform: capitalize;">
+                    <span>{{minString(persona.fullName+"")}}</span>
+                </h1>
+                <div class="perfil-subtext ">
+                    <div style="display: flex; align-items: center;">
+                        <app-icon-menu class="icono" [icon]="'assets/icons/Correo_icono-01.svg'"></app-icon-menu>
+                        <p class="cuerpo_texto">{{persona.correoElectronico}}</p>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <app-icon-menu class="icono" [icon]="'assets/icons/Celular_icono-01-01.svg'"></app-icon-menu>
+                        <p class="cuerpo_texto">{{persona.telefonoMovil}}</p>
+                    </div>
+                    <button (click)="cerrarsession()" class="button-miM-large" style="width: fit-content; height: 30px;" mat-stroked-button
+                        color="primary">
+                        <p class="texto_boton">{{'mi-perfil.cerrar-sesion' | transloco}}</p>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<br>
+<div class="container-card">
+    <mat-card [class]="proceso? 'skeleton card-auth':'card-auth'" [style]="styleCustom">
+        <mat-card-content class="card-content-miM">
+            <form [class]="proceso? 'skeleton-none':'example-form'" [formGroup]="registerForm">
+
+                <div class="grid-registro-mMo">
+                    <div class="grid-registro-mMo__colum">
+                        <div class="container-form-miM" style="text-align: left !important;">
+                            <mat-label class="label-custom titulo_formulario">{{'mi-perfil.tipo-documento' | transloco}}</mat-label>
+                            <mat-form-field class="container-imput-miM" appearance="outline" subscriptSizing="dynamic"
+                                color="primary" style="background-color: #EDEDED ;border-radius: 6px;">
+                                <input class="texto_formularios" readonly matInput [placeholder]="'mi-perfil.tipo-documento' | transloco"
+                                    formControlName="tipoDocumento" >
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="grid-registro-mMo__colum">
+                        <div class="container-form-miM" style="text-align: left !important;">
+                            <mat-label class="label-custom titulo_formulario">{{'mi-perfil.documento' | transloco}}</mat-label>
+                            <mat-form-field class="container-imput-miM" appearance="outline" subscriptSizing="dynamic"
+                                color="primary" style="background-color: #EDEDED;border-radius: 6px;">
+                                <input class="texto_formularios" readonly matInput [placeholder]="'mi-perfil.documento' | transloco"
+                                    formControlName="numeroDocumento">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="!tipoPersona">
+                    <div class="grid-registro-mMo">
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM" style="text-align: left !important;">
+                                <mat-label class="label-custom titulo_formulario">{{'mi-perfil.primer-nombre' | transloco}}</mat-label>
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="texto_formularios" matInput [placeholder]="'mi-perfil.primer-nombre' | transloco" formControlName="primerNombre">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM" style="text-align: left !important;">
+                                <mat-label class="label-custom titulo_formulario">{{'mi-perfil.segundo-nombre' | transloco}}</mat-label>
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="texto_formularios" matInput [placeholder]="'mi-perfil.segundo-nombre' | transloco" formControlName="segundoNombre">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-registro-mMo">
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM" style="text-align: left !important;">
+                                <mat-label class="label-custom titulo_formulario">{{'mi-perfil.primer-apellido' | transloco}}</mat-label>
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="texto_formularios" matInput [placeholder]="'mi-perfil.primer-apellido' | transloco" formControlName="primerApellido">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM" style="text-align: left !important;">
+                                <mat-label class="label-custom titulo_formulario">{{'mi-perfil.segundo-apellido' | transloco}}</mat-label>
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="texto_formularios" matInput [placeholder]="'mi-perfil.segundo-apellido' | transloco" formControlName="segundoApellido">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="tipoPersona">
+                    <div class="container-form-miM" style="text-align: left !important;">
+                        <mat-label class="label-custom titulo_formulario">{{'mi-perfil.razon-social' | transloco}}</mat-label>
+                        <mat-form-field class="container-imput-miM" appearance="outline"
+                            subscriptSizing="dynamic" color="primary">
+                            <input class="texto_formularios" matInput [placeholder]="'mi-perfil.razon-social' | transloco" formControlName="razonSocial">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="grid-registro-mMo">
+                    <div class="grid-registro-mMo__colum">
+                        <div class="container-form-miM" style="text-align: left !important;">
+                            <mat-label class="label-custom titulo_formulario">{{'mi-perfil.sexo' | transloco}}</mat-label>
+                            <mat-form-field class="container-select-miM" appearance="outline" subscriptSizing="dynamic"
+                                color="primary">
+                                <mat-select class="texto_formularios" matNativeControl [placeholder]="'Sexo'" formControlName="sexo">
+                                    <mat-option class="texto_formularios" value="">{{'mi-perfil.sexo1' | transloco}}</mat-option>
+                                    <mat-option class="texto_formularios" *ngFor="let index of listSexo" [value]="index.code">
+                                        {{index.name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="grid-registro-mMo__colum">
+                        <div class="container-form-miM" style="text-align: left !important;">
+                            <mat-label class="label-custom titulo_formulario">{{'mi-perfil.celular' | transloco}}</mat-label>
+                            <mat-form-field class="container-imput-miM" appearance="outline" subscriptSizing="dynamic"
+                                color="primary">
+                                <input class="texto_formularios" matInput [placeholder]="'mi-perfil.celular' | transloco" formControlName="celular">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-registro-mMo">
+                    <div class="grid-registro-mMo__colum">
+                        <div class="container-form-miM" style="text-align: left !important;">
+                            <mat-label class="label-custom titulo_formulario">{{'mi-perfil.correo' | transloco}}</mat-label>
+                            <mat-form-field class="container-imput-miM" appearance="outline" subscriptSizing="dynamic"
+                                color="primary">
+                                <input class="texto_formularios" matInput [placeholder]="'mi-perfil.correo' | transloco" formControlName="email">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="grid-registro-mMo__colum">
+                        <div class="container-form-miM" style="text-align: left !important;">
+                            <mat-label class="label-custom titulo_formulario">{{'mi-perfil.fecha-nacimiento' | transloco}}</mat-label>
+                            <mat-form-field class="container-imput-miM" appearance="outline" subscriptSizing="dynamic"
+                                color="primary">
+                                <input class="texto_formularios" maxlength="10" matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker"
+                                    [placeholder]="'Fecha de nacimiento'" formControlName="fechaNacimiento">
+                                <mat-error class="cuerpo_texto_info_formulario" *ngIf="registerForm.controls['fechaNacimiento'].invalid">
+                                    {{'mi-perfil.formato' | transloco}}
+                                </mat-error>
+                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <mat-grid-list [class]="proceso? 'skeleton-none':''" [cols]="1" rowHeight="2rem" style="margin-top: 15px;">
+                <mat-grid-tile>
+                    <button class="button-miM-large" style="width: fit-content; height: 30px;" (click)="actualizar()"
+                        [disabled]="!registerForm.valid" mat-flat-button color="primary">
+                        <mat-spinner *ngIf="isConsulta" color="accent" diameter="20"></mat-spinner>
+                        <p *ngIf="!isConsulta" class="texto_boton">{{'mi-perfil.actualizar' | transloco}}</p>
+                    </button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+    </mat-card>
+</div>
+<div class="marguenes-custom"></div>

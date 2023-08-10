@@ -1,0 +1,22 @@
+<mat-card class="example-card">
+    <mat-card-header class="example-card-header"
+        [style]="{'background-color':color, 'height':'37px', 'justify-content': 'right', 'padding': '0'}">
+        <button name="cerrar notificación" aria-label="haz clic para cerrar notificación" [style]="{'margin-top':'-5px'}" mat-icon-button (click)="this.openLink(false)">
+            <i-feather [style]="{'color':'white'}" name="x"></i-feather>
+        </button>
+    </mat-card-header>
+    <i-feather *ngIf="data.type !== 'custom'"  [style]="{'color':color}" class="icon-noty" [name]="icon"></i-feather>
+    <app-icon-menu *ngIf="data.type === 'custom'" [class]="iconClass+' icon-noty-v2'" [icon]="icon"></app-icon-menu>
+    <mat-card-content class="example-card-content" [style]="!data.button? 'text-align: center; padding-bottom: 20px':'text-align: center;'">
+        <h1 class="titulos-h1-miM titulo_destacado letter-spacing-uno">{{title}}</h1>
+        <p class="titulos-miM cuerpo_texto letter-spacing-uno" [style]="'margin-left: 10%; margin-right: 10%;'">
+            {{text}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions class="example-card-actions" *ngIf="data.button" style="justify-content: center;">
+        <button aria-label="haz clic para cancelar la notificación" class="button-noty-miM-warn button-noty-1" mat-stroked-button color="warn"
+            (click)="this.openLink(false)"><p class="texto_boton letter-spacing-uno" style="color: #20223E;">{{buttonText1}}</p></button>
+        <button aria-label="haz clic para aceptar la notificación" class="button-noty-miM button-noty-2" color="primary" mat-flat-button (click)="this.openLink(true)">
+            <p class="texto_boton letter-spacing-uno">{{buttonText2}}</p></button>
+    </mat-card-actions>
+</mat-card>

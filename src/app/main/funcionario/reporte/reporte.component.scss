@@ -1,0 +1,185 @@
+@import "../../../../assets/sass/styles.scss";
+
+.example-container {
+  width: 100%;
+  background-color: transparent;
+  @include respond(custom-m) {
+    
+  }
+}
+
+.btn-home-ver_m {
+  width: 20%;
+  height: 20px;
+
+  @include respond(laptop-s) {
+    width: 30%;
+  }
+  @include respond(phone-s) {
+    width: 40%;
+    font-size: 10px;
+  }
+}
+
+.title-home-fun {
+  color: $colorPrimario1;
+  font-family: Raleway Bold;
+  //font-size: 18px;
+}
+
+.group-graficas-home {
+  display: flex;
+  @include respond(phone-xxl) {
+    flex-direction: column;
+  }
+
+  &_uno {
+    width: 50%;
+    
+    @include respond(phone-xxl) {
+      width: 100%;
+    }
+  }
+
+  &_uno_card {
+    margin: 10px 10px 10px 0px;
+    @include respond(phone-xxl) {
+      margin: 10px 0px 10px 0px;
+    }
+    height: max-content;
+  }
+
+  &_dos_card {
+    margin: 10px 0px 10px 10px;
+    @include respond(phone-xxl) {
+      margin: 10px 0px 10px 0px;
+    }
+    height: max-content;
+  }
+
+  &_dos {
+    width: 50%;
+    @include respond(phone-xxl) {
+      width: 100%;
+    }
+  }
+}
+
+.group-graficas-home-btn {
+  display: flex;
+
+  &_uno {
+    width: 50%;
+  }
+
+  &_uno_card {
+    margin: 10px 10px 10px 0px;
+    height: 120px;
+  }
+
+  &_dos_card {
+    margin: 10px 0px 10px 10px;
+    height: 120px;
+  }
+
+  &_dos {
+    width: 50%;
+  }
+}
+
+.container-btn-reporte {
+  width: 100%;
+  /*@include respond(phone-xxl) {
+    width: 100%;
+  }*/
+}
+
+.card-hover-reporte-btn:hover {
+  cursor: pointer;
+  background-color: $colorPrimario1;
+  color: white;
+}
+
+.flex-custom {
+  display: flex;
+  @include respond(phone-xxl) {
+    flex-direction: column;
+  }
+
+  &-icon{
+    align-self: center;
+    width: 20%;
+    @include respond(phone-xxl) {
+      width: auto;
+      align-self: normal;
+    }
+  }
+
+  &-iconv2{
+    align-self: center;
+    width: 20%;
+    @include respond(phone-xxl) {
+      width: 50%;
+      align-self: normal;
+    }
+  }
+
+  &-text{
+    align-self: center;
+    //padding-left: 20px;
+    width: 40%;
+    @include respond(phone-xxl) {
+      width: auto;
+      margin-top: 5px;
+      margin-bottom: 0;
+      padding-left: 0;
+      align-self: normal;
+    }
+  }
+
+  &-text2{
+    width: 40%;
+    align-self: center;
+    padding-left: 20px;
+    @include respond(phone-xxl) {
+      width: 50%;
+      padding-left: 0;
+    }
+  }
+}
+
+.none-flex{
+  display: none;
+  @include respond(phone-xxl) {
+    display: block;
+  }
+}
+
+.none-flex-vi{
+  display: block;
+  @include respond(phone-xxl) {
+    display: none;
+  }
+}
+
+.none-width-vi{
+  width: 20%;
+  @include respond(phone-xxl) {
+    width: 100%;
+  }
+
+  &-icon{
+    width: 100%;
+    @include respond(phone-xxl) {
+      width: 50%;
+    }
+  }
+
+  &-text{
+    width: 0;
+    @include respond(phone-xxl) {
+      width: 50%;
+    }
+  }
+
+}

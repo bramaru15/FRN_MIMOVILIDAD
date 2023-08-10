@@ -1,0 +1,355 @@
+<div class="fondo-auth fondo-auth-vertical-center">
+    <div class="container-card" style="margin-top: 7%; height: 100%;">
+        <mat-card class="card-auth" style="max-width: 600px !important;">
+            <mat-card-content class="card-content-miM">
+                <img class="logo-miM-auth cursor-custom" (click)="linkLogo()" alt="Card" src="../../../assets/images/logos/miMovilidadFondoBlanco.svg">
+                <h1 class="titulos-destacados-miM titulo">{{'registro.titulo'| transloco}}</h1>
+                <p class="titulos-miM cuerpo_texto">{{'registro.subtitulo'| transloco}}</p>
+                <form class="example-form" [formGroup]="registerForm" (window:resize)="onResize()">
+
+                    <div class="container-form-miM registro-colum-height">
+                        <mat-form-field class="container-select-miM" appearance="outline" subscriptSizing="dynamic"
+                            color="primary">
+                            <mat-select class="texto_formularios" matNativeControl [placeholder]="('registro.tipoDocumento' | transloco )+(registerForm.controls['idTipoIdentificacion'].hasValidator(_validator) === true? '*' : '') "
+                                formControlName="idTipoIdentificacion" (selectionChange)="changeTipoNit()">
+                                <mat-option class="texto_formularios" *ngFor="let index of listCatalogo" value={{index.code}}>
+                                    {{index.name}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="registerForm.controls['idTipoIdentificacion'].invalid">
+                                <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['idTipoIdentificacion']">
+                                </app-error-menssage>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="grid-registro-mMo">
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="texto_formularios" #numeroIdentificacion maxlength="11" matInput [placeholder]="('registro.documento' | transloco )+(registerForm.controls['numeroIdentificacion'].hasValidator(_validator) === true? '*' : '')"
+                                        formControlName="numeroIdentificacion" [type]="changeTipoDocumento()" (change)="maxLengthCheck(numeroIdentificacion, registerForm.controls['numeroIdentificacion'])">
+                                    <mat-error *ngIf="registerForm.controls['numeroIdentificacion'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['numeroIdentificacion']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="texto_formularios" #numeroIdentificacion2 maxlength="11" id="numeroIdentificacion2" matInput
+                                        [placeholder]="('registro.confirmaDocumento' | transloco )+((registerForm.controls['numeroIdentificacion2'].hasValidator(_validator) === true? '*' : ''))"
+                                        formControlName="numeroIdentificacion2" [type]="changeTipoDocumento()" (change)="maxLengthCheck(numeroIdentificacion2, registerForm.controls['numeroIdentificacion2'])">
+                                    <mat-error *ngIf="registerForm.controls['numeroIdentificacion2'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['numeroIdentificacion2']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div [class]="isNit? 'skeleton-none':'grid-registro-mMo'">
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="texto_formularios" maxlength="10" matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker"
+                                        [placeholder]="('registro.fechaNacimiento' | transloco )+(registerForm.controls['fechanacimiento'].hasValidator(_validator) === true? '*' : '')" formControlName="fechanacimiento">
+                                    <mat-error class="cuerpo_texto_info_formulario" *ngIf="registerForm.controls['fechanacimiento'].invalid">
+                                        {{'registro.formato-fecha'| transloco}}
+                                    </mat-error>
+                                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="texto_formularios" maxlength="10" matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker2"
+                                        [placeholder]="('registro.fechaExpedicion' | transloco )+(registerForm.controls['fechaExpedicion'].hasValidator(_validator) === true? '*' : '')" formControlName="fechaExpedicion">
+                                    <mat-error class="cuerpo_texto_info_formulario" *ngIf="registerForm.controls['fechaExpedicion'].invalid">
+                                        {{'registro.formato-fecha'| transloco}}
+                                    </mat-error>
+                                    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker2></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div [class]="isNit? 'container-form-miM registro-colum-height':'skeleton-none'">
+                        <mat-form-field class="container-imput-miM" appearance="outline" subscriptSizing="dynamic"
+                            color="primary">
+                            <input class="input-name texto_formularios" maxlength="50" matInput [placeholder]="('registro.razonSocial' | transloco )+(registerForm.controls['razonSocial'].hasValidator(_validator) === true? '*' : '')"
+                                formControlName="razonSocial">
+                            <mat-error *ngIf="registerForm.controls['razonSocial'].invalid">
+                                <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['razonSocial']">
+                                </app-error-menssage>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div [class]="isNit? 'skeleton-none':'grid-registro-mMo'">
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="input-name texto_formularios" maxlength="50" matInput [placeholder]="('registro.primerNombre' | transloco )+(registerForm.controls['nombre1'].hasValidator(_validator) === true? '*' : '')" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"
+                                        formControlName="nombre1">
+                                    <mat-error *ngIf="registerForm.controls['nombre1'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['nombre1']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="input-name texto_formularios" maxlength="50" matInput [placeholder]="('registro.segundoNombre' | transloco )+(registerForm.controls['nombre2'].hasValidator(_validator) === true? '*' : '')" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"
+                                        formControlName="nombre2">
+                                    <mat-error *ngIf="registerForm.controls['nombre2'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['nombre2']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div [class]="isNit? 'skeleton-none':'grid-registro-mMo'">
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="input-name texto_formularios" maxlength="50" matInput [placeholder]="('registro.primerApellido' | transloco )+(registerForm.controls['apellido1'].hasValidator(_validator) === true? '*' : '')" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"
+                                        formControlName="apellido1">
+                                    <mat-error *ngIf="registerForm.controls['apellido1'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['apellido1']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="input-name texto_formularios" maxlength="50" matInput [placeholder]="('registro.segundoApellido' | transloco )+(registerForm.controls['apellido2'].hasValidator(_validator) === true? '*' : '')" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"
+                                        formControlName="apellido2">
+                                    <mat-error *ngIf="registerForm.controls['apellido2'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['apellido2']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div [class]="isNit? 'skeleton-none':'container-form-miM registro-colum-height'">
+                        <mat-form-field class="container-select-miM" appearance="outline" subscriptSizing="dynamic"
+                            color="primary">
+                            <mat-select class="texto_formularios" matNativeControl [placeholder]="('registro.sexo' | transloco )+(registerForm.controls['sexo'].hasValidator(_validator) === true? '*' : '')" formControlName="sexo">
+                                <mat-option class="texto_formularios" value="">{{'--'+('registro.sexo'| transloco)+'--'}}</mat-option>
+                                <mat-option class="texto_formularios" *ngFor="let index of listSexo" value={{index.code}}>
+                                    {{index.name}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="registerForm.controls['sexo'].invalid">
+                                <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['sexo']">
+                                </app-error-menssage>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div [class]="isNit? 'skeleton-none':'grid-registro-mMo'">
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-select-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <mat-select class="texto_formularios" matNativeControl [placeholder]="('registro.grupoSanguineo' | transloco )+(registerForm.controls['grupoSanguineo'].hasValidator(_validator) === true? '*' : '')"
+                                        formControlName="grupoSanguineo">
+                                        <mat-option class="texto_formularios" value="">{{'--'+('registro.GrupoSanguineo'| transloco)+'--'}}</mat-option>
+                                        <mat-option class="texto_formularios" *ngFor="let index of listGrupoSanguineo" value={{index.code}}>
+                                            {{index.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error *ngIf="registerForm.controls['grupoSanguineo'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['grupoSanguineo']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-select-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <mat-select class="texto_formularios" matNativeControl [placeholder]="('registro.rh' | transloco )+(registerForm.controls['rh'].hasValidator(_validator) === true? '*' : '')" formControlName="rh">
+                                        <mat-option class="texto_formularios" value="">{{'--'+('registro.rh'| transloco)+'--'}}</mat-option>
+                                        <mat-option class="texto_formularios" *ngFor="let index of listRh" value={{index.code}}>
+                                            {{index.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error *ngIf="registerForm.controls['rh'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['rh']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-registro-mMo">
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="texto_formularios" [showMaskTyped]="false" mask="(000) 000-0000" matInput [placeholder]="('registro.celular' | transloco )+(registerForm.controls['telefonoMovil'].hasValidator(_validator) === true? '*' : '')"
+                                        formControlName="telefonoMovil">
+                                    <mat-error *ngIf="registerForm.controls['telefonoMovil'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['telefonoMovil']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="texto_formularios" [showMaskTyped]="false" mask="(000) 000-0000" matInput
+                                        [placeholder]="('registro.confirmarCelular' | transloco )+(registerForm.controls['telefonoMovil2'].hasValidator(_validator) === true? '*' : '')" formControlName="telefonoMovil2">
+                                    <mat-error *ngIf="registerForm.controls['telefonoMovil2'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['telefonoMovil2']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-registro-mMo">
+                        <div class="grid-registro-mMo__colum">
+                            <div tabindex="0" class="container-form-miM activeFocus">
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="texto_formularios" matInput type="email" [placeholder]="('registro.correo' | transloco )+(registerForm.controls['correoElectronico'].hasValidator(_validator) === true? '*' : '')"
+                                        formControlName="correoElectronico">
+                                    <mat-error *ngIf="registerForm.controls['correoElectronico'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['correoElectronico']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                    <div [class]="'tooltip'">
+                                        <i-feather style="color: #425287;" name="alert-triangle"></i-feather>
+                                        <span class="tooltiptext cuerpo_texto_info_formulario">
+                                            {{'registro.mensaje'| transloco}}
+                                        </span>
+                                    </div>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="texto_formularios" matInput type="email" [placeholder]="('registro.confirmarCorreo' | transloco )+(registerForm.controls['correoElectronico2'].hasValidator(_validator) === true? '*' : '')"
+                                        formControlName="correoElectronico2">
+                                    <mat-error *ngIf="registerForm.controls['correoElectronico2'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['correoElectronico2']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-registro-mMo">
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="texto_formularios" matInput [type]="hide1 ? 'password' : 'text'" [placeholder]="('registro.contrasena' | transloco )+(registerForm.controls['password'].hasValidator(_validator) === true? '*' : '')"
+                                        formControlName="password">
+                                    <mat-error *ngIf="registerForm.controls['password'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['password']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                    <button color="primary" mat-icon-button matSuffix (click)="hide1 = !hide1"
+                                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+                                        <div class="icon-custom-btn" *ngIf="!hide1" [innerHTML]="iconoVer"></div>
+                                        <div class="icon-custom-btn" *ngIf="hide1" [innerHTML]="iconoNoVer"></div>
+                                        <!--i-feather [name]="hide ? 'eye-off' : 'eye'"></i-feather-->
+                                    </button>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="grid-registro-mMo__colum">
+                            <div class="container-form-miM">
+                                <mat-form-field class="container-imput-miM" appearance="outline"
+                                    subscriptSizing="dynamic" color="primary">
+                                    <input class="texto_formularios" matInput [type]="hide2 ? 'password' : 'text'"
+                                        [placeholder]="('registro.confirmarContrasena' | transloco )+(registerForm.controls['password2'].hasValidator(_validator) === true? '*' : '')" formControlName="password2">
+                                    <mat-error *ngIf="registerForm.controls['password2'].invalid">
+                                        <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['password2']">
+                                        </app-error-menssage>
+                                    </mat-error>
+                                    <button color="primary" mat-icon-button matSuffix (click)="hide2 = !hide2"
+                                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+                                        <div class="icon-custom-btn" *ngIf="!hide2" [innerHTML]="iconoVer"></div>
+                                        <div class="icon-custom-btn" *ngIf="hide2" [innerHTML]="iconoNoVer"></div>
+                                        <!--i-feather [name]="hide ? 'eye-off' : 'eye'"></i-feather-->
+                                    </button>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section class="container-form-miM" style="text-align-last: left;">
+                        <mat-checkbox id="checkTratamientoData" aria-label="haz clic para aceptar el tratamiento de datos" name="checkTratamientoData" [color]="'accent'" formControlName="check"></mat-checkbox>
+                        <span class="cuerpo_texto_info_formulario" style="font-size: 12px;"> {{'registro.acepto'| transloco}} <a style="text-decoration: none; color: #425287;"
+                                [href]="['https://www.ventanillamovilidad.com.co/politica-de-tratamiento']"
+                                rel="noopener" target="_blank">{{'registro.terminos'| transloco}}</a></span>
+                        <mat-error [class]="registerForm.controls['check'].value === null? 'none-mMo':''"
+                            style="font-size: 9px;" *ngIf="registerForm.controls['check'].invalid">
+                            <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['check']">
+                            </app-error-menssage>
+                        </mat-error>
+                    </section>
+                </form>
+
+                <mat-grid-list [cols]="2" rowHeight="2.5rem" style="margin-top: 5px">
+                    <mat-grid-tile>
+                        <a [routerLink]="['/pages/landing-page']" style="width: 100%; text-decoration: none;">
+                            <button aria-label="haz clic para regresar a la pagina inicial" name="regresar" style="width: 95% !important;" class="button-miM-large" mat-stroked-button
+                                color="primary">
+                                <p class="texto_boton">{{'login.regresar'| transloco}}</p> 
+                            </button>
+                        </a>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <button aria-label="haz clic para crear una cuenta" name="crear cuenta" style="width: 95% !important;" class="button-miM-large" color="primary" mat-flat-button
+                            [disabled]="!registerForm.valid" (click)="proceso? '':this.registrar()">
+                            <mat-spinner *ngIf="proceso" color="accent" diameter="20"></mat-spinner>
+                            <p class="texto_boton">{{proceso? '' :'login.crear-cuenta'| transloco}}</p> 
+                        </button>
+                    </mat-grid-tile>
+                </mat-grid-list>
+
+                <img class="logo-miM-footer-auth" alt="Card"
+                    src="../../../assets/images/logos/tripticoMovilidadVerde.svg">
+            </mat-card-content>
+
+        </mat-card>
+        <div style="height: 25px;">
+        </div>
+    </div>
+</div>

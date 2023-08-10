@@ -1,0 +1,66 @@
+<div *ngIf="isOffline" class="static-offline offline-header">
+    <app-icon-menu class="icon-offline-size" [icon]="'assets/icons/Icono_Modo Offline.svg'"></app-icon-menu>
+    <span class="informacion_destacada_bold">Modo offline - Sin conexión a internet</span>
+</div>
+<div [style]="isOffline? 'height: calc(100% - 33px);':'height: 100%;'" [class]="estadoBtnEspacio.value+' '+estadoBtnAltura.value+' '+estadoBtnAgrandar.value">
+    <router-outlet></router-outlet>
+    <div class="btn-accesibilidad">
+        <button aria-label="haz clic para abrir el menú de accesibilidad" name="accesibilidad" mat-mini-fab
+            color="accent" (click)="manuAccesi()">
+            <app-icon-menu class="icon-btn-menu-accesibilidad"
+                [icon]="'assets/icons/Icono_accesibilidad.svg'"></app-icon-menu>
+        </button>
+    </div>
+    <div class="manu-accesibilidad" *ngIf="menuAccesibilidad">
+        <div class="manu-accesibilidad-header">
+            <div style="width: 80%; align-self: center;">
+                <span class="manu-accesibilidad-header-title informacion_destacada_bold">
+                    {{'accesibilidad.titleManu' | transloco}}
+                </span>
+            </div>
+            <div style="width: 20%; text-align: end;">
+                <button style="color: white" name="clone" aria-label="haz clic para cerrar menú de accesibilidad"
+                    mat-icon-button (click)="manuAccesi()">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="manu-accesibilidad-contenido">
+            <div class="gird-accesibilidad">
+                <app-btn-idioma [isAccesibilidad]="true" style="width: 100%; text-align: center; padding-bottom: 20px;"></app-btn-idioma>
+                <app-btn-accesibilidad [styleBtn]="'width: 120px; padding: 5px;'" [classIcon]="'icon-btn-accesibilidad'"
+                    [icon]="'assets/icons/Icono_espaciado texto.svg'"
+                    [name]="'accesibilidad.btnEspacio'| transloco" [proceso]="false"
+                    [estadoBtn]="estadoBtnEspacio.name"
+                    (custonEvento)="espacioText($event)"></app-btn-accesibilidad>
+
+                <app-btn-accesibilidad [styleBtn]="'width: 120px; padding: 5px;'" [classIcon]="'icon-btn-accesibilidad'"
+                    [icon]="'assets/icons/Icono_agrandar letra.svg'"
+                    [name]="'accesibilidad.btnAgrandar'| transloco" [proceso]="false"
+                    [estadoBtn]="estadoBtnAgrandar.name"
+                    (custonEvento)="agrandarText($event)"></app-btn-accesibilidad>
+
+                <app-btn-accesibilidad [styleBtn]="'width: 120px; padding: 5px;'" [classIcon]="'icon-btn-accesibilidad'"
+                    [icon]="'assets/icons/Icono_interlineado.svg'"
+                    [name]="'accesibilidad.btnAltura'| transloco" [proceso]="false"
+                    [estadoBtn]="estadoBtnAltura.name"
+                    (custonEvento)="alturaText($event)"></app-btn-accesibilidad>
+
+                <!--app-btn-accesibilidad [styleBtn]="'width: 120px; padding: 5px;'" [classIcon]="'icon-btn-accesibilidad'"
+                    [icon]="'assets/icons/Icono_realzar enlace.svg'"
+                    [name]="'accesibilidad.btnEnlace'| transloco" [proceso]="false"
+                    (custonEvento)="agrandarText($event)"></app-btn-accesibilidad-->
+            </div>
+        </div>
+        <div class="manu-accesibilidad-footer">
+            <button (click)="restablecer()" style="width:max-content; min-width: 100px; height: 25px !important;" class="button-miM-large"
+                color="primary" mat-flat-button>
+                <div style="display: flex;">
+                    <app-icon-menu class="icon-btn-restablecer" style="align-self: center; padding-right: 10px;"
+                        [icon]="'assets/icons/Icono_restablecer configuración.svg'"></app-icon-menu>
+                    <p class="texto_boton-accesibilidad">{{'accesibilidad.btnRestablecer' | transloco}}</p>
+                </div>
+            </button>
+        </div>
+    </div>
+</div>

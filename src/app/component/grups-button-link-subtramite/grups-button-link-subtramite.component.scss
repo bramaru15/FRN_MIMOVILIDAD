@@ -1,0 +1,50 @@
+@import "../../../assets/sass/styles.scss";
+
+.table-link {
+    background-color: $colorFondo;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-column-acto {
+    border: none !important;
+}
+
+.paginator-link {
+    background-color: $colorFondo;
+}
+
+
+.container-form-miM-v2 {
+    background-color: white;
+    border-radius: $radiusInputFiltrarCuston;
+}
+
+.filtro-miMo {
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    @include respond(phone-s) {
+        padding: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    &__input {
+        width: 100%;
+        align-self: center;
+        text-align: center;
+
+
+        @include respond(phone-s) {
+            font-size: 9px;
+            min-width: 0 !important;
+            padding: 0;
+        }
+
+        input {}
+    }
+}

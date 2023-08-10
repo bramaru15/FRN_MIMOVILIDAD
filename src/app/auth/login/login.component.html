@@ -1,0 +1,113 @@
+<div class="fondo-auth fondo-auth-vertical-center">
+    <div class="container-card" style="padding-top: 7%; height: 100%;">
+        <mat-card class="card-auth" style="max-width: 525px !important;">
+            <mat-card-content class="card-content-miM">
+                <img class="logo-miM-auth cursor-custom" (click)="linkLogo()" alt="Card" src="../../../assets/images/logos/miMovilidadFondoBlanco.svg">
+                <h1 class="titulos-destacados-miM titulo">{{'login.titulo'| transloco}}</h1>
+                <p class="titulos-miM cuerpo_texto">{{'login.cuerpo-texto'| transloco}}</p>
+                <form class="example-form" [formGroup]="registerForm">
+                    <div class="container-form-miM colum-height">
+                        <mat-form-field class="container-select-miM" appearance="outline" subscriptSizing="dynamic"
+                            color="primary">
+                            <mat-select class="texto_formularios" matNativeControl [placeholder]="'login.tipoDocumento'| transloco"
+                                formControlName="selectedTipoDocumento" (selectionChange)="funcionarioChange()">
+                                <mat-option class="texto_formularios" *ngFor="let index of listCatalogo" value={{index.code}}>
+                                    {{index.name}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="registerForm.controls['selectedTipoDocumento'].invalid">
+                                <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['selectedTipoDocumento']">
+                                </app-error-menssage>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div [class]="isFun? 'container-form-miM colum-height':'skeleton-none'">
+                        <mat-form-field class="container-imput-miM" appearance="outline" subscriptSizing="dynamic"
+                            color="primary">
+                            <input class="texto_formularios" matInput [placeholder]="'login.usuario'| transloco" formControlName="usuario">
+                            <mat-error *ngIf="registerForm.controls['usuario'].invalid">
+                                <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['usuario']">
+                                </app-error-menssage>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div [class]="isFun? 'skeleton-none':'container-form-miM colum-height'">
+                        <mat-form-field class="container-imput-miM" appearance="outline" subscriptSizing="dynamic"
+                            color="primary">
+                            <input class="texto_formularios" maxlength="11" matInput [placeholder]="'login.documento'| transloco"
+                                formControlName="numDocumento">
+                            <mat-error *ngIf="registerForm.controls['numDocumento'].invalid">
+                                <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['numDocumento']">
+                                </app-error-menssage>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="container-form-miM colum-height">
+                        <mat-form-field class="container-imput-miM" appearance="outline" subscriptSizing="dynamic"
+                            color="primary">
+                            <input class="texto_formularios" matInput [type]="hide ? 'password' : 'text'" [placeholder]="'login.contrasena'| transloco"
+                                formControlName="password">
+                            <mat-error *ngIf="registerForm.controls['password'].invalid">
+                                <app-error-menssage class="cuerpo_texto_info_formulario" [control]="registerForm.controls['password']">
+                                </app-error-menssage>
+                            </mat-error>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                                <div class="icon-custom-btn" *ngIf="!hide" [innerHTML]="iconoVer"></div>
+                                <div class="icon-custom-btn" *ngIf="hide" [innerHTML]="iconoNoVer"></div>
+                                <!--i-feather [name]="hide ? 'eye-off' : 'eye'"></i-feather-->
+                            </button>
+                        </mat-form-field>
+                    </div>
+                </form>
+                <mat-grid-list [cols]="2" rowHeight="2.8rem" style="margin-top: 15px;">
+                    <mat-grid-tile>
+                        <a [routerLink]="['/pages/landing-page']" style="width: 100%; text-decoration: none;">
+                            <button style="width: 95% !important;" class="button-miM-large" mat-stroked-button
+                                color="primary">
+                                <p class="texto_boton">{{'login.regresar'| transloco}}</p> 
+                            </button>
+                        </a>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <button (click)="ingresar()" class="button-miM-large" mat-flat-button
+                            [disabled]="!registerForm.valid" color="primary">
+                            <p class="texto_boton">{{'login.ingresar'| transloco}}</p> 
+                        </button>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <a [routerLink]="['/usernamerecovery']" style="margin-right: auto;">
+                            <button class="button-miM-text cuerpo_texto_resaltado" color="primary" mat-button>{{'login.olvido-contrasena'| transloco}}</button>
+                        </a>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <a [routerLink]="['/signup']" style="margin-left: auto;">
+                            <button class="button-miM-text cuerpo_texto_resaltado" color="primary" mat-button>{{'login.crear-cuenta'| transloco}}</button>
+                        </a>
+                    </mat-grid-tile>
+                </mat-grid-list>
+
+                <img class="logo-miM-footer-auth" alt="Card"
+                    src="../../../assets/images/logos/tripticoMovilidadVerde.svg">
+            </mat-card-content>
+        </mat-card>
+        <div class="loading-indicator">
+            <ngx-spinner bdColor="#EDEDED" size="default" color="#20223E" type="square-jelly-box" [fullScreen]="true"
+                template="<img class='spinner' src='assets/images/logos/Favicon_MiMOVILIDAD.svg' />">
+                <p style="color: #20223E; font-family: Raleway Bold;"> {{'login.cargando'| transloco}} </p>
+            </ngx-spinner>
+        </div>
+    </div>
+</div>
+
+<div class="version-custom">
+    <span class="cuerpo_texto" style="display: flex;align-items: center;justify-content: center;">
+        Versión: {{environment.version}}, {{'login.version'| transloco}}
+        <app-icon-menu style="margin-left: 5px" class="icon-version-custom"
+            [icon]="'assets/icons/Google_Chrome_icon_(February_2022).svg'">
+        </app-icon-menu>
+        <app-icon-menu style="margin-left: 5px" class="icon-version-custom"
+            [icon]="'assets/icons/Microsoft_Edge_logo_(2019).svg'">
+        </app-icon-menu>
+    </span>
+</div>

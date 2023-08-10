@@ -1,0 +1,31 @@
+<app-card-header [proceso]="proceso" [imgLink]="'assets/images/3d/Fimar_electronica_elemento 3D.png'" [title]="'Califica tu experiencia'"
+    [text]="'<span>Ayudanos a mejorar la experiencia de viaje en Taxi.</span>'"></app-card-header>
+<app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'Identifica al conductor en el tarjetón'"></app-title-pages>
+<div class="container-card">
+    <mat-card [class]="proceso? 'skeleton card-auth':'card-auth'" [style]="styleCustom">
+        <mat-card-content class="card-content-miM">
+            <form [class]="proceso? 'skeleton-none':'example-form'" [formGroup]="registerForm">
+                <div class="flex-custom">
+                    <div class="container-form-miM-taxi colum-height flex-custom-input">
+                        <mat-form-field class="container-imput-miM" appearance="outline" subscriptSizing="dynamic" color="primary">
+                            <input aria-label="Ingresa el dato correspondiente para poder consultar" class="input-name texto_formularios" matInput placeholder="Placa" formControlName="valor">
+                        </mat-form-field>
+                        <mat-form-field class="container-imput-miM" appearance="outline" subscriptSizing="dynamic" color="primary">
+                            <input aria-label="Ingresa el dato correspondiente para poder consultar" class="input-name texto_formularios" matInput placeholder="Nombre del conductor" formControlName="valor">
+                        </mat-form-field>
+                    </div>
+                    <button class="button-miM-large flex-custom-btn"
+                        style="width: max-content; min-width: 100px; height: 30px;"  mat-flat-button
+                        color="primary">
+                        <p class="texto_boton">Consultar</p>
+                    </button>
+                    <div class="control-section">
+                    </div>                    
+                </div>
+            </form>
+            <div class="card flex justify-content-center">
+                <p-rating [(ngModel)]="value"></p-rating>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

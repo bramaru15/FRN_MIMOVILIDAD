@@ -1,0 +1,684 @@
+{
+    "accesibilidad": {
+        "titleManu": "Manú de Accesibilidad",
+        "btnRestablecer": "Restablecer la configuración",
+        "btnEspacio": "Espaciado texto",
+        "btnAgrandar": "Agrandar letra",
+        "btnAltura": "Altura de la línea",
+        "btnEnlace": "Realzar enlaces"
+    },
+    "notificaciones": {
+        "login":{
+            "erroUno":{
+                "text": "Error consultando la información de la persona, por favor vuelva a realizar el ingreso si desea realizar tramites"
+            },
+            "errorDos":{
+                "text":"Rol no permitido"
+            },
+            "errorTres":{
+                "title":"Usuario y contraseña inválido",
+                "text":"Verifica los datos ingresados e intenta nuevamente"
+
+            }
+            
+        },
+        "addNuevaVersion":{
+            "title":"Nueva versión de Mi Movilidad",
+            "text":"Hay una nueva versión disponible. ¿Desea actualizar la aplicación?"
+
+        },
+        "buttonCard":{
+            "title":"Crear recordatorio",
+            "text":"¿Quieres agregar esta cita a tu agenda? Si aceptas, abre el archivo que se descargará y asócialo con tu calendario personal",
+            "error":"No se pudo generar el archivo de calendario ics."
+        },
+        "sesion":{
+            "info":{
+                "title":"Cierre de sesión",
+                "text":"Tu sesión ha caducado por razones de seguridad. Por favor, vuelve a iniciar sesión para continuar utilizando nuestros servicios."
+            },
+            "error":{
+                "text":"Error inesperado del sistema, Tu sesión ha caducado por razones de seguridad. Por favor, vuelve a iniciar sesión más tarde."
+            }
+        },
+        "comparendos":{
+            "error":{
+                "text":"Error del Sistema"
+            }
+        },
+        "firmaElectronica":{
+            "error":"Error"
+        },
+        "inmovilzacion":{
+            "error":"Error del Sistema"
+        },
+        "recuperarContrasena":{
+            "custom":{
+                "title":"Proceso exitoso",
+                "text":"Correo enviado exitosamente."
+            },
+            "error":{
+                "text":"El usuario no esta registrado en el sistema"
+            }
+
+        },
+        "cierreSession": {
+            "v1": {
+                "title": "Cierre de sesión",
+                "text": "¿Está seguro que desea cerrar la sesión?"
+            }
+        },
+        "offline": {
+            "v1": {
+                "title": "Sin conexión a internet",
+                "text": "Estás actualmente en modo offline. No tienes conexión a internet y algunas opciones pueden estar limitadas. Por favor, restablece tu conexión para acceder a todas las funciones."
+            },
+            "v2": {
+                "title": "Modo Offline",
+                "text": "Para acceder a esta opción, se requiere conexión a internet. Por favor, verifica tu conexión y vuelve a intentarlo."
+            },
+            "v3": {
+                "title": "Sin conexión a internet",
+                "text": "Actualmente estás en modo offline. Dado que has perdido la conexión a internet la sesión se cerrará ya que algunas opciones están limitadas. Por favor, restablece tu conexión para continuar navegando de manera autenticada."
+            }
+        }
+    },      
+    "login":{
+        "titulo":"¡Hola!",
+        "cuerpo-texto":"Regístrate o accede a tu cuenta para gestionar las citas, comparendos, inmovilizaciones y trámites de Movilidad.",
+        "ingresar":"Ingresar",
+        "olvido-contrasena":"Olvidé mi Contraseña",
+        "cargando":"Cargando...",
+        "version":"Se recomienda su uso en:",
+        "crear-cuenta":"Crear cuenta",
+        "usuario":"Usuario",
+        "tipoDocument": "Tipo de documento",
+        "numDocument": "Número de documento",
+        "password": "Contraseña",
+        "regresar": "Regresar",
+        "tipoDocumento":"Tipo de documento",
+        "documento":"Número de documento",
+        "contrasena":"Contraseña"
+    },
+    "recupera-contrasena":{
+        "titulo":"¿Olvidaste tu contraseña?",
+        "descripcion":"Ingresa los siguientes datos y te enviaremos un correo electrónico para que puedas recuperar tu contraseña.",
+        "enviar":"Enviar"
+    },
+    "registro":{
+        "titulo":"Creación de cuenta",
+        "subtitulo":"Ingresa la siguiente información",
+        "confirmaNumDocuemt": "Confirmar Nro. de documento",
+        "fechaNacimiento": "Fecha de nacimiento",
+        "fechaExpedicion": "Fecha expedición",
+        "formato-fecha":"El formato debe ser aaaa-mm-dd y la fecha máxima hoy",
+        "razonSocial": "Razon social",
+        "primerNombre": "Primer nombre",
+        "segundoNombre": "Segundo nombre",
+        "primerApellido": "Primer apellido",
+        "segundoApellido": "Segundo apellido",
+        "sexo": "Sexo",
+        "GrupoSanguineo": "Grupo sanguíneo",
+        "rh":"RH",
+        "connfirmaCelular":"Confirmar celular",
+        "email": "Correo electrónico",
+        "confirmEmail": "Confirmar correo electrónico",
+        "confirmPassWord": "Confirmar contraseña",
+        "mensaje":"Recuerde que con este correo se creará su cuenta",
+        "acepto":"Acepto la",
+        "terminos":"Política de Tratamiento de Datos Personales",
+        "regresar":"Regresar",
+        "tipoDocumento":"Seleccione Tipo de documento",
+        "documento":"Número de documento",
+        "confirmaDocumento":"Confirmar Nro. de documento",
+        "grupoSanguineo":"Grupo sanguineo",
+        "rhs":"rh",
+        "celular":"Celular",
+        "confirmarCelular":"Confirmar celular",
+        "correo":"Correo electrónico",
+        "confirmarCorreo":"Confirmar correo electrónico",
+        "contrasena":"Constraseña",
+        "confirmarContrasena":"Confirmar contraseña",
+        "tratamientoDatos":"Acepto la Política de Tratamiento de Datos Personales",
+        "cuenta":"Crear cuenta",
+        "registroExitoso":"Registro exitoso",
+        "mensajeIngreso":"Ingresa a tu correo electrónico para validar el registro."
+
+    },
+    "inicio":{
+        "close":"close",
+        "menu":"menu",
+        "inicio":"Inicio",
+        "mapas":"Mapas",
+        "apps":"Apps",
+        "ayuda":"Ayuda",
+        "ingreso":"Ingreso",
+        "asesoriasyconsultas":"Asesorías y consultas",
+        "mapasBogota":"Mapas de Bogotá",
+        "appsRecomendadas":"Apps recomendadas",
+        "centroAyuda":"Centro de ayuda",
+        "miPerfil":"Mi perfil",
+        "actualizacionDatos":"Actualización de datos",
+        "firmaElectronica":"Firma electrónica",
+        "notificacion":"Notificación electrónica",
+        "misCitas":"Mis citas",
+        "tramitesyservicios":"Trámites y servicios",
+        "tramites":"Trámites",
+        "comparendos":"Comparendos",
+        "inmovilizaciones":"Inmovilizaciones",
+        "reportes":"Reportes"
+
+    },
+    "home" :{
+        "restablecer":"Reestablecer",
+        "rango-fechas":"Rango de fechas",
+        "aplicar":"Aplicar",
+        "menu":"Menu",
+        "demanda-tramites":"Top 5 demanda de trámites",
+        "ver-mas":"Ver más",
+        "usuarios-activos":"Usuarios activos por mes",
+        "titulo-card-header":"Aquí encontrarás información actualizada sobre los trámites y servicios ofrecidos. Ingresa en cada opción para obtener más detalles.",
+        "rango1":"30 días",
+        "rango2":"3 meses",
+        "rango3":"6 meses",
+        "filtrar":"Filtrar",
+        "filtrosAplicados":"Filtros aplicados",
+        "numeroInstalaciones":"Número de instalaciones",
+        "firmasElectronicas":"Firmas electrónicas activas",
+        "notificaciones":"Notificaciones electrónicas autorizadas",
+        "usuariosActivos":"Usuarios activos",
+        "misCitas":"Mis citas",
+        "comparendos":"Comparendos",
+        "inmovilizaciones":"Inmovilizaciones",
+        "tramites":"Trámites",
+        "servicio":"General",
+        "otrosServicios":"Otros Servicios",
+        "asesoriasyconsultas":"Asesorías y consultas",
+        "explora":"Explora otros servicios disponibles para ti.",
+        "explorar":"Explorar",
+        "mapasBogota":"Mapas de Bogotá",
+        "verMas":"Ver más",
+        "descubre":"Descubre las ubicaciones de los diferentes servicios en Bogotá.",
+        "firmaElectronica":"Firma electrónica",
+        "activarFirmaElectronica":"Activa tu firma electrónica en solo unos minutos.",
+        "activar":"Activar",
+        "notificacion":"Notificación electrónica",
+        "correo":"Autorizar las notificaciones por correo electrónico.",
+        "autorizar":"Autorizar",
+        "cardText":"<span> Desde aquí podrás iniciar o continuar con cualquier trámite y/o servicio que tengas con la <strong>Secretaría Distrital de Movilidad.</strong> </spam>",
+        "saludo":"Hola ",
+        "cardTextFuncionario": "<span>Aquí encontrarás información actualizada sobre los trámites y servicios ofrecidos. Ingresa en cada opción para obtener más detalles.</span>"
+
+    },
+    "reporte":{
+        "filtrar":"Filtrar",
+        "reestablecer":"Reestablecer",
+        "close":"close",
+        "navegador":"Navegador",
+        "servicio":"Servicio",
+        "nombre-tramite":"Nombre Trámite",
+        "rango-fechas": "Rango de fecha",
+        "aplicar":"Aplicar",
+        "rango1":"30 dias",
+        "rango2":"3 meses",
+        "rango3":"6 meses",
+        "cantidad-servicio":"Cantidad por servicio",
+        "dispositivo":"Dispositivo",
+        "notificacion-electronica":"Notificación electrónica",
+        "descargar-archivo":"Descargar archivo",
+        "categorias":"Categorias",
+        "sistemaOperativo":"Sistema Operativo",
+        "servicios":"Servicios",
+        "cardText":"<span>Accede a información actualizada y detallada. Utiliza el botón de <strong>Filtrar</strong> para personalizar los criterios de búsqueda y visualizar los datos según tus necesidades. </span>",
+        "cantidad":"Cantidad por servicio",
+        "notificacion":"Notificación electrónica",
+        "filtros":"Filtros aplicados",
+        "instalaciones":"Instalaciones",
+        "usuarios":"Usuarios",
+        "tramite":"Trámites",
+        "firma":"Firma electrónica",
+        "titleCard": "Reportes",
+        "textCard": "<span>Accede a información actualizada y detallada. Utiliza el botón de <strong>Filtrar</strong> para personalizar los criterios de búsqueda y visualizar los datos según tus necesidades. </span>",
+        "total": {
+            "tramite": "Total mayor trámite utilizado",
+            "firmaElectronica": "Total de Firmas electrónicas",
+            "instalaciones": "Total de instalaciones",
+            "usuario": "Total de usuarios habilidados",
+            "notificacion": "Total de Notificaciones electrónicas"
+        }
+    },
+    "firma-electronica":{
+        "documento":"Número de documento",
+        "tipo-documento":"Tipo de documento",
+        "nombre":"Nombre",
+        "correo":"Correo electrónico",
+        "continuar":"Continuar",
+        "contrasena": "Contraseña",
+        "confirmar-contrasena": "Confirmar contraseña",
+        "acuerdo":"Acuerdo de firma electrónica",
+        "privacidad":"1. Privacidad de los datos:",
+        "privacidad1":"a. La página XYZ se compromete a proteger la privacidad de los datos personales proporcionados durante el proceso de registro.",
+        "privacidad2":"b. Los datos recopilados durante el registro se utilizarán únicamente para los fines relacionados con los servicios ofrecidos por XYZ.",
+        "privacidad3":"c. No compartiremos, venderemos ni revelaremos de ninguna manera los datos personales de los usuarios a terceros sin su consentimiento explícito, a menos que sea requerido por ley.",
+        "veracidad":"2 .Veracidad de la información:",
+        "veracidad1":"a. Los usuarios deben proporcionar información veraz, completa y actualizada durante el registro en la página XYZ.",
+        "veracidad2":"b. Cualquier información falsa, engañosa o incompleta puede resultar en la suspensión o terminación de la cuenta del usuario.",
+        "responsabilidad":"3. Responsabilidad de la cuenta:",
+        "responsabilidad1":"a. Los usuarios son responsables de mantener la confidencialidad de su información de inicio de sesión y de proteger su cuenta contra el acceso no autorizado.",
+        "responsabilidad2":"b. Cualquier actividad realizada a través de la cuenta del usuario se considerará responsabilidad exclusiva del titular de la cuenta.",
+        "uso":"4. Uso adecuado:",
+        "uso1":"a. Los usuarios se comprometen a utilizar la página XYZ de manera adecuada y respetuosa, sin participar en actividades ilegales, fraudulentas, difamatorias, obscenas o perjudiciales.",
+        "uso2":"b. Queda prohibido el uso de la página para enviar spam, correo no deseado u otro tipo de comunicaciones no solicitadas.",
+        "suspension":"5. Suspensión o terminación de cuentas:",
+        "suspension1":"a. XYZ se reserva el derecho de suspender o terminar la cuenta de cualquier usuario que viole estas políticas de registro o los términos de servicio de la página.",
+        "suspension2":"b. En caso de sospecha de actividad fraudulenta, XYZ puede tomar las medidas necesarias, incluida la cooperación con las autoridades competentes.",
+        "consentimiento":"6. Consentimiento del usuario:",
+        "consentimiento1":"a. Al registrarse en la página XYZ, el usuario otorga su consentimiento para el procesamiento de sus datos personales de acuerdo con las leyes de protección de datos aplicables.",
+        "consentimiento2":"b. El usuario tiene el derecho de retirar su consentimiento en cualquier momento, lo que resultará en la eliminación de sus datos personales de nuestra base de datos.",
+        "recopilacion":"7. Recopilación de datos:",
+        "recopilacion1":"a. La página XYZ recopilará información personal como nombre, dirección de correo electrónico y fecha de nacimiento durante el proceso de registro. Estos datos son necesarios para brindar servicios personalizados y mejorar la experiencia del usuario.",
+        "recopilacion2":"b. Además de los datos proporcionados durante el registro, podemos recopilar información adicional de forma automática, como dirección IP, tipo de navegador y dispositivo utilizado, con fines estadísticos y de seguridad.",
+        "cookies":"8. Uso de cookies:",
+        "cookies1":"a. La página XYZ utiliza cookies para mejorar la experiencia del usuario y proporcionar funcionalidades personalizadas. Al utilizar la página, el usuario acepta el uso de cookies de acuerdo con nuestra política de cookies.",
+        "seguridad":"9. Seguridad de los datos:",
+        "seguridad1":"a. La página XYZ implementa medidas de seguridad apropiadas para proteger los datos personales de los usuarios contra el acceso no autorizado, la divulgación o la alteración.",
+        "seguridad2":"b. Sin embargo, es importante tener en cuenta que ninguna transmisión de datos a través de internet es completamente segura. Aunque nos esforzamos por proteger la información del usuario, no podemos garantizar la seguridad absoluta de los datos transmitidos a través de nuestra página.",
+        "comunicaciones":"10. Comunicaciones de marketing:",
+        "comunicaciones1":"a. Con el consentimiento del usuario, la página XYZ puede enviar comunicaciones de marketing, como boletines informativos o promociones, a la dirección de correo electrónico proporcionada durante el registro.",
+        "comunicaciones2":"b. El usuario tiene el derecho de optar por no recibir dichas comunicaciones en cualquier momento, utilizando el enlace de cancelación de suscripción incluido en cada correo electrónico o modificando sus preferencias en su cuenta.",
+        "retencion":"11. Retención de datos:",
+        "retencion1":"a. La página XYZ retendrá los datos personales de los usuarios durante el tiempo necesario para cumplir con los fines para los que fueron recopilados, a menos que se solicite lo contrario o sea requerido por ley.",
+        "retencion2":"b. Al finalizar la relación con la página, los datos personales se eliminarán de manera segura, a menos que deban mantenerse para cumplir con obligaciones legales o resolver disputas.",
+        "transferencia":"12. Transferencia de datos:",
+        "transferencia1":"a. En caso de que se realice una transferencia de datos a terceros, la página XYZ garantizará que se cumplan los requisitos legales de protección de datos aplicables y que se establezcan acuerdos de confidencialidad adecuados.",
+        "acceso":"13. Acceso y rectificación de datos:",
+        "acceso1":"a. Los usuarios tienen derecho a acceder, corregir o actualizar sus datos personales almacenados en nuestra página. Para ejercer este derecho, pueden ponerse en contacto con nuestro equipo de soporte o utilizar las opciones disponibles en su cuenta.",
+        "menores":"14. Menores de edad:",
+        "menores1":"a. La página XYZ está diseñada para ser utilizada por personas mayores de 18 años. No recopilamos de manera intencional información personal de menores de edad. Si se identifica que un menor ha proporcionado información sin el consentimiento de sus padres o tutores, tomaremos las medidas necesarias para eliminar dicha información.",
+        "modificaciones":"15. Modificaciones en las políticas de registro:",
+        "modificaciones1":"a. XYZ se reserva el derecho de modificar estas políticas de registro en cualquier momento. Cualquier cambio será notificado a los usuarios a través de la página o por correo electrónico. Se recomienda a los usuarios revisar regularmente estas políticas para estar informados sobre las actualizaciones.",
+        "acepto":"Acepto",
+        "no-acepto":"No Acepto",
+        "aceptar":"Generar"
+    },
+    "mi-perfil":{
+        "cerrar-sesion":"Cerrar sesión",
+        "documento":"Número de documento",
+        "tipo-documento":"Tipo de documento",
+        "primer-nombre":"Primer nombre",
+        "segundo-nombre":"Segundo nombre",
+        "primer-apellido":"Primer apellido",
+        "segundo-apellido":"Segundo apellido",
+        "razon-social":"Razon social",
+        "sexo":"Sexo",
+        "sexo1":"--Sexo--",
+        "celular":"Celular",
+        "correo":"Correo electrónico",
+        "fecha-nacimiento":"Fecha de nacimiento",
+        "formato":"El formato debe ser aaaa-mm-dd y la fecha máxima hoy",
+        "actualizar":"Actualizar"
+
+    },
+    "notificacion-electro":{
+        "correo":"Correo electrónico",
+        "continuar":"Continuar"
+
+    },
+    "taxis":{
+        "placa":"Placa",
+        "tarjeta":"Número tarjeta de control",
+        "consultar":"Consultar",
+        "vehiculoPlaca":"Vehículo placa ",
+        "tarjetaControl":"Tarjeta de control ",
+        "titulo":"Consulta de Taxis",
+        "categoria":"Centro de ayuda",
+        "asistente":"Asistente Virtual",
+        "subText":"<span>Verifica si un taxi está legalmente registrado en Bogotá y cuenta con los documentos o permisos necesarios para brindar servicios de transporte público.</span>",
+        "selecciona":"Selecciona el tipo de consulta",
+        "ingresaDatos":"Ingresa los datos del taxi",
+        "numeroPlaca":"Número de placa o tarjeta de control",
+        "textoResultado": {
+            "textUno": "El(los) conductor(es) autorizado(s) para conducir el vehículo de número de placa <strong>",
+            "textDos": "</strong> ingresado es(son):"
+        },
+        "verTarjeta":"Ver tarjeta",
+        "resultado":"Resultados"
+    },
+    "anonimo":{
+        "textCard":"<span>Descarga estas aplicaciones móviles esenciales para mejorar tu movilidad en la ciudad.</spam>",
+        "title":"Mi Movilidad a un clic",
+        "textCard2":"<spam>Explora servicios, trámites y consultas de movilidad en Bogotá de manera rápida y sencilla.</spam>",
+        "otros-servicios":"Otros servicios",
+        "general":"Servicios",
+        "apptext":"Descubre las mejores aplicaciones móviles para optimizar tu movilidad en la ciudad.",
+        "app":"Apps recomendadas",
+        "appBtn":"Ver más",
+        "masServicios":"Más servicios",
+        "masServiciosText":"<a class='a-custon-anonimo' href='/#/signin'>Inicia sesión</a><span> o regístrate para acceder a más servicios y actualizar tu información.</span>",
+        "registrate":"Regístrate",
+        "inmovilizaciones":"Inmovilizaciones",
+        "comparendos":"Comparendos",
+        "exceptuados":"Exceptuados",
+        "taxis":"Taxis",
+        "picoyplaca":"Pico y placa solidario",
+        "excepcionDiscapacitados":"Excepción discapacitados"
+    },
+    "navbar":{
+        "iniciar-sesion":"Iniciar sesión",
+        "cerrar-sesion":"Cerrar sesión",
+        "actualizacion":"Actualización de datos"
+    },
+    "appDescarga":{
+        "title":"Apps Recomendadas",
+        "textCard":"<span>Descarga estas aplicaciones móviles esenciales para mejorar tu movilidad en la ciudad.</spam>",
+        "planificaViaje":"Planifica tu viaje con TransMiApp",
+        "planificaViajeText":"<spam>Encuentra rutas, horarios y paraderos de <strong>TransMilenio</strong> y de todo el <strong>Sistema Integrado de Transporte Público</strong> en Bogotá. Viaja de manera más facil y conveniente.</spam>",
+        "descargar":"Descargar ahora",
+        "subtitulo": "Aplicaciones móviles",
+        "bici":"TemBici: Alquila una bicicleta en minutos",
+        "temBiciText":"<spam>Transforma tu forma de moverte por la ciudad, encuentra una bicicleta cerca de ti y disfruta de un viaje cómodo y seguro.</spam>"
+    },
+    "actoresViales":{
+        "titulo":"Trámites de Actores Viales",
+        "categoria1":"Centro de ayuda",
+        "asistente":"Asistente Virtual",
+        "subText":"<span>Descubre los trámites virtuales destinados a los actores viales en la <strong>Ventanilla Única de Servicios</strong>. </span>",
+        "expedicion":"Expedición licencia de conducción",
+        "btbExpedicion": "Expedir licencia de conducción",
+        "filterExpedicion1":"Expedicion licencia de conduccion",
+        "filterExpedicion2":"Expedir licencia de conduccion",
+        "derechosyrequisitos":"Ver derechos y requisitos",
+        "categoriaTramite":"Actores viales",
+        "tipoTramite1":"Expedicion licencia",
+        "renovacion":"Renovación licencia de conducción",
+        "filterRenovacion1":"Renovar licencia de conduccion",
+        "recategorizacion":"Recategorización licencia de conducción",
+        "filterRecategorizacion1":"Recategorización licencia de conducción hacia arriba",
+        "filterRecategorizacion2":"Recategorización licencia de conducción hacia abajo",
+        "tipoTramite2":"Recategorización licencia",
+        "duplicado":"Duplicado licencia de conducción",
+        "tipoTramite3":"Duplicado licencia",
+        "renovacionLicencia":"Renovación licencia"
+    },
+    "asesorias":{
+        "titulo":"Asesorías y consultas",
+        "cardText":"<span> Desde aquí podrás conocer y acceder a otros servicios de la <span class='textsub'> Secretaría Distrital de Movilidad.</span></span>",
+        "servicioTaxi":"Servicio de taxi",
+        "subTextservicioTaxi":"Conoce y disfruta del servicio de taxi legal en Bogotá.",
+        "asesoriasyconsultas":"Asesorías y consultas",
+        "servicioTaxis":"Servicio de Taxis",
+        "consultar":"Consultar",
+        "calificar":"Calificar tu experiencia",
+        "verMas":"Ver más",
+        "excepcionDiscapacidad":"Vehículos Exceptuados",
+        "btnExcepcionDiscapacidad": "Excepción por discapacidad",
+        "picoyplaca":"Pagar pico y placa solidario",
+        "orientacionVictimas":"Orientación a Víctimas de Siniestros Viales",
+        "asesoriasyconsultasText":"Si eres víctima de un siniestro vial en el Distrito Capital y/o tienes un familiar afectado, accede de forma gratuita a los servicios de orientación jurídica, social y psicológica ofrecidos por la <strong>Secretaría Distrital de Movilidad.</strong>",
+        "accederOrvi":"Acceder a ORVI",
+        "picoyplacaText":"Verifica la autorización de un vehículo para circular sin restricciones por pico y placa.",
+        "servicios":"Servicios"
+
+    },
+    "centroAyuda":{
+        "asesoraVirtual":"Asesora virtual",
+        "centrodeAyuda":"Centro de ayuda",
+        "asistenteVirtual":"Asistente Virtual",
+        "subText1":"<spam>Comunícate con Lucía, la asesora virtual de servicios a la ciudadanía de la Secretaría Distrital de Movilidad, quien está disponible las 24 horas, los 7 días de la semana. </spam>",
+        "hablaLucia":"Habla con Lucía",
+        "orientacionVictimas":"Orientación a Víctimas de Siniestros Viales",
+        "subText2":"Si eres víctima de un siniestro vial en el Distrito Capital y/o tienes un familiar afectado, accede de forma gratuita a los servicios de orientación jurídica, social y psicológica ofrecidos por la <strong>Secretaría Distrital de Movilidad.</strong>",
+        "orvi":"ORVI",
+        "chatea":"Chatea con nosotros",
+        "lineaAtencion":"Línea de atención a la ciudadanía",
+        "titulo":"¿Necesitas ayuda?",
+        "text":"Si tienes problemas con nuestra plataforma o con la gestión que estás realizando, envíanos un correo a ",
+        "horario":"Lunes a viernes: 7:00 a.m. a 7:00 p.m. - Sábados: 8:00 a.m. a 2:00 p.m.",
+        "telText": "(601) 364 9400 opción 2"
+    },
+    "comparendos":{
+        "titulo":"Comparendos",
+        "multa":"Multa(s)",
+        "multas":"Multa",
+        "noTieneComparendos":"No tienes comparendos vigentes.",
+        "tieneComparendos":"Ya tienes una firma vigente hasta ",
+        "pagos":"Pagos",
+        "ultimoComparendo":"Último Comparendo Impuesto",
+        "cardText":"<span>Consulta los comparendos vigentes con la <spam class='textsub'>Secretaría Distrital de Movilidad </spam>y realiza tus pagos.</span>",
+        "comparendosInfraccion":"Comparendo por Infracción",
+        "comparendos":"Comparendos",
+        "comparendosVigentes":"Comparendos vigentes",
+        "pagarComparendo":"Pagar comparendo",
+        "fechaImposicion":"Fecha de imposición",
+        "estado":"Estado"
+
+    },
+    "inmovilizaciones":{
+        "titulo":"Vehículos inmovilizados",
+        "subTitulo": "Último Vehículo Inmovilizado",
+        "cardText":"<span>Consulta los vehículos de tu propiedad que se encuentran en los patios de la </span> <strong> Secretaría Distrital de Movilidad.</strong>",
+        "inmovilizados":"Ya tienes una firma vigente hasta",
+        "noInmovilizados":"No tienes vehículos inmovilizados.",
+        "tramitesRelacionados":"Otras consultas",
+        "consultaPlaca":"Consultar por placa",
+        "detalles":"Conoce los detalles de este trámite",
+        "salidaPatios":"Solicitar salida de patios",
+        "vehiculoPlaca":"Vehículo placa",
+        "salida":"Salida de patios",
+        "fechaIngreso":"Fecha de ingreso",
+        "patio":"Patio",
+        "comparendo":"Infracción",
+        "categoria":"Inmovilizaciones"
+    },
+    "mapas":{
+        "titulo":"Mapas de Bogotá",
+        "text":"<span>Encuentra la ubicación de diferentes servicios en la ciudad. Haz clic en la opción que necesites.</span>",
+        "planificaViaje":"Planifica tu viaje con TransMiApp",
+        "appsRecomendadas":"Apps Recomendadas",
+        "appsMoviles":"Aplicaciones móviles",
+        "subText1":"<spam>Encuentra rutas. horarios y paraderos de <strong>TransMilenio</strong> y de todo el <strong>Sistema Integrado de Transporte Público</strong> en Bogotá. Viaja de manera más facil y conveniente.</spam>",
+        "descargar":"Descargar ahora",
+        "temBici":"TemBici: Alquila una bicicleta en minutos",
+        "subText2":"<spam>Transforma tu forma de moverte por la ciudad, encuentra una bicicleta cerca de ti y disfruta de un viaje cómodo y seguro.</spam>",
+        "cicloRutas":"Ciclorrutas",
+        "mapa":"Mapas",
+        "cicloVias":"Ciclovías",
+        "cicloParqueaderos":"Cicloparqueaderos",
+        "parqueoPago":"Zonas de parqueo pago",
+        "incidentes":"Incidentes en la vía",
+        "obras":"Obras en la vía",
+        "mapasDisponibles":"Mapas disponibles"
+
+    },
+    "misCitas":{
+        "titulo":"Mis citas",
+        "cardText":"<span> Aquí podrás agendar, consultar, reagendar o cancelar tus citas en los diferentes puntos de atención de la<spam class='textsub'> Secretaría Distrital de Movilidad.</spam>",
+        "proximaCita":"Próxima cita",
+        "noTieneCitas":"No tienes citas agendadas.",
+        "tieneCitas":"Ya tienes una firma vigente hasta",
+        "otrasOpciones":"Otras opciones para citas",
+        "modificarCita":"Modificar cita",
+        "fecha":"Fecha",
+        "text":"10 de febrero de 2023",
+        "nueva":"Nueva cita",
+        "historico":"Histórico de Citas",
+        "comoAgendar":"¿Cómo agendar una cita?",
+        "citas":"Citas",
+        "reagendar" :"Reagendar cita",
+        "ubicacion":"Ubicación",
+        "puntoAtencion":"Punto de atención",
+        "hora":"Hora"
+
+    },
+    "sidebar":{
+        "iniciarSesion":"Iniciar sesión",
+        "cerrarSesion":"Cerrar sesión"
+    },
+    "consultaVehiculos":{
+        "resultados":"Resultados",
+        "consultar":"Consultar",
+        "digitaPlaca":"Digita la placa a consultar",
+        "ingresaPlaca":"Ingresa la placa",
+        "vehiculosInmobilizados":"Vehículos inmovilizados",
+        "subText":"Valida si tu vehículo se encuentra en algún patio autorizado por la <strong>Secretaría Distrital de Movilidad.</strong>",
+        "asesoriasyconsultas":"Asesorías y consultas",
+        "servicioTaxi":"Servicios de Taxis",
+        "inmovilizacion":"inmovilizacion",
+        "mensajeBusqueda1":"El vehículo consultado se encuentra inmovilizado desde el día",
+        "mensajeBusqueda2":"por la(s) infracción(es) ",
+        "mensajeBusqueda3":"en el patio",
+        "titleCardResul": "Vehículo placa",
+        "vertarjeta": "Ver tarjeta"
+    },
+    "cardTaxis": {
+        "verMas": "Ver más",
+        "placa": {
+            "mensajeUno": "La placa <strong>",
+            "mensajeDos": "</strong> no cuenta con Tarjeta de Control activa a la fecha <strong>",
+            "mensajeTres": " </strong> para la ciudad de Bogotá."
+        },
+        "tarjetaOperation": {
+            "mensajeUno": " La tarjeta de control <strong>",
+            "mensajeDos": "</strong> no se encuentra activa a la fecha <strong>",
+            "mensajeTres": " </strong> para la ciudad de Bogotá."
+        },
+        "exceptuado": "El vehículo consultado No se encuentra inscrito en el registro de vehículos exentos de la restricción de circulación vial en Bogotá D.C.",
+        "inmovilizacion": {
+            "mensajeUno": "El vehículo de placa ",
+            "mensajeDos": " no se encuentra inmovilizado en el patio Álamos."
+        }
+    },
+    "exceptuados":{
+        "digitaPlaca":"Digita la placa a consultar",
+        "consultar":"Consultar",
+        "verExcepcion":"Ver excepción",
+        "vehiculosExceptuados":"Vehículos exceptuados",
+        "centroAyuda":"Centro de ayuda",
+        "asistente":"Asistente Virtual",
+        "ingresaPlaca":"Ingresa la placa",
+        "resultados":"Resultados",
+        "subText":"<span> Comprueba si tu vehículo está en el registro de excepciones de pico y placa. </span>",
+        "cardText":"El vehículo consultado se encuentra en el registro de vehículos exceptuados de la restricción de circulación vial en Bogotá D.C., y cuenta con las causales de excepción que se relacionan a continuación."
+    },
+    "firmaElectronica":{
+        "mensajeFirma":"Ya tienes una firma vigente hasta ",
+        "error1":"Error al intentar consultar la firma electrónica, por favor intente de nuevo.",
+        "procesoExitoso":"Proceso exitoso",
+        "text":"Se creo la firma electrónica correctamente y expira el",
+        "error2":"Error al intentar generar la firma electrónica, por favor intente de nuevo",
+        "titulo":"Firma electrónica",
+        "tipoDocumento":"Tipo de documento",
+        "documento":"Número de documento",
+        "nombre":"Nombre",
+        "correo":"Correo electrónico",
+        "firmaVigente":"Ya tienes una firma vigente hasta ",
+        "generarFirma":"Generar firma electrónica",
+        "contrasena":"Contraseña",
+        "confirmarContrasena":"Confirmar contraseña",
+        "confirmaDatos":"Confirma tus datos",
+        "otrasOpciones":"Otras opciones",
+        "cardText3":"<span>Estos datos se reflejarán en tu firma. En caso de no ser correctos, modifícalos en la sección Actualización de datos.</span>",
+        "activarFirmaElectronica":"¿Cómo activar tu firma electrónica?",
+        "actualizacionDatos":"Actualización de datos",
+        "cardText":{
+            "mensajeUno":"<span>Identifícate de forma segura en documentos oficiales con la firma electrónica.</span>",
+            "mensajeDos":"<span>Ingrese una clave para asignarle a su firma.</span>"
+        }
+    
+
+
+
+    },
+    "miPerfil":{
+        "procesoExitoso":"Proceso exitoso",
+        "actualizar":"Gracias por actualizar tus datos.",
+        "datos":"Datos de usuario",
+        "text":"Aquí puedes ver tus datos personales e información de contacto, no olvides mantenerlos actualizados."
+
+    },
+    "notificacionElectro":{
+        "actualizacion":"Actualización de datos",
+        "comoAutorizar":"¿Cómo autorizar la notificación electrónica?",
+        "notificacion":"Notificación electrónica",
+        "opciones":"Otras opciones",
+        "cardText":"<span>Agiliza y simplifica la comunicación con la notificación electrónica de actos administrativos.</span>",
+        "cardText2":"<span>Verifica que el correo electrónico registrado sea correcto, de lo contrario, modifícalo en la sección Actualización de datos.</span>",
+        "titulo":"Notificación electrónica",
+        "autorizacion":"Autorización",
+        "otrasOpciones":"Otras opciones",
+        "correo":"Correo electrónico"
+
+    },
+    "serviciosPublicos":{
+        "tramitesServicios":"Trámites de Servicio Público",
+        "centroAyuda":"Centro de ayuda",
+        "asistenteVirtual":"Asistente Virtual",
+        "subText1":"<span> Encuentra los trámites virtuales disponibles para el servicio público en la <strong>Ventanilla Única de Servicios</strong>.</span>",
+        "expedicion":"Expedición tarjeta de operación",
+        "btnExpedicion": "Expedir tarjeta de operación",
+        "filterExpedicion1":"Expedición tarjeta de operacion",
+        "filterExpedicion2":"Ver derechos y requisitos",
+        "filterExpedicion3":"Expedir tarjeta de operacion",
+        "derechosyrequisitos":"Ver derechos y requisitos",
+        "servicios":"Servicios públicos",
+        "expedicionTO":"Expedición TO",
+        "renovacion":"Renovación tarjeta de operación",
+        "filterRenovacion1":"Renovacion tarjeta de operacion",
+        "filterRenovacion2":"Ver derechos y requisitos",
+        "filterRenovacion3":"Renovar tarjeta de operacion",
+        "renovacionTO":"Renovación TO",
+        "renovar":"Renovar tarjeta de operación",
+        "cancelacion":"Cancelación tarjeta de operación",
+        "filterCancelacion1":"Cancelacion tarjeta de operacion",
+        "filterCancelacion2":"Ver derechos y requisitos",
+        "filterCancelacion3":"Cancelar tarjeta de operacion",
+        "cancelacionTO":"Cancelación TO",
+        "duplicado":"Duplicado tarjeta de operación",
+        "filterDuplicado1":"Duplicado tarjeta de operacion",
+        "filterDuplicado2":"Ver derechos y requisitos",
+        "filterDuplicado3":"Duplicado tarjeta de operacion",
+        "duplicadoTO":"Duplicado TO"
+    },
+    "tramites":{
+        "nuevoTramite":"Nuevo trámite",
+        "noFirma":"No tienes trámites vigentes.",
+        "firma":"Ya tienes una firma vigente hasta",
+        "titulo":"Trámites",
+        "cardTramite":"<span> Conoce los requisitos e inicia un nuevo trámite presencial o virtual de la <spam class='+'textsub'+'>Ventanilla Única de Servicios</spam>, también puedes consultar y gestionar tus solicitudes vigentes. </span>",
+        "tramitede":"Trámite de ",
+        "consultar":"Consultar trámite",
+        "tramitesVigentes":"Trámites vigentes",
+        "fecha":"Fecha",
+        "estado":"Estado",
+        "vehiculos":"Vehículos",
+        "actoresViales":"Actores viales",
+        "servicioPublico":"Servicio público",
+        "ultimoTramite":"Último trámite solicitado",
+        "cardText":{
+            "mensajeUno":"<span> Conoce los requisitos e inicia un nuevo trámite presencial o virtual de la <spam class='textsub'>Ventanilla Única de Servicios</spam>, también puedes consultar y gestionar tus solicitudes vigentes. </span>",
+            "mensajeDos":"<span>Para realizar una nueva solicitud, selecciona la categoría del trámite que deseas.</span>"
+        }
+
+    },
+    "vehiculo":{
+        "traspaso":"Traspaso de propiedad",
+        "derechosyrequisitos":"Ver derechos y requisitos",
+        "traspasarVehiculo":"Traspasar vehiculo",
+        "vehiculo":"Vehículos",
+        "levantarPrenda":"Levantar prenda",
+        "inscribirPrenda":"Inscribir prenda",
+        "prenda":"Prenda",
+        "insclevantPrenda":"Inscripción o levantamiento de prenda",
+        "matricula":"Matrícula",
+        "matricular":"Matricular vehiculo",
+        "button":{
+            "text":"<span>Accede a los trámites virtuales relacionados con vehículos en la <strong>Ventanilla Única de Servicios</strong>. </span>"
+        }
+    },
+    "visor":{
+        "titulo":"Visor geográfico",
+        "irUbicacion":"Ir a mi ubicación"
+
+    }
+
+}

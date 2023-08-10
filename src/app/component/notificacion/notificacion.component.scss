@@ -1,0 +1,53 @@
+@import "../../../assets/sass/styles.scss";
+$radiusCustom: 20px;
+
+.button-noty-1{
+    width: 30%;
+    height: 30px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-right: 9px;
+}
+
+.button-noty-2{
+    height: 30px;
+    width: 30%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-left: 9px;
+}
+    
+.example-card{
+    max-width: 400px;
+    overflow: hidden;
+    @include respond(phone) {
+        width: 100%;
+    }
+    //min-height: 230px;
+}
+
+.icon-noty{ 
+    min-inline-size: 70px;
+    height: 100%;
+    align-self: center;
+    margin-top: 20px;
+    stroke-width: 0.09rem !important;
+}
+
+.example-card-content {
+    align-self: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 0 40px 0 40px;
+    width: 100%;
+    @include respond(phone) {
+        //width: fit-content;
+        padding: 0 0 20px 0;
+    }
+}
+
+.icon-noty-v2 {
+    height: 100%;
+    align-self: center;
+    margin-top: 20px;
+}

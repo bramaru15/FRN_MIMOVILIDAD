@@ -1,0 +1,126 @@
+@import "../../../assets/sass/styles.scss";
+$tamanoCircle: 20px;
+
+.dibujo-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    margin: 0 auto;
+    background-color: transparent;
+    position: relative;
+
+    &__line {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: black;
+        transform: translateY(-20%);
+    }
+
+    &__circle_uno {
+        z-index: 3;
+        width: $tamanoCircle;
+        height: $tamanoCircle;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        position: relative;
+        margin-bottom: 10px;
+        background: $colorVerde;
+    }
+
+    &__circle_dos {
+        z-index: 3;
+        width: $tamanoCircle;
+        height: $tamanoCircle;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background: $colorVerde;
+        position: relative;
+        margin-bottom: 10px;
+    }
+}
+
+.text-slider {
+    font-family: Raleway ExtraBold;
+    color: $colorPrimario1;
+    @include respond(phone-s) {
+       font-size: 10px;
+    }
+}
+
+.card-custom-header {
+    width: 100%;
+    display: flex;
+    @include respond(phone-xxl) {
+        flex-direction: column;
+    }
+    &__text {
+        width: -webkit-fill-available;
+        width: -moz-fill-available;
+    }
+
+    &__btn {
+        width: fit-content;
+        text-align-last: right;
+        align-self: center;
+        @include respond(phone-xxl) {
+            align-self: normal;
+            width: 100%;
+            text-align-last: center;
+        }
+        .button-filtrar {
+            min-width: 100px;
+            @include respond(phone-xxl) {
+                margin-top: 14.070px;
+                align-self: normal;
+            }
+        }
+    }
+}
+
+
+
+.card-header{
+    border-radius: $radiusCardCuston !important;
+    box-shadow: none !important;
+    color: $colorPrimario1;
+    min-height: 75px;
+    padding-left: 40px;
+    padding-right: 40px;
+    @include respond(phone) {
+        padding-left: 9px;
+        padding-right: 9px;
+    }  
+}
+
+
+.rango-fecha-container {
+    display: flex;
+    
+    /*@include respond(phone-xxl) {
+        flex-direction: column;
+    }*/
+
+    &_fecha {
+        width: 50%;
+        align-self: center;
+        @include respond(phone-xxl) {
+            align-self: auto;
+        }
+    }
+}
+
+.fecha-borde {
+    //border-radius: 5px; 
+    //border: 1px solid;
+    padding: 5px;
+    margin: 0 6px 0 6px;
+    @include respond(phone-xxl) {
+        margin: 0;
+    }
+}

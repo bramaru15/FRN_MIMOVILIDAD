@@ -1,0 +1,4 @@
+<button aria-label="haz clic para ir a la pagina inicial" name="notificacion" mat-icon-button  (click)="toggleBadgeVisibility()">
+    <!--i-feather style="font-size: 10px; font-family: Raleway Bold;" [matBadge]="numeroNotificacion >= 100? '+99' : numeroNotificacion" matBadgeOverlap="false" matBadgeSize="medium" matBadgeColor="accent" [matBadgeHidden]="hidden" name="bell"></i-feather-->
+    <app-icon-menu class="icon-btn-notificacion-size" [icon]="'assets/icons/Notificación_icono.svg'" style="font-size: 10px; font-family: Raleway Bold;" [matBadge]="numeroNotificacion >= 100? '99+' : numeroNotificacion" matBadgeOverlap="false" matBadgeSize="medium" matBadgeColor="accent" [matBadgeHidden]="hidden" name="bell"></app-icon-menu>
+</button>

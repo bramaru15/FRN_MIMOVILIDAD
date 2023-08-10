@@ -1,0 +1,20 @@
+<div class="marguenes-custom"></div>
+<app-card-header-centro-ayuda
+[proceso]="proceso" 
+[imgLink]="'assets/icons/Centro_de_ayuda_icono.svg'" 
+[imgLink2]="'assets/icons/Telefono_icono.svg'" 
+[title]="'centroAyuda.titulo'| transloco"
+[text]="'centroAyuda.text' | transloco" 
+[text2]="'centroAyuda.lineaAtencion' | transloco"
+[title2]="'centroAyuda.telText' | transloco"
+[linkCorreo]="environment.direccionamiento.centroAyuda.correo"
+[linkTelefo]="environment.direccionamiento.centroAyuda.tel"
+[text3]="'centroAyuda.horario' | transloco"
+></app-card-header-centro-ayuda>
+<div class="marguenes-custom"></div>
+<div style="display: flex; flex-flow: wrap;">
+    <div *ngFor="let index of listButton" [style]="'width: 100%; margin: 1% 0% 1% 0%;'">
+        <app-card-btn-home-v2 [proceso]="proceso" [listButton]="index"></app-card-btn-home-v2>
+    </div>
+</div>
+<div class="marguenes-custom"></div>

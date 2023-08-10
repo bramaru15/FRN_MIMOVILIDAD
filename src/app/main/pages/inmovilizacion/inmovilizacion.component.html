@@ -1,0 +1,13 @@
+<div class="marguenes-custom"></div>
+<app-card-header [proceso]="proceso" [imgLink]="'assets/images/3d/Elemento_3D_inmobilizaciones.png'" [title]="'inmovilizaciones.titulo'| transloco" [text]="'inmovilizaciones.cardText'| transloco"></app-card-header>
+<app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'inmovilizaciones.subTitulo'| transloco"></app-title-pages>
+
+<app-card-tramites  [dataCardTramite]="dataCardTramite" *ngIf="listaTramites.length > 0"></app-card-tramites>
+<div [class]="proceso? 'skeleton-none':''" *ngIf="listaTramites.length <= 0">
+    <p class="text-noCard">
+        <app-sin-informacion text="'inmovilizaciones.inmovilizados'| transloco" [text]="'inmovilizaciones.noInmovilizados'| transloco"></app-sin-informacion>
+    </p>
+</div>
+<app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'inmovilizaciones.tramitesRelacionados' | transloco" [text]="''"></app-title-pages>
+<app-groups-button-card [proceso]="proceso" [listButton]="listButton"></app-groups-button-card>
+<div class="marguenes-custom"></div>

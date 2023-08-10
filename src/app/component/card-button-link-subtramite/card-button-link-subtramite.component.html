@@ -1,0 +1,15 @@
+<div class="custom-button" tabindex="0" (click)="accion(listButton.link, listButton.linkVus, listButton.name)" (keydown.enter)="accion(listButton.link, listButton.linkVus, listButton.name)">
+    <mat-card  class="card-button-link-subtra">
+        <mat-card-content class="card-content-link-subtra">
+            <div class="card-custom-btnlink-subtra">
+                <div class="card-custom-btnlink-subtra__icon">
+                    <div class="icon-card-btnlink-subtra" [innerHTML]="icono"></div>
+                </div>
+                <div class="card-custom-btnlink-subtra__title">
+                    <h1 class="subtitulo"> {{listButton.name}} </h1>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+

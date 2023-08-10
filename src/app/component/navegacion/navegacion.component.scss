@@ -1,0 +1,23 @@
+$colorGris2: #999999;
+$colorAzul1: #20223E;
+.navegacion-custon {
+    display: flex;
+    justify-content: left;
+}
+   
+
+.btn-custom-navegacion {
+    padding: 0 !important;
+}
+    
+
+.btn-custom-icon {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+}
+
+svg {
+    width: 100% !important;
+    height: 100% !important;
+}

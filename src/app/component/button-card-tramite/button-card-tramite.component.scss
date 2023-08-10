@@ -1,0 +1,38 @@
+@import "../../../assets/sass/styles.scss";
+
+h3 {
+    margin-bottom: 5px;
+    font-family: Raleway Bold;
+    //font-size: 14px;
+}
+
+p {
+    margin-top: 0;
+    //font-size: 13px;
+    font-family: Raleway Medium;
+}
+
+.activo {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: $colorVerde;
+    border-radius: 50%;
+}
+
+.inactivo {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: $colorRojo;
+    border-radius: 50%;
+}
+
+.activo-buttom {
+    text-decoration: underline;
+}
+
+.activo-buttom:hover {
+    cursor: pointer;
+    color: $colorAzul2;
+}

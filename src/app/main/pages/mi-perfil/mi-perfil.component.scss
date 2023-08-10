@@ -1,0 +1,83 @@
+@import "../../../../assets/sass/styles.scss";
+
+
+.label-custom {
+    color: $colorPrimario1;
+}
+
+.grid-registro-mMo {
+    display: flex;
+
+    @include respond(phone) {
+        flex-direction: column;
+    }
+
+    &__colum {
+        margin-bottom: 10px;
+        width: 50%;
+
+        @include respond(phone) {
+            width: 100%;
+        }
+    }
+}
+
+.perfil-img {
+    width: 15%;
+    align-self: center;
+    @include respond(phone) { 
+        width: 40%;
+    }
+    @include respond(phone-s) { 
+        width: 30%;
+    }
+    img {
+        width: 70%;
+        @include respond(phone-s) { 
+            width: 95%;
+        }
+        margin-left: 30px;
+        border-radius: 50%;
+        @include respond(phone) { 
+            margin-left: 0px;
+        }
+    }
+}
+
+.perfil-titulo {
+    margin-left: 30px;
+    width: 85%;
+    @include respond(phone) { 
+        width: 60%;
+        margin-left: 5px;
+    }
+    @include respond(phone-s) { 
+        width: 70%;
+        margin-left: 5px;
+    }
+}
+
+.perfil-subtext {
+    align-items: center;
+    display: flex;
+
+    button{
+        margin-left: 30px;
+        @include respond(phone) { 
+            margin-left: 0px;
+        }
+    }
+    @include respond(phone) {
+        flex-direction: column;
+        align-items: normal;
+
+    }
+}
+
+.card-button-link {
+    border-radius: $radiusCardCuston !important;
+    box-shadow: none !important;
+    color: $colorPrimario1; 
+    width: 100%;
+    min-height: 60px;
+}

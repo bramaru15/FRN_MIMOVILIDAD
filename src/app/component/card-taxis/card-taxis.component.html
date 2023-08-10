@@ -1,0 +1,36 @@
+<mat-card [class]="proceso? 'skeleton card-header':'card-header'">
+    <mat-card-content>
+        <div class="card-custom-header">
+            <div class="card-custom-header__text">
+                <div style="display: flex;">
+                    <app-icon-menu [class]="proceso? 'skeleton-none':'icon-card-btnlink-taxis'"
+                        [icon]="imgLink"></app-icon-menu>
+                    <h2 [class]="proceso? 'skeleton-none':'subtitulo'"
+                        style="margin: 0 0 0 10px; font-family: Raleway Extrabold; align-self: center;">
+                        {{title}}{{placa}}</h2>
+                </div>
+
+                <p style="font-family: Raleway Medium;">
+                    <span [class]="proceso? 'skeleton-none':'cuerpo_texto'" [innerHTML]="safehtmlStr"></span>
+                    <a *ngIf="tipoResiltado === 'inmovilizacion' && resultadoBusqueda" class="cuerpo_texto"
+                        style="color: #425287;" rel="noopener" target="_blank"
+                        href="https://goo.gl/maps/9iRacpDver7tb2cK7">Álamos.</a>
+                </p>
+                <app-checkbox-conductores-uniselect *ngIf="tipoResiltado !== 'exceptuado'" [data]="listadoConductores"
+                    (messageEvent)="selectionConductor($event)"></app-checkbox-conductores-uniselect>
+            </div>
+            <div *ngIf="tipoResiltado !=='inmovilizacion'" class="card-custom-header__button">
+                <button [style]="!resultadoBusqueda? 'display: none;': 'width: max-content; min-width: 100px; margin: 4px;'"
+                    class="button-miM-large" color="primary" (click)="openDialog()"
+                    [disabled]="!(conductorSeleccionado.selected.length >0) && tipoResiltado !== 'exceptuado'"
+                    mat-flat-button>
+                    <p class="texto_boton">{{textBoton}}</p>
+                </button>
+                <button style="width: max-content; min-width: 100px; margin: 4px;" class="button-miM-large" mat-stroked-button
+                    (click)="direccionaMientoVermas()" color="primary">
+                    <p class="texto_boton">{{'cardTaxis.verMas' | transloco}}</p>
+                </button>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

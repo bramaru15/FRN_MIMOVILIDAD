@@ -1,0 +1,45 @@
+<mat-card class="example-card">
+    <mat-card-header class="example-card-header"
+        [style]="{'background-color':color, 'height':'37px', 'justify-content': 'right', 'padding': '0'}">
+        <button [style]="{'margin-top':'-5px'}" mat-icon-button (click)="this.openLink(false)">
+            <i-feather [style]="{'color':'white'}" name="x"></i-feather>
+        </button>
+    </mat-card-header>
+    <mat-card-content class="example-card-content">
+        <div>
+            <div>
+                <div style="display: flex;">
+                    <app-icon-menu class="icon-card-btnlink-detalletaxis"
+                        [icon]="'assets/icons/Icono_tipo_tramite_inscripcion.svg'"></app-icon-menu>
+                    <h2 class="text-color subtitulo" style="margin: 0; font-family: Raleway Extrabold;align-self: center;">
+                        No. RADICADO {{data.radicado}}</h2>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p class="text-color cuerpo_texto"><strong class="textsub">INFORMACIÓN DE LA EXCEPCIÓN</strong></p>
+        <hr />
+        <p class="text-color cuerpo_texto"><strong class="textsub">Tipo Excepción:</strong> {{data.exTipoExc.nombreTipoExc}}</p>
+        <hr />
+        <p class="text-color cuerpo_texto"><strong class="textsub">Fecha Registro:</strong> {{data.fechaReg}}
+        <br *ngIf="window.innerWidth <= 450"><span [style]="window.innerWidth <= 450? 'margin-top: 5px':'margin-left: 20px;'" *ngIf="data.exTipoExc.nombreTipoExc === 'Pico y Placa Solidario'"><strong class="textsub">Fecha límite:</strong> {{data.fechaLimite}}</span></p>
+        <hr />
+        <p class="text-color cuerpo_texto"><strong class="textsub">Descripción:</strong></p>
+        <p class="text-color cuerpo_texto">{{data.exTipoExc.observacionesTipoExc}}</p>
+        <hr />
+        <p class="text-color cuerpo_texto"><strong class="textsub">OBSERVACIONES</strong></p>
+        <hr />
+        <p class="text-color cuerpo_texto">{{data.observacionesExc}}</p>
+        <hr />
+        <p class="text-color cuerpo_texto"><strong class="textsub">INFORMACIÓN DEL VEHÍCULO</strong></p>
+        <hr />
+        <div class="inf-vehiculo">
+            <div class="inf-vehiculo_text1">
+                <p class="text-color cuerpo_texto"><strong class="textsub">Placa:</strong> {{data.placaExc}}</p>
+            </div>
+            <div class="inf-vehiculo_text">
+                <p class="text-color cuerpo_texto"><strong class="textsub">Estado:</strong> {{data.nameEstadoExc}}</p>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

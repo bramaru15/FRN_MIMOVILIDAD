@@ -1,0 +1,62 @@
+@import "../../../../assets/sass/styles.scss";
+
+.example-container {
+  width: 100%;
+  background-color: transparent;
+  @include respond(custom-m) {
+    
+  }
+}
+
+.btn-home-ver_m {
+  width: 100px;
+  height: 25px;
+
+  @include respond(phone-s) {
+    font-size: 10px;
+  }
+}
+
+.title-home-fun {
+  color: $colorPrimario1;
+  font-family: Raleway Bold;
+  //font-size: 18px;
+}
+
+.group-graficas-home {
+  display: flex;
+  @include respond(phone-xxl) {
+    flex-direction: column;
+  }
+
+  &_uno {
+    width: 50%;
+    
+    @include respond(phone-xxl) {
+      width: 100%;
+    }
+  }
+
+  &_uno_card {
+    margin: 10px 10px 10px 0px;
+    @include respond(phone-xxl) {
+      margin: 0px 0px 0px 0px;
+    }
+    height: 300px;
+  }
+
+  &_dos_card {
+    margin: 10px 0px 10px 10px;
+    @include respond(phone-xxl) {
+      margin: 0px 0px 0px 0px;
+    }
+    height: 300px;
+  }
+
+  &_dos {
+    width: 50%;
+    @include respond(phone-xxl) {
+      width: 100%;
+    }
+  }
+}

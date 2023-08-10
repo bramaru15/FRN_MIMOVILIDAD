@@ -1,0 +1,33 @@
+<div class="marguenes-custom"></div>
+<app-card-header [proceso]="proceso" [imgLink]="'assets/images/3d/Elemento_3D_notificacipn_electronica.png'" [title]="'notificacionElectro.titulo' | transloco" [text]="'notificacionElectro.cardText' | transloco"></app-card-header>
+<app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'notificacionElectro.autorizacion' | transloco" [text]="'notificacionElectro.cardText2' | transloco"></app-title-pages>
+<br>
+<div class="container-card">
+    <mat-card [class]="proceso? 'skeleton card-auth':'card-auth'" [style]="styleCustom">
+        <mat-card-content class="card-content-miM">
+            <form [class]="proceso? 'skeleton-none':'example-form'" [formGroup]="registerForm">
+                <div class="container-form-miM colum-height" style="text-align: left !important;">
+                    <mat-label class="label-custom titulo_formulario">{{'notificacion-electro.correo' | transloco}}</mat-label>
+                    <mat-form-field class="container-imput-miM no-editable" appearance="outline" subscriptSizing="dynamic"
+                        color="primary">
+                        <input class="texto_formularios" readonly matInput [placeholder]="('notificacionElectro.correo'| transloco)" formControlName="email">
+                    </mat-form-field>
+                </div>
+            </form>
+            <mat-grid-list [class]="proceso? 'skeleton-none':''" [cols]="1" rowHeight="2rem" style="margin-top: 15px;">
+                <mat-grid-tile>
+                    <button class="button-miM-large" (click)="isConsulta? '': consultar()" style="width: fit-content; height: 30px;"
+                        [disabled]="!registerForm.valid" mat-flat-button color="primary"> 
+                        <mat-spinner *ngIf="isConsulta" color="accent" diameter="20"></mat-spinner>
+                        <p *ngIf="!isConsulta" class="texto_boton">{{'notificacion-electro.continuar' | transloco}}</p>
+                    </button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+    </mat-card>
+</div>
+<app-title-pages [class]="proceso? 'skeleton-none':''" [title]="'notificacionElectro.otrasOpciones' | transloco"></app-title-pages>
+<app-groups-button-card [proceso]="proceso" [listButton]="listButton"></app-groups-button-card>
+<div class="marguenes-custom"></div>
+
+

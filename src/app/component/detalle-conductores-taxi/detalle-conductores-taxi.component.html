@@ -1,0 +1,61 @@
+<mat-card class="example-card">
+    <mat-card-header class="example-card-header"
+        [style]="{'background-color':color, 'height':'37px', 'justify-content': 'right', 'padding': '0'}">
+        <button [style]="{'margin-top':'-5px'}" mat-icon-button (click)="this.openLink(false)">
+            <i-feather [style]="{'color':'white'}" name="x"></i-feather>
+        </button>
+    </mat-card-header>
+    <mat-card-content class="example-card-content">
+        <div>
+            <div>
+                <div style="display: flex;">
+                    <app-icon-menu class="icon-card-btnlink-detalletaxis"
+                        [icon]="'assets/icons/Perfil_icono.svg'"></app-icon-menu>
+                    <h2 class="text-color subtitulo" style="margin: 0; font-family: Raleway Extrabold;align-self: center;">
+                        Tarjeta de control #{{taxi.numeroTarjetaControl}}</h2>
+                </div>
+            </div>
+        </div>
+        <p class="text-color">Los datos del conductor asociado al número de tarjeta de control consultada son:</p>
+        <hr />
+        <div class="tarjeta-detalle-conductor">
+            <div class="card-custom-header">
+                <div class="card-custom-header_img">
+                    <img *ngIf="this.taxi.conductorDTO.uriFoto === null" src="../../../assets/images/3d/avatar.png" class="foto-conductor"/>
+                    <img *ngIf="this.taxi.conductorDTO.uriFoto !== null" [src]="this.taxi.conductorDTO.uriFoto" [alt]="this.taxi.conductorDTO.foto" class="foto-conductor"/>
+                </div>
+                <div class="card-custom-header_text">
+                    <p class="text-color subtitulo"><strong class="textsub">{{this.taxi.conductorDTO.persona.nombres}} {{this.taxi.conductorDTO.persona.apellidos}}</strong></p>
+                    <hr />
+                    <p class="text-color cuerpo_texto"><strong class="textsub">RH: </strong>{{this.taxi.tipoSangre}} <strong class="textsub" style="margin-left: 10px;">EPS: </strong>
+                        {{taxi.eps}}</p>
+                    <hr />
+                    <p class="text-color cuerpo_texto"><strong class="textsub">ARL: </strong> {{taxi.arl}}</p>
+                    <hr />
+                    <p class="text-color cuerpo_texto"><strong class="textsub">FECHA DE VENCIMIENTO: </strong><span
+                        style="text-transform: capitalize;">{{fechaVencimiento| date:'dd MMMM yyyy'}}</span></p>
+                    <hr />
+                    <p class="text-color cuerpo_texto"><strong class="textsub">FECHA DE VENCIMIENTO RTM: </strong><span
+                        style="text-transform: capitalize;">{{fechaVencimientoRtm| date:'dd MMMM yyyy'}}</span></p>
+                    <hr />
+                    <p class="text-color cuerpo_texto"><strong class="textsub">FECHA DE VENCIMIENTO SOAT: </strong><span
+                        style="text-transform: capitalize;">{{fechaVencimientoSOAT| date:'dd MMMM yyyy'}}</span></p>
+                    <hr />
+                    <p class="text-color cuerpo_texto"><strong class="textsub">FECHA DE VENCIMIENTO TO: </strong><span
+                        style="text-transform: capitalize;">{{fechaVencimientoSOAT| date:'dd MMMM yyyy'}}</span></p>
+                    <hr />
+                </div>
+            </div>
+            <div>
+                <p class="text-color cuerpo_texto"><strong class="textsub">RAZÓN SOCIAL:</strong> {{taxi.nombreEmpresa}}</p>
+                <hr />
+                <p class="text-color cuerpo_texto"><strong class="textsub">NIT:</strong> {{taxi.nitEmpresa}}</p>
+                <hr />
+                <p class="text-color cuerpo_texto"><strong class="textsub">PLACA:</strong> {{taxi.placa}}</p>
+            </div>
+            <!--div class="placa-taxi-detalle text-color">
+                <span class="cuerpo_texto">{{taxi.placa}}</span>
+            </div-->
+        </div>
+    </mat-card-content>
+</mat-card>

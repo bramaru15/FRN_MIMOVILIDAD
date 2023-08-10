@@ -1,0 +1,37 @@
+<mat-card [class]="proceso? 'skeleton card-button-link':'card-button-link'">
+    <mat-card-content class="card-content-link-miMo" style="padding: 10px 0;">
+        <div class="card-custom-btnlink">
+            <div class="flex-custom-vs" style="width: 100%;">
+                <div class="card-custom-btnlink__title" [style]="'width: 100%; height: 100%;'">
+                    <div style="display: flex; align-items: end;">
+                        <div class="margen-titulo">
+                            <div *ngIf="listButton.linkIcon !== ''" style="width: fit-content;">
+                                <div [class]="proceso? 'skeleton-none':'icon-card-header-v1'"
+                                    [innerHTML]="icono"></div>
+                            </div>
+                            <div *ngIf="listButton.linkImg !== undefined">
+                                <div
+                                    [class]="proceso? 'skeleton-none':'icon-card-header-v1'">
+                                    <img style="border-radius: 50px;" [src]="listButton.linkImg"
+                                        [alt]="listButton.name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h1 *ngIf="listButton.tamanoTitulo === 'h1'" [class]="proceso? 'skeleton-none':'titulo_destacado'"
+                            style="margin-top: 11px;">
+                            {{listButton.name}} </h1>
+                        <h2 *ngIf="listButton.tamanoTitulo === 'h2' || listButton.tamanoTitulo === undefined"
+                            [class]="proceso? 'skeleton-none':'titulo_destacado'" style="margin-top: 11px;"> {{listButton.name}} </h2>
+                        <h3 *ngIf="listButton.tamanoTitulo === 'h3'" [class]="proceso? 'skeleton-none':'titulo_destacado'"
+                            style="margin-top: 11px;">
+                            {{listButton.name}} </h3>
+                    </div>
+                    <p [class]="proceso? 'skeleton-none':''" style="margin: 11px 0;">
+                        <span class="cuerpo_texto" [innerHTML]="safehtmlStr"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
